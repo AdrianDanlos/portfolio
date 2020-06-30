@@ -1,38 +1,43 @@
 <template>
-  <div class="overflow-hidden">
-    <v-row justify="end" class="ma-3">
-      <v-icon v-if="!drawer" @click.stop="drawer = !drawer" style="z-index: 10">mdi-menu</v-icon>
-      <v-icon v-if="drawer" @click.stop="drawer = !drawer" style="z-index: 10">mdi-close</v-icon>
-    </v-row>
-
-    <v-navigation-drawer v-model="drawer" absolute temporary width="100vw">
-      <v-sheet height="100%" class="d-flex flex-column justify-center align-center purple menu">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">CONTACT</a>
-      </v-sheet>
-    </v-navigation-drawer>
+  <div>
+    <main-loading v-if="!loaded"></main-loading>
+    <navbar></navbar> 
   </div>
 </template>
 
-
-
 <script>
+import MainLoading from './../components/MainLoading';
 export default {
+  components:{
+    MainLoading
+  },
   data() {
     return {
-      drawer: null
-    };
+      loaded: false
+    }
+  },
+  mounted(){
+    let svg = document.getElementsByTagName('svg')[0];
+    let svgText = document.getElementsByClassName('svg-text')[0]
+
+    //Give opacity to the svg text and switch svg color
+    setTimeout(() => {
+      svgText.style.opacity = 1;
+      svg.style.color = "rgb(101, 101, 203)";
+    }, 1800);
+
+    //Make svg disappear by removing its width
+    setTimeout(() => {
+      svg.style.cssText += ';width:0 !important;';
+    }, 2600); 
+    
+    //Hide main loading component
+    setTimeout(() => {
+      this.loaded = true;
+    }, 3000); //2s is the animation time of the loading logo
+    
   }
-};
+}
 </script>
 
-<style scoped>
-  .menu a{
-    font-size: 60px;
-    text-decoration: none;
-    color: white;
-    line-height: 80px;
-  }
-</style>
+
