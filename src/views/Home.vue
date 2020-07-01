@@ -1,24 +1,30 @@
 <template>
   <div>
     <main-loading v-if="!loaded"></main-loading>
-    <navbar></navbar> 
+    <navbar></navbar>
+    <intro></intro>
+    <v-sheet height="100vh" color="purple">
+      <v-container class="content-wrapper pa-5 pa-sm-3"></v-container>
+    </v-sheet>
   </div>
 </template>
 
 <script>
-import MainLoading from './../components/MainLoading';
+import MainLoading from "./../components/MainLoading";
+import Intro from "./../components/Intro";
 export default {
-  components:{
-    MainLoading
+  components: {
+    MainLoading,
+    Intro
   },
   data() {
     return {
       loaded: false
-    }
+    };
   },
-  mounted(){
-    let svg = document.getElementsByTagName('svg')[0];
-    let svgText = document.getElementsByClassName('svg-text')[0]
+  mounted() {
+    let svg = document.getElementsByTagName("svg")[0];
+    let svgText = document.getElementsByClassName("svg-text")[0];
 
     //Give opacity to the svg text and switch svg color
     setTimeout(() => {
@@ -28,16 +34,19 @@ export default {
 
     //Make svg disappear by removing its width
     setTimeout(() => {
-      svg.style.cssText += ';width:0 !important;';
-    }, 2600); 
-    
+      svg.style.cssText += ";width:0 !important;";
+    }, 2600);
+
     //Hide main loading component
     setTimeout(() => {
       this.loaded = true;
-    }, 3000); //2s is the animation time of the loading logo
-    
+    }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
   }
-}
+};
 </script>
 
+
+<style scoped>
+
+</style>
 

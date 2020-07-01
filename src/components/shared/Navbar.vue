@@ -1,6 +1,6 @@
 <template>
-  <div class="overflow-hidden">
-    <v-row class="d-flex align-center justify-space-between ma-9 menu-icon-container">
+  <v-sheet class="overflow-hidden nav-container" width="100%" height="100vh">
+    <div class="d-flex align-center justify-space-between ma-5 ma-sm-9 menu-icon-container">
       <div class="d-flex align-center">
         <logo :class="menuColor"></logo>
         <header-brand :class="menuColor"></header-brand>
@@ -13,7 +13,7 @@
         <span class="d-none d-sm-block d- mr-2 font-weight-bold">CLOSE</span>
         <v-icon large>mdi-close</v-icon>
       </div>
-    </v-row>
+    </div>
 
     <v-navigation-drawer v-model="drawer" absolute temporary width="100vw" class="drawer">
       <v-sheet
@@ -32,17 +32,17 @@
         </p>
       </v-sheet>
     </v-navigation-drawer>
-  </div>
+  </v-sheet>
 </template>
 
 
 
 <script>
-import HeaderBrand from './../Header';
+import HeaderBrand from "./../Header";
 
 export default {
-  components:{
-    HeaderBrand,
+  components: {
+    HeaderBrand
   },
   data() {
     return {
@@ -54,10 +54,9 @@ export default {
     async setHeaderColor() {
       //We check if the menu is closing or opening to set a timing for the color change of the logo and header-brand
       let timing;
-      if(screen.width < 500){
+      if (screen.width < 500) {
         timing = this.drawer ? 50 : 200;
-      }
-      else{
+      } else {
         timing = this.drawer ? 50 : 350;
       }
 
@@ -67,17 +66,30 @@ export default {
         }, timing);
       });
       this.menuColor = result;
+    },
+    hideScrollY() {
+      let html = document.getElementsByTagName("html")[0];
+      //this.drawer ? html.style.overflowY = "scroll" : html.style.overflowY = "auto";
+      if (this.drawer) {
+        html.classList.add("no-scroll");
+      } else {
+        html.classList.remove("no-scroll");
+      }
     }
   },
   watch: {
     drawer: function() {
       this.setHeaderColor();
+      this.hideScrollY();
     }
   }
 };
 </script>
 
 <style scoped>
+.nav-container {
+  position: absolute;
+}
 .menu-icon-container div {
   z-index: 10;
   cursor: pointer;
@@ -134,5 +146,5 @@ export default {
   bottom: 0;
   user-select: none;
 }
-/* #F44336 */
+
 </style>
