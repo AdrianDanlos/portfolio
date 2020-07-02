@@ -19,7 +19,19 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700;900&family=Nunito+Sans:wght@400;900&family=Fira+Code:wght@100;400;700;900&display=swap");
-.section-push-up{
+
+/*GRID STRUCTURE: CONTAINER (COMPONENT) -> ROW (.CONTENT-WRAPPER)*/
+/*Grid Padding on this elements -> CONTAINER & COLS*/
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .content-wrapper {
+  max-width: 1200px;
+}
+.section-push-up {
   padding-bottom: 50px;
 }
 .no-scroll {
@@ -35,9 +47,6 @@ export default {
 }
 .dark-lighten-text {
   color: #5e7682;
-}
-.container.content-wrapper {
-  max-width: 1200px;
 }
 
 /* #F44336 */

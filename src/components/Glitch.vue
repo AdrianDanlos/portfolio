@@ -34,7 +34,7 @@ export default {
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-bottom: 33px;
+  margin-bottom: 16px;
 }
 .content .text {
   position: relative;
@@ -71,6 +71,37 @@ export default {
   text-shadow: -2px 0 rgba(255, 0, 0, 0.555);
   animation: glitch-2 3s linear infinite reverse;
 }
+
+@media (max-width: 1263px) {
+  .content {
+    margin-bottom: 6px;
+    width: 440px;
+    justify-content: center;
+  }
+  .content .text {
+    font-size: 30px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 599px) {
+  .content {
+    width: 100%;
+  }
+  .content .text {
+    font-size: 20px;
+    color: #263238;
+  }
+
+  .content .text:before,
+  .content .text:after {
+    color: #3e3e41;
+  }
+  .content .text:before {
+    text-shadow: none;
+    left: 1px;
+  }
+}
+
 @keyframes glitch-1 {
   0% {
     clip: rect(132px, 350px, 101px, 30px);
@@ -200,17 +231,6 @@ export default {
   }
   100% {
     clip: rect(83px, 350px, 40px, 30px);
-  }
-}
-@media (max-width: 600px) {
-  .content {
-    margin-bottom: 15px;
-    width: 325px;
-    justify-content: center;
-  }
-  .content .text {
-    font-size: 20px;
-    margin-left: 0;
   }
 }
 </style>

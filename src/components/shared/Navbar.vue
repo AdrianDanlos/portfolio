@@ -1,6 +1,6 @@
 <template>
   <v-sheet class="overflow-hidden nav-container" width="100%" height="100vh">
-    <div class="d-flex align-center justify-space-between ma-5 ma-sm-9 menu-icon-container">
+    <div class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9 menu-icon-container">
       <div class="d-flex align-center">
         <logo :class="menuColor"></logo>
         <header-brand :class="menuColor"></header-brand>

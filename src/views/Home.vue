@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div id="web-container">
     <main-loading v-if="!loaded"></main-loading>
     <navbar></navbar>
     <intro></intro>
     <v-sheet height="100vh" color="purple">
-      <v-container class="content-wrapper pa-5 pa-sm-3"></v-container>
+      <v-container class="content-wrapper pa-5 pa-md-3"></v-container>
     </v-sheet>
   </div>
 </template>
