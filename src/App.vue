@@ -57,12 +57,10 @@ export default {
 /*Grid Padding on this elements -> CONTAINER & COLS*/
 .container {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.container .content-wrapper {
-  max-width: 1200px;
+  @include flexCenter();
+  .content-wrapper {
+    max-width: 1200px;
+  }
 }
 .section-push-up {
   padding-bottom: 50px;

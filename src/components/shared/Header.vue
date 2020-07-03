@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="overflow-hidden nav-container" width="100%" height="100vh">
+  <div class="overflow-hidden nav-container">
     <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9">
       <div class="d-flex align-center">
         <logo :class="menuColor"></logo>
@@ -18,7 +18,7 @@
     </header>
 
     <v-navigation-drawer v-model="drawer" absolute temporary width="100vw" class="drawer">
-      <v-sheet height="100%" class="d-flex flex-column justify-center align-center menu">
+      <v-sheet height="100%" class="flex-column menu">
         <a href="#">HOME</a>
         <a href="#">ABOUT</a>
         <a href="#">PROJECTS</a>
@@ -30,7 +30,7 @@
         </p>
       </v-sheet>
     </v-navigation-drawer>
-  </v-sheet>
+  </div>
 </template>
 
 
@@ -87,21 +87,40 @@ export default {
 <style scoped lang="scss">
 .nav-container {
   position: absolute;
+  @include fullScreen();
 }
-header div,
-header nav {
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
+header {
+  div,
+  nav {
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
 }
-.open span,
-.close span {
-  font-size: 0.8rem;
-  letter-spacing: 4px;
+.open,
+.close {
+  span {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+  }
 }
-.open i {
-  color: $dark;
+.open {
+  i {
+    color: $dark;
+  }
 }
+.close {
+  transition: all 0.3s ease;
+  &:hover {
+    * {
+      color: white;
+    }
+    i {
+      transform: rotate(90deg);
+    }
+  }
+}
+
 .menu a,
 .menu p,
 .menu i,
@@ -110,33 +129,26 @@ header nav {
 .open:hover * {
   color: $gray;
 }
-.close {
-  transition: all 0.3s ease;
-}
-.close:hover * {
-  color: white;
-}
-.close:hover i {
-  transform: rotate(90deg);
+
+.menu {
+  @include flexCenter();
+  opacity: 0.9;
+  background-color: $dark-blue;
+  a {
+    font-size: 60px;
+    text-decoration: none;
+    line-height: 80px;
+    transition: 0.1s all;
+    user-select: none;
+    font-weight: $thinest;
+    &:hover {
+      color: white;
+      font-weight: $boldest;
+    }
+  }
 }
 .drawer {
   transition: all 0.5s ease;
-}
-.menu {
-  opacity: 0.9;
-  background-color: $dark-blue;
-}
-.menu a {
-  font-size: 60px;
-  text-decoration: none;
-  line-height: 80px;
-  transition: 0.1s all;
-  user-select: none;
-  font-weight: $thinest;
-}
-.menu a:hover {
-  color: white;
-  font-weight: $boldest;
 }
 .copyright {
   font-size: 14px;

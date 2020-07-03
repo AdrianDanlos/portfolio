@@ -35,41 +35,41 @@ export default {
   align-items: center;
   overflow: hidden;
   margin-bottom: 16px;
-}
-.content .text {
-  position: relative;
-  color: $primary-glitch-color;
-  font-weight: $bold;
-  font-size: 45px;
-  font-family: $title-font;
-  transform: scale(2);
-  padding: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 0 140px;
-  z-index: 0; /*Probar con 1 para quitar rayas*/
-}
-.content .text:before,
-.content .text:after {
-  padding: 30px;
-  color: $secondary-glitch-color;
-  content: attr(data-text);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: white; /*white background might be better*/
-  overflow: hidden;
-  top: 0;
-}
-.content .text:before {
-  left: 3px;
-  text-shadow: -2px 0 $shadow-glitch-color;
-  animation: glitch-1 6s linear infinite reverse;
-}
-.content .text:after {
-  left: -6px;
-  text-shadow: -2px 0 $shadow2-glitch-color;
-  animation: glitch-2 3s linear infinite reverse;
+  .text {
+    position: relative;
+    color: $primary-glitch-color;
+    font-weight: $bold;
+    font-size: 45px;
+    font-family: $title-font;
+    transform: scale(2);
+    padding: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 0 140px;
+    z-index: 0; /*Probar con 1 para quitar rayas*/
+    &::before,
+    &::after {
+      padding: 30px;
+      color: $secondary-glitch-color;
+      content: attr(data-text);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white; /*white background might be better*/
+      overflow: hidden;
+      top: 0;
+    }
+    &::before {
+      left: 3px;
+      text-shadow: -2px 0 $shadow-glitch-color;
+      animation: glitch-1 6s linear infinite reverse;
+    }
+    &::after {
+      left: -6px;
+      text-shadow: -2px 0 $shadow2-glitch-color;
+      animation: glitch-2 3s linear infinite reverse;
+    }
+  }
 }
 
 @media (max-width: 1263px) {
@@ -77,28 +77,27 @@ export default {
     margin-bottom: 6px;
     width: 440px;
     justify-content: center;
-  }
-  .content .text {
-    font-size: 30px;
-    margin-left: 0;
+    .text {
+      font-size: 30px;
+      margin-left: 0;
+    }
   }
 }
 @media (max-width: 599px) {
   .content {
     width: 100%;
-  }
-  .content .text {
-    font-size: 20px;
-    color: $dark;
-  }
-
-  .content .text:before,
-  .content .text:after {
-    color: $dark-gray;
-  }
-  .content .text:before {
-    text-shadow: none;
-    left: 1px;
+    .text {
+      font-size: 20px;
+      color: $dark;
+      &::before,
+      &::after {
+        color: $dark-gray;
+      }
+      &::before {
+        text-shadow: none;
+        left: 1px;
+      }
+    }
   }
 }
 

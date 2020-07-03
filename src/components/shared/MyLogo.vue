@@ -1,15 +1,6 @@
 <template>
   <div class="logo-container d-flex align-center">
-    <svg
-      id="logo"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      viewBox="0 0 84 96"
-      style="
-    fill: none;
-    user-select: none;
-"
-    >
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
       <title>Logo</title>
       <g transform="translate(-8.000000, -2.000000)">
         <text class="svg-text" x="38.5" y="60" fill="currentcolor">A</text>
@@ -42,6 +33,8 @@ svg {
   width: 55px;
   font-size: 35px;
   font-weight: $regular;
+  fill: none;
+  user-select: none;
 }
 .logo-container {
   z-index: 15;

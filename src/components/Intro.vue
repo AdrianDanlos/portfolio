@@ -2,7 +2,7 @@
   <v-container>
     <main class="content-wrapper row section-push-up flex-column flex-lg-row mx-auto">
       <section
-        class="col-12 col-lg-10 d-flex justify-center align-center order-last order-lg-first"
+        class="col-12 col-lg-10 order-last order-lg-first"
       >
         <div class="d-flex flex-column">
           <p class="d-none d-sm-block orange-text serif-font">Hi, my name is</p>
@@ -17,7 +17,7 @@
         </div>
       </section>
       <aside
-        class="col-12 col-lg-2 d-flex align-center justify-center justify-lg-end mb-5 img-container"
+        class="col-12 col-lg-2 justify-lg-end mb-5 img-container"
       >
         <img src="/images/me.png" alt="Adrian" />
       </aside>
@@ -37,6 +37,9 @@ export default {
 <style scoped lang="scss">
 main {
   position: relative;
+}
+section, aside{
+  @include flexCenter();
 }
 .name,
 .rol {
