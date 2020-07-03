@@ -1,35 +1,28 @@
 <template>
-  <v-sheet>
-    <v-container>
-      <div
-        class="content-wrapper row intro-container section-push-up flex-column flex-lg-row mx-auto"
+  <v-container>
+    <main class="content-wrapper row section-push-up flex-column flex-lg-row mx-auto">
+      <section
+        class="col-12 col-lg-10 d-flex justify-center align-center order-last order-lg-first"
       >
-        <v-sheet
-          class="col-12 col-lg-10 d-flex justify-center align-center order-last order-lg-first text-container"
-        >
-          <div class="d-flex flex-column">
-            <p class="hi d-none d-sm-block">Hi, my name is</p>
-            <p class="name dark-text d-none d-sm-block mb-1">Adrian Danlos</p>
-            <div
-              class="d-flex align-end align-lg-center flex-column flex-sm-row glitch-container"
-            >
-              <span class="rol dark-lighten-text d-none d-sm-block">I am a</span>
-              <glitch></glitch>
-            </div>
-            <p
-              class="intro-text mt-0 mt-lg-4"
-            >As a Software Developer I'm always looking to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
+        <div class="d-flex flex-column">
+          <p class="d-none d-sm-block orange-text serif-font">Hi, my name is</p>
+          <p class="name dark-text d-none d-sm-block mb-1">Adrian Danlos</p>
+          <div class="d-flex align-end align-lg-center flex-column flex-sm-row glitch-container">
+            <span class="rol gray-text d-none d-sm-block">I am a</span>
+            <glitch></glitch>
           </div>
-        </v-sheet>
-        <v-sheet
-          class="col-12 col-lg-2 d-flex align-center justify-center justify-lg-end mb-5 img-container"
-          width="100%"
-        >
-          <img src="/images/me.png" alt="Adrian" />
-        </v-sheet>
-      </div>
-    </v-container>
-  </v-sheet>
+          <p
+            class="intro-long-text mt-0 mt-lg-4"
+          >As a Software Developer I'm always looking to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
+        </div>
+      </section>
+      <aside
+        class="col-12 col-lg-2 d-flex align-center justify-center justify-lg-end mb-5 img-container"
+      >
+        <img src="/images/me.png" alt="Adrian" />
+      </aside>
+    </main>
+  </v-container>
 </template>
 
 <script>
@@ -41,22 +34,16 @@ export default {
 };
 </script>
 
-<style scoped>
-.intro-container {
+<style scoped lang="scss">
+main {
   position: relative;
-  height: 100vh;
-}
-
-.hi {
-  font-family: "Fira Code";
-  color: #ff6300e3;
 }
 .name,
 .rol {
-  font-family: "Montserrat";
+  font-family: $title-font;
   font-size: 70px;
   line-height: 70px;
-  font-weight: 700;
+  font-weight: $bold;
 }
 .glitch-container {
   position: relative;
@@ -72,12 +59,12 @@ img {
   );
   filter: grayscale(1);
 }
-.intro-text {
+.intro-long-text {
   width: 50%;
-  color: #263238;
+  color: $dark;
 }
 @media (max-width: 1263px) {
-  .text-container {
+  section {
     margin-top: -30px;
   }
   img {
@@ -89,12 +76,12 @@ img {
   .rol {
     font-size: 32px;
   }
-  .intro-text {
+  .intro-long-text {
     width: 540px;
   }
 }
 @media (max-width: 599px) {
-  .intro-text {
+  .intro-long-text {
     width: 100%;
   }
   .img-container {

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center justify-center overflow-hidden main-loading-container">
+  <div class="d-flex align-center justify-center overflow-hidden main-loading-container dark-blue-bg">
     <logo :loaded="loaded"></logo>
   </div>
 </template>
@@ -26,7 +26,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #030013;
   z-index: 20;
 }
 ::v-deep polygon {
@@ -49,5 +48,4 @@ export default {
 ::v-deep .stroke-on {
   stroke-dashoffset: 0;
 }
-/*#F44336*/
 </style>

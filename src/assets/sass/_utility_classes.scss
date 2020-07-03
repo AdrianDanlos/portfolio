@@ -1,0 +1,77 @@
+/*COLOR UTILITY CLASSES */
+.dark-text {
+  color: $dark;
+}
+.dark-bg {
+  background-color: $dark;
+}
+.dark-blue-text {
+  color: $dark-blue;
+}
+.dark-blue-bg {
+  background-color: $dark-blue;
+}
+.dark-gray-text {
+  color: $dark-gray;
+}
+.dark-gray-bg {
+  background-color: $dark-gray;
+}
+.gray-text {
+  color: $gray;
+}
+.gray-bg {
+  background-color: $gray;
+}
+.gray-blue-text {
+  color: $gray-blue;
+}
+.gray-blue-bg {
+  background-color: $gray-blue;
+}
+.light-text {
+  color: $light;
+}
+.light-bg {
+  background-color: $light;
+}
+.orange-text {
+  color: $orange;
+}
+.orange-bg {
+  background-color: $orange;
+}
+.light-orange-text {
+  color: $light-orange;
+}
+.light-orange-bg {
+  background-color: $light-orange;
+}
+
+/*FONT FAMILY UTILITY CLASSES*/
+.title-font{
+  font-family: $title-font;
+}
+.alternative-font{
+  font-family: $alternative-font;
+}
+.serif-font{
+  font-family: $serif-font;
+}
+
+/*FONT WEIGHTS*/
+.thinest{
+  font-weight: $thinest;
+}
+.thin{
+  font-weight: $thin;
+}
+.regular{
+  font-weight: $regular;
+}
+.bold{
+  font-weight: $bold;
+}
+.boldest{
+  font-weight: $boldest;
+}

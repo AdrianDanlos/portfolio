@@ -1,26 +1,24 @@
 <template>
   <v-sheet class="overflow-hidden nav-container" width="100%" height="100vh">
-    <div class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9 menu-icon-container">
+    <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9">
       <div class="d-flex align-center">
         <logo :class="menuColor"></logo>
         <header-brand :class="menuColor"></header-brand>
       </div>
-      <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer">
-        <span class="d-none d-sm-block mr-2 font-weight-bold">MENU</span>
-        <v-icon large>mdi-menu</v-icon>
-      </div>
-      <div class="d-flex align-center close" v-if="drawer" @click.stop="drawer = !drawer">
-        <span class="d-none d-sm-block d- mr-2 font-weight-bold">CLOSE</span>
-        <v-icon large>mdi-close</v-icon>
-      </div>
-    </div>
+      <nav>
+        <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer">
+          <span class="d-none d-sm-block mr-2 font-weight-bold dark-text">MENU</span>
+          <v-icon large>mdi-menu</v-icon>
+        </div>
+        <div class="d-flex align-center close" v-if="drawer" @click.stop="drawer = !drawer">
+          <span class="d-none d-sm-block d- mr-2 font-weight-bold">CLOSE</span>
+          <v-icon large>mdi-close</v-icon>
+        </div>
+      </nav>
+    </header>
 
     <v-navigation-drawer v-model="drawer" absolute temporary width="100vw" class="drawer">
-      <v-sheet
-        height="100%"
-        color="#000510"
-        class="d-flex flex-column justify-center align-center menu"
-      >
+      <v-sheet height="100%" class="d-flex flex-column justify-center align-center menu">
         <a href="#">HOME</a>
         <a href="#">ABOUT</a>
         <a href="#">PROJECTS</a>
@@ -38,7 +36,7 @@
 
 
 <script>
-import HeaderBrand from "./../Header";
+import HeaderBrand from "./../Brand";
 
 export default {
   components: {
@@ -86,11 +84,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .nav-container {
   position: absolute;
 }
-.menu-icon-container div {
+header div,
+header nav {
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -100,9 +99,8 @@ export default {
   font-size: 0.8rem;
   letter-spacing: 4px;
 }
-.open span,
 .open i {
-  color: #1f1f1f;
+  color: $dark;
 }
 .menu a,
 .menu p,
@@ -110,7 +108,7 @@ export default {
 .close span,
 .close i,
 .open:hover * {
-  color: #878a8f;
+  color: $gray;
 }
 .close {
   transition: all 0.3s ease;
@@ -126,6 +124,7 @@ export default {
 }
 .menu {
   opacity: 0.9;
+  background-color: $dark-blue;
 }
 .menu a {
   font-size: 60px;
@@ -133,18 +132,17 @@ export default {
   line-height: 80px;
   transition: 0.1s all;
   user-select: none;
-  font-weight: 100;
+  font-weight: $thinest;
 }
 .menu a:hover {
   color: white;
-  font-weight: 900;
+  font-weight: $boldest;
 }
 .copyright {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: $thin;
   position: absolute;
   bottom: 0;
   user-select: none;
 }
-
 </style>

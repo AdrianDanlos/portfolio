@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .content {
   width: 655px;
   height: 72px;
@@ -38,10 +38,10 @@ export default {
 }
 .content .text {
   position: relative;
-  color: #ff6300e3;
-  font-weight: 700;
+  color: $primary-glitch-color;
+  font-weight: $bold;
   font-size: 45px;
-  font-family: "Montserrat";
+  font-family: $title-font;
   transform: scale(2);
   padding: 30px;
   letter-spacing: 2px;
@@ -52,7 +52,7 @@ export default {
 .content .text:before,
 .content .text:after {
   padding: 30px;
-  color: #ff9c4b;
+  color: $secondary-glitch-color;
   content: attr(data-text);
   position: absolute;
   width: 100%;
@@ -63,12 +63,12 @@ export default {
 }
 .content .text:before {
   left: 3px;
-  text-shadow: -2px 0 #ff620080;
+  text-shadow: -2px 0 $shadow-glitch-color;
   animation: glitch-1 6s linear infinite reverse;
 }
 .content .text:after {
   left: -6px;
-  text-shadow: -2px 0 rgba(255, 0, 0, 0.555);
+  text-shadow: -2px 0 $shadow2-glitch-color;
   animation: glitch-2 3s linear infinite reverse;
 }
 
@@ -89,12 +89,12 @@ export default {
   }
   .content .text {
     font-size: 20px;
-    color: #263238;
+    color: $dark;
   }
 
   .content .text:before,
   .content .text:after {
-    color: #3e3e41;
+    color: $dark-gray;
   }
   .content .text:before {
     text-shadow: none;

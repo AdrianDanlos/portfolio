@@ -1,6 +1,9 @@
 <template>
   <v-app>
+    <main-loading v-if="!loaded"></main-loading>
     <!-- header -->
+    <header-vue></header-vue>
+    <!-- content -->
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -9,17 +12,47 @@
 </template>
 
 <script>
+import MainLoading from "./../src/components/MainLoading";
 export default {
+  components: {
+    MainLoading
+  },
   name: "App",
-  data: () => ({
-    //
-  })
+  data() {
+    return {
+      loaded: false
+    };
+  },
+  methods: {
+    animateLoading() {
+      let svg = document.getElementsByTagName("svg")[0];
+      let svgText = document.getElementsByClassName("svg-text")[0];
+
+      //Give opacity to the svg text and switch svg color
+      setTimeout(() => {
+        svgText.style.opacity = 1;
+        svg.style.color = "rgb(101, 101, 203)";
+      }, 1800);
+
+      //Make svg disappear by removing its width
+      setTimeout(() => {
+        svg.style.cssText += ";width:0 !important;";
+      }, 2600);
+
+      //Hide main loading component
+      setTimeout(() => {
+        this.loaded = true;
+      }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
+    }
+  },
+  mounted() {
+    this.animateLoading();
+  }
 };
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700;900&family=Nunito+Sans:wght@400;900&family=Fira+Code:wght@100;400;700;900&display=swap");
-
+<style lang="scss">
+/*GLOBAL CSS*/
 /*GRID STRUCTURE: CONTAINER (COMPONENT) -> ROW (.CONTENT-WRAPPER)*/
 /*Grid Padding on this elements -> CONTAINER & COLS*/
 .container {
@@ -39,16 +72,4 @@ export default {
   width: 100%;
   overflow-y: scroll;
 }
-.light-text {
-  color: lightgray;
-}
-.dark-text {
-  color: #263238;
-}
-.dark-lighten-text {
-  color: #5e7682;
-}
-
-/* #F44336 */
-/* #ff9e00 */
 </style>

@@ -12,18 +12,7 @@
     >
       <title>Logo</title>
       <g transform="translate(-8.000000, -2.000000)">
-        <text
-          class="svg-text"
-          x="38.5"
-          y="60"
-          fill="currentcolor"
-          style="
-    font-size: 35px;
-    /* font-family: Roboto; */
-    font-family: &quot;Roboto&quot;, sans-serif !important;
-    font-weight: 400;
-"
-        >A</text>
+        <text class="svg-text" x="38.5" y="60" fill="currentcolor">A</text>
         <g transform="translate(11.000000, 5.000000)">
           <polygon
             id="Shape"
@@ -48,9 +37,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 svg {
   width: 55px;
+  font-size: 35px;
+  font-weight: $regular;
 }
 .logo-container {
   z-index: 15;
