@@ -1,14 +1,12 @@
 <template>
   <v-container>
     <main class="content-wrapper row section-push-up flex-column flex-lg-row mx-auto">
-      <section
-        class="col-12 col-lg-10 order-last order-lg-first"
-      >
+      <section class="col-12 col-lg-10 order-last order-lg-first">
         <div class="d-flex flex-column">
           <p class="d-none d-sm-block orange-text serif-font">Hi, my name is</p>
           <p class="name dark-text d-none d-sm-block mb-1">Adrian Danlos</p>
           <div class="d-flex align-end align-lg-center flex-column flex-sm-row glitch-container">
-            <span class="rol gray-text d-none d-sm-block">I am a</span>
+            <span class="rol gray-blue-text d-none d-sm-block">I am a</span>
             <glitch></glitch>
           </div>
           <p
@@ -16,9 +14,7 @@
           >As a Software Developer I'm always looking to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
         </div>
       </section>
-      <aside
-        class="col-12 col-lg-2 justify-lg-end mb-5 img-container"
-      >
+      <aside class="col-12 col-lg-2 justify-lg-end mb-5 img-container">
         <img src="/images/me.png" alt="Adrian" />
       </aside>
     </main>
@@ -38,7 +34,8 @@ export default {
 main {
   position: relative;
 }
-section, aside{
+section,
+aside {
   @include flexCenter();
 }
 .name,
@@ -48,12 +45,7 @@ section, aside{
   line-height: 70px;
   font-weight: $bold;
 }
-.glitch-container {
-  position: relative;
-}
 img {
-  /* -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0))); */
-  /* mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0))); */
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 0%,
@@ -62,6 +54,10 @@ img {
   );
   filter: grayscale(1);
 }
+.glitch-container {
+  position: relative;
+}
+
 .intro-long-text {
   width: 50%;
   color: $dark;

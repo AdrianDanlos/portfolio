@@ -1,7 +1,8 @@
 <template>
   <div id="web-container">
     <intro></intro>
-    <v-sheet height="100vh" color="purple">
+    <about-me></about-me>
+    <v-sheet height="100vh" color="white">
       <v-container class="content-wrapper pa-5 pa-md-3"></v-container>
     </v-sheet>
   </div>
@@ -9,9 +10,11 @@
 
 <script>
 import Intro from "./../components/Intro";
+import AboutMe from "./../components/AboutMe";
 export default {
   components: {
-    Intro
+    Intro,
+    AboutMe
   }
 };
 </script>

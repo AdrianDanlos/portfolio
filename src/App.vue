@@ -59,7 +59,7 @@ export default {
   height: 100vh;
   @include flexCenter();
   .content-wrapper {
-    max-width: 1200px;
+    width: 1200px;
   }
 }
 .section-push-up {

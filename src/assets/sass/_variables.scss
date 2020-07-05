@@ -37,7 +37,7 @@ $boldest: 900;
 
 @mixin fullScreen{
     width: 100%;
-    height: 100vh;
+    height: 100vh !important;
 }
 
 /*IMPORTS*/
