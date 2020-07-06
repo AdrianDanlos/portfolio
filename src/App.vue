@@ -53,14 +53,17 @@ export default {
 
 <style lang="scss">
 /*GLOBAL CSS*/
-/*GRID STRUCTURE: CONTAINER (COMPONENT) -> ROW (.CONTENT-WRAPPER)*/
+/*GRID STRUCTURE: 1.V-SHEET(COMPONENT LVL / FULL WIDTH SHEET TO STYLE BACKGROUND) 2.CONTAINER -> 3.ROW (.CONTENT-WRAPPER)*/
 /*Grid Padding on this elements -> CONTAINER & COLS*/
 .container {
-  height: 100vh;
   @include flexCenter();
   .content-wrapper {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
   }
+}
+.fullHeight{
+  height: 100vh;
 }
 .section-push-up {
   padding-bottom: 50px;

@@ -43,3 +43,32 @@ $boldest: 900;
 /*IMPORTS*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Nunito+Sans:wght@100;300;400;700;900&family=Fira+Code:wght@100;300;400;700;900&display=swap");
 @import './utility_classes';
+
+.fade-enter-active {
+    transition: opacity .7s;
+}
+
+.fade-leave-active {
+    transition: opacity .3s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 4s;
+}
+
+.v-enter,
+.v-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+}

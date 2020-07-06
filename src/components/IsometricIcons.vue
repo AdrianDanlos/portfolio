@@ -1,171 +1,139 @@
 <template>
-  <ul>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-vuejs</v-icon>
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-language-javascript</v-icon>
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-laravel</v-icon>
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-language-php</v-icon>
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-language-html5</v-icon>
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>
-          <v-icon>mdi-sass</v-icon>
-        </span>
-      </a>
-    </li>
-  </ul>
+  <v-container>
+    <v-row>
+      <v-col sm12 md6 class="d-flex justify-start justify-sm-end pr-0 first-row">
+        <li @mouseover="$emit('displayTechnology', n)" v-for="n in 3" :key="n">
+          <span v-for="n in 4" :key="n"></span>
+          <span>
+            <v-icon>{{ technologiesIcons[n - 1] }}</v-icon>
+          </span>
+        </li>
+      </v-col>
+      <v-col sm12 md6 class="d-flex pl-0 second-row">
+        <li @mouseover="$emit('displayTechnology', n + 3)" v-for="n in 3" :key="n">
+          <span v-for="n in 4" :key="n"></span>
+          <span>
+            <v-icon>{{ technologiesIcons[(n + 3) - 1] }}</v-icon>
+          </span>
+        </li>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      technologiesIcons: [
+        "mdi-vuejs",
+        "mdi-language-javascript",
+        "mdi-laravel",
+        "mdi-language-php",
+        "mdi-language-html5",
+        "mdi-sass"
+      ]
+    };
+  }
+};
+</script>
+
 <style lang="scss" scoped>
-ul {
+.container {
   position: relative;
   display: flex;
   transform-style: preserve-3d;
   transform: rotate(-25deg) skew(25deg);
   padding: 50px 0 0 0;
 }
-ul li {
+.container li {
   position: relative;
   list-style: none;
   width: 60px;
   height: 60px;
   margin: 0 10px;
+  flex: 1 0 auto;
 }
-ul li:before {
+.container li:before {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0px;
   width: 100%;
   height: 4px;
-  background: #a8a8a8;
+  background: #e6e6e6;
   transform-origin: top;
   transform: skewX(-41deg);
 }
-ul li:after {
+.container li:after {
   content: "";
   position: absolute;
   top: 0px;
   left: -4px;
   width: 4px;
   height: 100%;
-  background: #c9c9c9;
+  background: #d1d1d1;
   transform-origin: right;
   transform: skewY(-49deg);
 }
-ul li span {
+.container li span {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   @include flexCenter();
-  background: rgb(189, 189, 189);
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 30px !important;
+  background: #f6f6f6;
   transition: 0.2s;
 }
-ul li:hover span {
-  z-index: 1000;
+.container li:hover span {
+  z-index: 1;
   transition: 0.5s;
   color: #fff;
-  box-shadow: -1px 1px 1 1px rgba(0, 0, 0, 0.05);
+  box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
-ul li:hover span:nth-child(5) {
+.container li:hover span:nth-child(5) {
   transform: translate(40px, -40px);
   opacity: 1;
 }
-ul li:hover span:nth-child(4) {
+.container li:hover span:nth-child(4) {
   transform: translate(30px, -30px);
   opacity: 0.8;
 }
-ul li:hover span:nth-child(3) {
+.container li:hover span:nth-child(3) {
   transform: translate(20px, -20px);
   opacity: 0.6;
 }
-ul li:hover span:nth-child(2) {
+.container li:hover span:nth-child(2) {
   transform: translate(10px, -10px);
   opacity: 0.4;
 }
-ul li:hover span:nth-child(1) {
+.container li:hover span:nth-child(1) {
   transform: translate(0px, 0px);
   opacity: 0.2;
 }
-ul li:nth-child(1):hover span {
+.first-row li:nth-child(1):hover span {
   background: #40b883;
 }
-ul li:nth-child(2):hover span {
+.first-row li:nth-child(2):hover span {
   background: #efd61f;
 }
-ul li:nth-child(3):hover span {
+.first-row li:nth-child(3):hover span {
   background: #e65b49;
 }
-ul li:nth-child(4):hover span {
+.second-row li:nth-child(1):hover span {
   background: #4d598f;
 }
-ul li:nth-child(5):hover span {
+.second-row li:nth-child(2):hover span {
   background: #f88838;
 }
-ul li:nth-child(6):hover span {
+.second-row li:nth-child(3):hover span {
   background: #c66395;
 }
-ul li:hover i {
+.container li:hover i {
   color: #e7e7e7;
 }
-ul li:nth-child(2):hover i {
+.container li:nth-child(2):hover i {
   color: rgb(71, 71, 71);
 }
 
