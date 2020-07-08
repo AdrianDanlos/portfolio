@@ -56,11 +56,22 @@
               </div>
             </transition>
             <h3>
-              <span @mouseover="setNewText('CORE SKILLS')" class="mb-3 mb-sm-0 current-section-title">CORE SKILLS</span><span class="mx-2 d-none d-sm-inline-block"> - </span>
-              <span @mouseover="setNewText('TEAMWORK')" class="mb-3 mb-sm-0 current-section-title">TEAMWORK</span><span class="mx-2 d-none d-sm-inline-block"> - </span>
+              <span
+                @mouseover="setNewText('CORE SKILLS')"
+                class="mb-3 mb-sm-0"
+                :class="!userInteracted ? 'defaultSectionTitle' : 'currentSectionTitle'"
+              >CORE SKILLS</span>
+              <span class="mx-2 d-none d-sm-inline-block">-</span>
+              <span
+                @mouseover="setNewText('TEAMWORK')"
+                class="mb-3 mb-sm-0"
+                :class="{currentSectionTitle: userInteracted}"
+              >TEAMWORK</span>
+              <span class="mx-2 d-none d-sm-inline-block">-</span>
               <span
                 @mouseover="setNewText('PROBLEM SOLVING')"
-                class="mb-3 mb-sm-0 current-section-title"
+                class="mb-3 mb-sm-0"
+                :class="{currentSectionTitle: userInteracted}"
               >PROBLEM SOLVING</span>
             </h3>
           </div>
@@ -98,7 +109,8 @@ export default {
       currentTech: 0,
       currentSection: "CORE SKILLS",
       technologiesLargeText: "Always Learning",
-      technologiesSmallText: "CORE"
+      technologiesSmallText: "CORE",
+      userInteracted: false
     };
   },
   methods: {
@@ -106,6 +118,7 @@ export default {
       this.currentTech = n;
     },
     setNewText(keyWord) {
+      this.userInteracted = true;
       this.currentSection = keyWord;
     }
   },
@@ -120,7 +133,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 #dynamic-text-container {
   position: relative;
   height: 165px;
@@ -132,12 +144,10 @@ h3 {
   position: absolute;
   bottom: 0;
 }
-h3 .current-section-title {
+.currentSectionTitle, .defaultSectionTitle {
   display: inline-block;
-  text-decoration: none;
 }
-
-h3 .current-section-title::after {
+h3 .currentSectionTitle::after {
   content: "";
   display: block;
   width: 0;
@@ -146,7 +156,16 @@ h3 .current-section-title::after {
   transition: width 0.3s;
 }
 
-h3 .current-section-title:hover::after {
+h3 .currentSectionTitle:hover::after {
+  width: 100%;
+}
+
+.defaultSectionTitle::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: $gray-blue;
+  transition: width 0.3s;
   width: 100%;
 }
 

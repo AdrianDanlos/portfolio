@@ -1,7 +1,7 @@
 <template>
   <v-sheet>
     <v-container id="intro-container">
-      <v-row class="content-wrapper row section-push-up flex-column flex-lg-row mx-auto">
+      <v-row class="content-wrapper flex-column flex-lg-row mx-auto">
         <v-col class="col-12 col-lg-10 order-last order-lg-first">
           <div class="d-flex flex-column">
             <p class="d-none d-sm-block orange-text serif-font">Hi, my name is</p>
@@ -83,13 +83,19 @@ img {
     width: 100%;
   }
   .img-container {
-    margin-top: 130px;
+    margin-top: 90px;
+  }
+  img {
+    width: 180px;
   }
 }
 
 @media (min-width: 600px) {
   #intro-container {
     @include fullHeight();
+  }
+  .row {
+    @include sectionPushup();
   }
 }
 </style>

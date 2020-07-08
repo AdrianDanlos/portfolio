@@ -62,9 +62,6 @@ export default {
     width: 100%;
   }
 }
-.section-push-up {
-  padding-bottom: 50px;
-}
 .no-scroll {
   position: fixed;
   width: 100%;
