@@ -62,9 +62,6 @@ export default {
     width: 100%;
   }
 }
-.fullHeight{
-  height: 100vh;
-}
 .section-push-up {
   padding-bottom: 50px;
 }
@@ -73,4 +70,5 @@ export default {
   width: 100%;
   overflow-y: scroll;
 }
+
 </style>

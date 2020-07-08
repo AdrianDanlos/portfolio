@@ -1,18 +1,18 @@
 <template>
   <v-sheet color="#ffffee">
-    <v-container class="flex-column fullHeight">
+    <v-container class="flex-column" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="content-wrapper align-center flex-column flex-sm-row mt-15">
-        <v-col sm12 md6>
+      <v-row class="content-wrapper align-center flex-column flex-sm-row mt-7 mt-sm-15">
+        <v-col class="col-12 col-sm-6">
           <h4>A FEW WORDS ABOUT ME</h4>
           <h1
             class="mb-4"
           >I'm a Frontend Developer who enjoys creating things that live on the internet, whether that be websites, applications, or anything in between.</h1>
 
           <div id="dynamic-text-container">
-            <!-- PASSION -->
+            <!-- CORE SKILLS -->
             <transition name="fade">
-              <div v-if="currentText === 'PASSION'" class="dynamic-text">
+              <div v-if="currentSection === 'CORE SKILLS'" class="dynamic-text">
                 <p>
                   Despite being specialized on Frontend technologies I have a broad experience building performant
                   <span
@@ -28,12 +28,12 @@
 
             <!-- TEAMWORK -->
             <transition name="fade">
-              <div v-if="currentText === 'TEAMWORK'" class="dynamic-text">
+              <div v-if="currentSection === 'TEAMWORK'" class="dynamic-text">
                 <p>
                   I'm well aware about the importance of
                   <span
                     class="special-text"
-                  >interpersonal skills</span> when building projects. Thus, have read some of the most popular books such as
+                  >interpersonal skills</span> when building projects. Thus, I have read some of the most popular books on the topic such as
                   <span
                     class="special-text"
                   >'How To Win Friends and Influence People'</span>, 'The Power of Introvers', 'How To Stop Worrying and Start Living' and many more to develop my social skills and contribute to a
@@ -46,34 +46,37 @@
 
             <!-- PROBLEM SOLVING -->
             <transition name="fade">
-              <div v-if="currentText === 'PROBLEM SOLVING'" class="dynamic-text">
+              <div v-if="currentSection === 'PROBLEM SOLVING'" class="dynamic-text">
                 <p>
-                  <span class="special-text">Logical and Rational Thinking</span> stand out as my main tools to face any kind of challenge and push innovation. Since I was a kid I played games based on Logic and Decision Making, hitting
+                  <span class="special-text">Logical and Rational Thinking</span> stand out as my main tools to face any kind of challenge and push innovation. Since I was a kid I have played games based on Logic and Decision Making, hitting
                   <span
                     class="special-text"
-                  >profesional level</span> in games such as Hearthstone and League of Legends.
+                  >professional level</span> in games such as Hearthstone and League of Legends.
                 </p>
               </div>
             </transition>
             <h3>
-              <span @mouseover="setNewText('PASSION')">PASSION</span> -
-              <span @mouseover="setNewText('TEAMWORK')">TEAMWORK</span> -
-              <span @mouseover="setNewText('PROBLEM SOLVING')">PROBLEM SOLVING</span>
+              <span @mouseover="setNewText('CORE SKILLS')" class="mb-3 mb-sm-0 current-section-title">CORE SKILLS</span><span class="mx-2 d-none d-sm-inline-block"> - </span>
+              <span @mouseover="setNewText('TEAMWORK')" class="mb-3 mb-sm-0 current-section-title">TEAMWORK</span><span class="mx-2 d-none d-sm-inline-block"> - </span>
+              <span
+                @mouseover="setNewText('PROBLEM SOLVING')"
+                class="mb-3 mb-sm-0 current-section-title"
+              >PROBLEM SOLVING</span>
             </h3>
           </div>
         </v-col>
-        <v-col sm12 md6 id="img-about-me-container">
+        <v-col class="col-12 col-sm-6" id="img-about-me-container">
           <img src="/images/about-me.svg" alt />
         </v-col>
       </v-row>
 
       <!-- SECOND ROW -->
       <v-row class="content-wrapper">
-        <v-col md6 class="arrow-container d-none d-sm-block">
+        <v-col class="col-12 col-sm-6 arrow-container d-none d-sm-block">
           <img id="img-arrow" src="/images/arrow.png" alt />
         </v-col>
-        <v-col sm12 md6 class="d-flex flex-column">
-          <isometric-icons @displayTechnology="displayTechnology($event)"></isometric-icons>
+        <v-col class="col-12 col-sm-6 d-flex flex-column isometric-container mt-n11 mt-sm-0">
+          <isometric-icons class="mt-13 mt-sm-0" @displayTechnology="displayTechnology($event)"></isometric-icons>
           <p id="skills-legend">
             <span>{{ technologies[currentTech] }}</span>
           </p>
@@ -91,17 +94,11 @@ export default {
   },
   data() {
     return {
-      technologies: [
-        "Always learning",
-        "VueJS",
-        "JavaScript",
-        "Laravel",
-        "PHP",
-        "HTML5",
-        "SASS"
-      ],
+      technologies: ["VueJS", "JavaScript", "Laravel", "PHP", "HTML5", "SASS"],
       currentTech: 0,
-      currentText: "PASSION"
+      currentSection: "CORE SKILLS",
+      technologiesLargeText: "Always Learning",
+      technologiesSmallText: "CORE"
     };
   },
   methods: {
@@ -109,13 +106,21 @@ export default {
       this.currentTech = n;
     },
     setNewText(keyWord) {
-      this.currentText = keyWord;
+      this.currentSection = keyWord;
+    }
+  },
+  mounted() {
+    if (screen.width < 600) {
+      this.technologies.unshift(this.technologiesSmallText);
+    } else {
+      this.technologies.unshift(this.technologiesLargeText);
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
+
 #dynamic-text-container {
   position: relative;
   height: 165px;
@@ -127,21 +132,21 @@ h3 {
   position: absolute;
   bottom: 0;
 }
-h3 span {
+h3 .current-section-title {
   display: inline-block;
   text-decoration: none;
 }
 
-h3 span::after {
+h3 .current-section-title::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: rgb(121, 121, 121);
+  background: $gray-blue;
   transition: width 0.3s;
 }
 
-h3 span:hover::after {
+h3 .current-section-title:hover::after {
   width: 100%;
 }
 
@@ -157,14 +162,15 @@ p {
 h1 {
   font-family: Montserrat;
   color: rgb(71, 71, 71);
+  color: $dark-gray;
   margin: 0;
 }
 h4,
 h3 {
   font-family: montserrat;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   font-weight: $regular;
-  color: rgb(71, 71, 71);
+  color: $gray-blue;
 }
 .special-text {
   color: $orange;
@@ -174,14 +180,12 @@ h3 {
   justify-content: center;
   transform-style: preserve-3d;
   transform: rotate(-25deg) skew(25deg);
-  // margin-left: 159px;
-  // margin-top: -31px;
   font-family: Montserrat;
-  font-size: 54px;
+  font-size: 50px;
   color: gray;
   font-weight: 100;
   span {
-    margin-left: 167px;
+    margin-left: 161px;
     margin-top: 10px;
   }
 }
@@ -194,8 +198,33 @@ h3 {
 
 #img-arrow {
   position: absolute;
-  left: 20px;
+  left: 30px;
   top: -45px;
   width: 700px;
+}
+@media (min-width: 600px) {
+  #about-me-container {
+    @include fullHeight();
+  }
+}
+@media (max-width: 599px) {
+  .isometric-container {
+    overflow: hidden;
+  }
+  #skills-legend {
+    span {
+      margin-left: 80px;
+      margin-top: 10px;
+    }
+  }
+  #dynamic-text-container {
+    position: relative;
+    height: 370px;
+  }
+  h3 {
+    @include flexCenter();
+    flex-direction: column;
+    width: 100%;
+  }
 }
 </style>

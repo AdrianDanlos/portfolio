@@ -52,7 +52,7 @@ export default {
     async setHeaderColor() {
       //We check if the menu is closing or opening to set a timing for the color change of the logo and header-brand
       let timing;
-      if (screen.width < 500) {
+      if (screen.width < 600) {
         timing = this.drawer ? 50 : 200;
       } else {
         timing = this.drawer ? 50 : 350;

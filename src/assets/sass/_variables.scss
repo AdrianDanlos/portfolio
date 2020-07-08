@@ -2,6 +2,7 @@
 $dark: #263238;
 $dark-blue: #000510;
 $dark-gray: #3e3e41;
+// $dark-gray2: #474747;
 $gray: #878a8f;
 $gray-blue: #5e7682;
 $light: #d4d4d4;
@@ -40,10 +41,15 @@ $boldest: 900;
     height: 100vh !important;
 }
 
+@mixin fullHeight{
+    height: 100vh;
+}
+
 /*IMPORTS*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Nunito+Sans:wght@100;300;400;700;900&family=Fira+Code:wght@100;300;400;700;900&display=swap");
 @import './utility_classes';
 
+/*VUEJS FADE TRANSITIONS*/
 .fade-enter-active {
     transition: opacity .7s;
 }

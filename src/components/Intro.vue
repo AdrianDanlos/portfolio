@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <v-container class="fullHeight">
+    <v-container id="intro-container">
       <v-row class="content-wrapper row section-push-up flex-column flex-lg-row mx-auto">
         <v-col class="col-12 col-lg-10 order-last order-lg-first">
           <div class="d-flex flex-column">
@@ -63,15 +63,13 @@ img {
   width: 50%;
   color: $dark;
 }
+
 @media (max-width: 1263px) {
   .col {
     margin-top: -30px;
   }
   img {
     width: 230px;
-  }
-  .intro-container {
-    height: auto;
   }
   .rol {
     font-size: 32px;
@@ -86,6 +84,12 @@ img {
   }
   .img-container {
     margin-top: 130px;
+  }
+}
+
+@media (min-width: 600px) {
+  #intro-container {
+    @include fullHeight();
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col sm12 md6 class="d-flex justify-start justify-sm-end pr-0 first-row">
+      <v-col sm12 md6 class="d-flex justify-center justify-sm-end pr-0 first-row">
         <li @mouseover="$emit('displayTechnology', n)" v-for="n in 3" :key="n">
           <span v-for="n in 4" :key="n"></span>
           <span>
@@ -34,7 +34,7 @@ export default {
         "mdi-sass"
       ]
     };
-  }
+  },
 };
 </script>
 
@@ -130,6 +130,25 @@ export default {
 .second-row li:nth-child(3):hover span {
   background: #c66395;
 }
+.first-row li:nth-child(1) span {
+  z-index: 6;
+}
+.first-row li:nth-child(2) span {
+  z-index: 5;
+}
+.first-row li:nth-child(3) span {
+  z-index: 4;
+}
+.second-row li:nth-child(1) span {
+  z-index: 3;
+}
+.second-row li:nth-child(2) span {
+  z-index: 2;
+}
+.second-row li:nth-child(3) span {
+  z-index: 1;
+}
+
 .container li:hover i {
   color: #e7e7e7;
 }
@@ -140,5 +159,32 @@ export default {
 i {
   font-size: 30px !important;
   //   color: white;
+}
+@media (max-width: 599px) {
+  .first-row li:nth-child(1) span {
+    z-index: 3;
+  }
+  .first-row li:nth-child(2) span {
+    z-index: 2;
+  }
+  .first-row li:nth-child(3) span {
+    z-index: 1;
+  }
+  .second-row li:nth-child(1) span {
+    z-index: 6;
+  }
+  .second-row li:nth-child(2) span {
+    z-index: 5;
+  }
+  .second-row li:nth-child(3) span {
+    z-index: 4;
+  }
+  .container li {
+    flex: 0 0 auto;
+    width: 65px;
+  }
+  .container {
+  padding: 0;
+}
 }
 </style>
