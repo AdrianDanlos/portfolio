@@ -17,7 +17,7 @@
                   Despite being specialized on Frontend technologies I have a broad experience building performant
                   <span
                     class="special-text"
-                  >end-to-end applications</span>. In 2019 I joined the engineering team at Ibai Sistemas where I had the opportunity to work on a
+                  >end-to-end applications</span>. In 2019 I joined the engineering team at Ibai Sistems where I had the opportunity to work on a
                   <span
                     class="special-text"
                   >wide variety of projects</span>.
@@ -58,20 +58,20 @@
             <h3>
               <span
                 @mouseover="setNewText('CORE SKILLS')"
-                class="mb-3 mb-sm-0"
-                :class="!userInteracted ? 'defaultSectionTitle' : 'currentSectionTitle'"
+                class="mb-3 mb-sm-0 underline-effect"
+                :class="{selectedSection: currentSection === 'CORE SKILLS'}"
               >CORE SKILLS</span>
               <span class="mx-2 d-none d-sm-inline-block">-</span>
               <span
                 @mouseover="setNewText('TEAMWORK')"
-                class="mb-3 mb-sm-0"
-                :class="{currentSectionTitle: userInteracted}"
+                class="mb-3 mb-sm-0 underline-effect"
+                :class="{selectedSection: currentSection === 'TEAMWORK'}"
               >TEAMWORK</span>
               <span class="mx-2 d-none d-sm-inline-block">-</span>
               <span
                 @mouseover="setNewText('PROBLEM SOLVING')"
-                class="mb-3 mb-sm-0"
-                :class="{currentSectionTitle: userInteracted}"
+                class="mb-3 mb-sm-0 underline-effect"
+                :class="{selectedSection: currentSection === 'PROBLEM SOLVING'}"
               >PROBLEM SOLVING</span>
             </h3>
           </div>
@@ -110,7 +110,6 @@ export default {
       currentSection: "CORE SKILLS",
       technologiesLargeText: "Always Learning",
       technologiesSmallText: "CORE",
-      userInteracted: false
     };
   },
   methods: {
@@ -118,7 +117,6 @@ export default {
       this.currentTech = n;
     },
     setNewText(keyWord) {
-      this.userInteracted = true;
       this.currentSection = keyWord;
     }
   },
@@ -144,10 +142,10 @@ h3 {
   position: absolute;
   bottom: 0;
 }
-.currentSectionTitle, .defaultSectionTitle {
+.underline-effect, .selectedSection {
   display: inline-block;
 }
-h3 .currentSectionTitle::after {
+h3 .underline-effect::after {
   content: "";
   display: block;
   width: 0;
@@ -156,17 +154,8 @@ h3 .currentSectionTitle::after {
   transition: width 0.3s;
 }
 
-h3 .currentSectionTitle:hover::after {
-  width: 100%;
-}
-
-.defaultSectionTitle::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: $gray-blue;
-  transition: width 0.3s;
-  width: 100%;
+.selectedSection::after {
+  width: 100% !important;
 }
 
 .arrow-container {
