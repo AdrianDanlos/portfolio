@@ -87,6 +87,7 @@ export default {
   .content {
     width: 100%;
     .text {
+      letter-spacing: 1px;
       font-size: 20px;
       color: $dark;
       &::before,

@@ -94,8 +94,11 @@ img {
   #intro-container {
     @include fullHeight();
   }
+}
+@media (min-width: 1600px) {
   .row {
     @include sectionPushup();
   }
 }
+
 </style>

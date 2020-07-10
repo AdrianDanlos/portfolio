@@ -36,7 +36,7 @@
 
 
 <script>
-import HeaderBrand from "./../Brand";
+import HeaderBrand from "./Brand";
 
 export default {
   components: {
@@ -52,7 +52,8 @@ export default {
     async setHeaderColor() {
       //We check if the menu is closing or opening to set a timing for the color change of the logo and header-brand
       let timing;
-      if (screen.width < 600) {
+
+      if (screen.width < 1000) {
         timing = this.drawer ? 50 : 200;
       } else {
         timing = this.drawer ? 50 : 350;
@@ -130,20 +131,22 @@ header {
   color: $gray;
 }
 
-.menu {
-  @include flexCenter();
-  opacity: 0.9;
-  background-color: $dark-blue;
-  a {
-    font-size: 60px;
-    text-decoration: none;
-    line-height: 80px;
-    transition: 0.1s all;
-    user-select: none;
-    font-weight: $thinest;
-    &:hover {
-      color: white;
-      font-weight: $boldest;
+.drawer {
+  .menu {
+    @include flexCenter();
+    opacity: 0.9;
+    background-color: $dark-blue;
+    a {
+      font-size: 60px;
+      text-decoration: none;
+      line-height: 80px;
+      transition: 0.1s all;
+      user-select: none;
+      font-weight: $thinest;
+      &:hover {
+        color: white;
+        font-weight: $boldest;
+      }
     }
   }
 }
@@ -156,5 +159,10 @@ header {
   position: absolute;
   bottom: 0;
   user-select: none;
+}
+@media (max-width: 380px) {
+  ::v-deep .logo-container svg {
+    width: 50px;
+  }
 }
 </style>

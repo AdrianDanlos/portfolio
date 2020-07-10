@@ -17,4 +17,9 @@ export default {};
   font-size: 13px;
   letter-spacing: 3px;
 }
+@media (max-width: 380px) {
+  .rol {
+    letter-spacing: 2px;
+  }
+}
 </style>

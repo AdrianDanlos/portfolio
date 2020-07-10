@@ -2,7 +2,6 @@
 $dark: #263238;
 $dark-blue: #000510;
 $dark-gray: #3e3e41;
-// $dark-gray2: #474747;
 $gray: #878a8f;
 $gray-blue: #5e7682;
 $light: #d4d4d4;
@@ -42,7 +41,7 @@ $boldest: 900;
 }
 
 @mixin fullHeight {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 @mixin sectionPushup {

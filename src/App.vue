@@ -13,9 +13,11 @@
 
 <script>
 import MainLoading from "./../src/components/MainLoading";
+import HeaderVue from "./../src/components/Header";
 export default {
   components: {
-    MainLoading
+    MainLoading,
+    HeaderVue
   },
   name: "App",
   data() {

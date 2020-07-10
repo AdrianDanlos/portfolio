@@ -6,11 +6,8 @@ import vuetify from './plugins/vuetify';
 import 'normalize.css';
 
 //Shared componentes
-import Header from './components/shared/Header';
 import Logo from './components/shared/MyLogo.vue';
 
-
-Vue.component('header-vue', Header);
 Vue.component('logo', Logo);
 
 

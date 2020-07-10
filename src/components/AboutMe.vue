@@ -2,17 +2,17 @@
   <v-sheet color="#ffffee">
     <v-container class="flex-column" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="content-wrapper align-center flex-column flex-sm-row mt-7 mt-sm-15">
-        <v-col class="col-12 col-sm-6">
+      <v-row class="content-wrapper align-center flex-column flex-md-row mt-7 mt-sm-15">
+        <v-col class="col-12 col-md-6 pb-lg-5">
           <h4>A FEW WORDS ABOUT ME</h4>
           <h1
             class="mb-4"
           >I'm a Frontend Developer who enjoys creating things that live on the internet, whether that be websites, applications, or anything in between.</h1>
 
-          <div id="dynamic-text-container">
+          <section id="dynamic-container" :style="{ height: dynamicContainerHeight + 'px' }">
             <!-- CORE SKILLS -->
             <transition name="fade">
-              <div v-if="currentSection === 'CORE SKILLS'" class="dynamic-text">
+              <div v-if="currentSection === 'CORE SKILLS'" :class="{positionAbsolute: loaded}">
                 <p>
                   Despite being specialized on Frontend technologies I have a broad experience building performant
                   <span
@@ -28,7 +28,7 @@
 
             <!-- TEAMWORK -->
             <transition name="fade">
-              <div v-if="currentSection === 'TEAMWORK'" class="dynamic-text">
+              <div v-if="currentSection === 'TEAMWORK'" :style="{position:'absolute'}">
                 <p>
                   I'm well aware about the importance of
                   <span
@@ -46,7 +46,7 @@
 
             <!-- PROBLEM SOLVING -->
             <transition name="fade">
-              <div v-if="currentSection === 'PROBLEM SOLVING'" class="dynamic-text">
+              <div v-if="currentSection === 'PROBLEM SOLVING'">
                 <p>
                   <span class="special-text">Logical and Rational Thinking</span> stand out as my main tools to face any kind of challenge and push innovation. Since I was a kid I have played games based on Logic and Decision Making, hitting
                   <span
@@ -55,26 +55,23 @@
                 </p>
               </div>
             </transition>
-            <h3>
-              <span
-                @mouseover="setNewText('CORE SKILLS')"
-                class="mb-3 mb-sm-0 underline-effect"
-                :class="{selectedSection: currentSection === 'CORE SKILLS'}"
-              >CORE SKILLS</span>
-              <span class="mx-2 d-none d-sm-inline-block">-</span>
-              <span
-                @mouseover="setNewText('TEAMWORK')"
-                class="mb-3 mb-sm-0 underline-effect"
-                :class="{selectedSection: currentSection === 'TEAMWORK'}"
-              >TEAMWORK</span>
-              <span class="mx-2 d-none d-sm-inline-block">-</span>
-              <span
-                @mouseover="setNewText('PROBLEM SOLVING')"
-                class="mb-3 mb-sm-0 underline-effect"
-                :class="{selectedSection: currentSection === 'PROBLEM SOLVING'}"
-              >PROBLEM SOLVING</span>
+            <h3
+              class="d-flex flex-column d-sm-block d-md-flex d-lg-block"
+              :class="{positionAbsolute: loaded}"
+            >
+              <span v-for="n in 3" :key="n">
+                <span
+                  @mouseover="setNewText(sections[n-1])"
+                  class="mb-3 mb-lg-0 underline-effect"
+                  :class="{selectedSection: currentSection === sections[n-1]}"
+                >{{sections[n-1]}}</span>
+                <span
+                  v-if="n < 3"
+                  class="mx-2 d-none d-sm-inline-block d-md-none d-lg-inline-block"
+                >-</span>
+              </span>
             </h3>
-          </div>
+          </section>
         </v-col>
         <v-col class="col-12 col-sm-6" id="img-about-me-container">
           <img src="/images/about-me.svg" alt />
@@ -83,11 +80,11 @@
 
       <!-- SECOND ROW -->
       <v-row class="content-wrapper">
-        <v-col class="col-12 col-sm-6 arrow-container d-none d-sm-block">
+        <v-col class="col-md-6 arrow-container d-none d-md-block">
           <img id="img-arrow" src="/images/arrow.png" alt />
         </v-col>
-        <v-col class="col-12 col-sm-6 d-flex flex-column isometric-container mt-n11 mt-sm-0">
-          <isometric-icons class="mt-13 mt-sm-0" @displayTechnology="displayTechnology($event)"></isometric-icons>
+        <v-col class="col-12 col-md-6 d-flex flex-column isometric-container mt-n13 mt-lg-0">
+          <isometric-icons class="isometric-icons" @displayTechnology="displayTechnology($event)"></isometric-icons>
           <p id="skills-legend">
             <span>{{ technologies[currentTech] }}</span>
           </p>
@@ -105,11 +102,15 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       technologies: ["VueJS", "JavaScript", "Laravel", "PHP", "HTML5", "SASS"],
       currentTech: 0,
+      sections: ["CORE SKILLS", "TEAMWORK", "PROBLEM SOLVING"],
       currentSection: "CORE SKILLS",
       technologiesLargeText: "Always Learning",
       technologiesSmallText: "CORE",
+      //We want to get the height of the container on render and fix it at that height so we can easily transition texts without disturbing the layout.
+      dynamicContainerHeight: null
     };
   },
   methods: {
@@ -118,54 +119,34 @@ export default {
     },
     setNewText(keyWord) {
       this.currentSection = keyWord;
+    },
+    chooseTechText() {
+      let smallText = this.technologiesSmallText;
+      let largeText = this.technologiesLargeText;
+
+      if (screen.width < 600) {
+        this.technologies.unshift(smallText);
+      } else if (screen.width > 600 && screen.width < 960) {
+        this.technologies.unshift(largeText);
+      } else if (screen.width > 960 && screen.width < 1263) {
+        this.technologies.unshift(smallText);
+      } else {
+        this.technologies.unshift(largeText);
+      }
     }
   },
   mounted() {
-    if (screen.width < 600) {
-      this.technologies.unshift(this.technologiesSmallText);
-    } else {
-      this.technologies.unshift(this.technologiesLargeText);
-    }
+    this.chooseTechText();
+    this.dynamicContainerHeight =
+      document.getElementById("dynamic-container").offsetHeight + 10;
+    this.loaded = true;
   }
 };
 </script>
 
 <style scoped lang="scss">
-#dynamic-text-container {
-  position: relative;
-  height: 165px;
-}
-.dynamic-text {
+.positionAbsolute {
   position: absolute;
-}
-h3 {
-  position: absolute;
-  bottom: 0;
-}
-.underline-effect, .selectedSection {
-  display: inline-block;
-}
-h3 .underline-effect::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: $gray-blue;
-  transition: width 0.3s;
-}
-
-.selectedSection::after {
-  width: 100% !important;
-}
-
-.arrow-container {
-  position: relative;
-}
-.text-layout {
-  margin-top: 60px;
-}
-p {
-  font-weight: 300;
 }
 h1 {
   font-family: Montserrat;
@@ -173,29 +154,44 @@ h1 {
   color: $dark-gray;
   margin: 0;
 }
+#dynamic-container {
+  position: relative;
+  h3 {
+    bottom: 0;
+    z-index: 10;
+    .underline-effect {
+      display: inline-block;
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $gray-blue;
+        transition: width 0.3s;
+      }
+    }
+  }
+  p {
+    font-weight: 300;
+    .special-text {
+      color: $orange;
+    }
+  }
+}
+
+.selectedSection {
+  display: inline-block;
+  &::after {
+    width: 100% !important;
+  }
+}
+
 h4,
 h3 {
-  font-family: montserrat;
+  font-family: Montserrat;
   letter-spacing: 2px;
   font-weight: $regular;
   color: $gray-blue;
-}
-.special-text {
-  color: $orange;
-}
-#skills-legend {
-  display: flex;
-  justify-content: center;
-  transform-style: preserve-3d;
-  transform: rotate(-25deg) skew(25deg);
-  font-family: Montserrat;
-  font-size: 50px;
-  color: gray;
-  font-weight: 100;
-  span {
-    margin-left: 161px;
-    margin-top: 10px;
-  }
 }
 #img-about-me-container {
   @include flexCenter();
@@ -203,36 +199,76 @@ h3 {
     width: 350px;
   }
 }
-
-#img-arrow {
-  position: absolute;
-  left: 30px;
-  top: -45px;
-  width: 700px;
+.arrow-container {
+  position: relative;
+  #img-arrow {
+    position: absolute;
+    left: 30px;
+    top: -40px;
+    width: 110%;
+  }
 }
+.isometric-container {
+  #skills-legend {
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: rotate(-25deg) skew(25deg);
+    font-family: Montserrat;
+    font-size: 50px;
+    color: $gray;
+    font-weight: 100;
+    span {
+      margin-left: 161px;
+      margin-top: 10px;
+    }
+  }
+}
+
 @media (min-width: 600px) {
+  #about-me-container {
+    @include sectionPushup();
+  }
+}
+@media (min-width: 960px) {
   #about-me-container {
     @include fullHeight();
   }
 }
-@media (max-width: 599px) {
+@media (max-width: 1263px) {
+  .isometric-icons {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 960px) {
   .isometric-container {
     overflow: hidden;
-  }
-  #skills-legend {
-    span {
-      margin-left: 80px;
-      margin-top: 10px;
+    .isometric-icons {
+      margin-top: 115px;
     }
   }
-  #dynamic-text-container {
-    position: relative;
-    height: 370px;
+}
+@media (max-width: 599px) {
+  .isometric-container {
+    .isometric-icons {
+      margin-top: 70px;
+    }
+    #skills-legend {
+      span {
+        font-size: 11vw;
+        margin-left: 40vw;
+        margin-top: 0;
+      }
+    }
   }
   h3 {
     @include flexCenter();
-    flex-direction: column;
     width: 100%;
+  }
+  #img-about-me-container {
+    img {
+      width: 100%;
+    }
   }
 }
 </style>
