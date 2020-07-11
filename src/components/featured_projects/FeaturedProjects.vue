@@ -1,14 +1,24 @@
 <template>
   <v-sheet color="#09192F">
-    <v-container id="featured-projects-container">
+    <v-container class="flex-column" id="featured-projects-container">
+
+          <h3 class="content-wrapper gray100-text pl-6">Featured projects</h3>
+ 
+
       <v-row class="content-wrapper">
-        <featured-project></featured-project>
+        <v-col>
+          <featured-project></featured-project>
+        </v-col>
       </v-row>
       <v-row class="content-wrapper">
-        <featured-project></featured-project>
+        <v-col>
+          <featured-project></featured-project>
+        </v-col>
       </v-row>
       <v-row class="content-wrapper">
-        <featured-project></featured-project>
+        <v-col>
+          <featured-project></featured-project>
+        </v-col>
       </v-row>
     </v-container>
   </v-sheet>

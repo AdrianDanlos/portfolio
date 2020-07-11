@@ -69,5 +69,10 @@ export default {
   width: 100%;
   overflow-y: scroll;
 }
-
+// @media (min-width: 1264px) {
+//   .container {
+//     max-width: 1200px;
+//     width: 100%NOT NEEDED, THATS DEFAULT VALUE ON CONTAINER
+//   }
+// }
 </style>
