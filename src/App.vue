@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import MainLoading from "./../src/components/MainLoading";
-import HeaderVue from "./../src/components/Header";
+import MainLoading from "./../src/components/main_loading/MainLoading";
+import HeaderVue from "./../src/components/header/Header";
 export default {
   components: {
     MainLoading,

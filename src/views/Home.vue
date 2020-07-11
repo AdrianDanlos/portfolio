@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Intro from "./../components/Intro";
-import AboutMe from "./../components/AboutMe";
+import Intro from "./../components/intro/Intro";
+import AboutMe from "./../components/about_me/AboutMe";
 export default {
   components: {
     Intro,

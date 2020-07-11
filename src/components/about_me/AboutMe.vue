@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import IsometricIcons from "./IsometricIcons";
+import IsometricIcons from "./child/IsometricIcons";
 export default {
   components: {
     IsometricIcons

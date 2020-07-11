@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Glitch from "./Glitch";
+import Glitch from "./child/Glitch";
 export default {
   components: {
     Glitch

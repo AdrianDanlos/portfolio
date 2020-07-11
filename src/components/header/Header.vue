@@ -36,7 +36,7 @@
 
 
 <script>
-import HeaderBrand from "./Brand";
+import HeaderBrand from "./child/Brand";
 
 export default {
   components: {
