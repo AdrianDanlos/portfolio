@@ -150,8 +150,7 @@ export default {
 }
 h1 {
   font-family: Montserrat;
-  color: rgb(71, 71, 71);
-  color: $dark-gray;
+  color: $gray-400;
   margin: 0;
 }
 #dynamic-container {
@@ -216,7 +215,7 @@ h3 {
     transform: rotate(-25deg) skew(25deg);
     font-family: Montserrat;
     font-size: 50px;
-    color: $gray;
+    color: $gray-300;
     font-weight: 100;
     span {
       margin-left: 161px;

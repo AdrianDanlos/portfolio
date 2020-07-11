@@ -1,10 +1,11 @@
 /*COLOR VARIABLES*/
-$dark: #263238;
 $dark-blue: #000510;
-$dark-gray: #3e3e41;
-$gray: #878a8f;
+$dark: #263238;
 $gray-blue: #5e7682;
-$light: #d4d4d4;
+$gray-400: #3e3e41;
+$gray-300: #878a8f;
+$gray-200: #d4d4d4;
+$gray-100: #f6f6f6;
 $orange: #ff6300e3;
 $light-orange: #ff9c4b;
 $washed-orange: #ff620080;
@@ -15,6 +16,11 @@ $primary-glitch-color: $orange;
 $secondary-glitch-color: $light-orange;
 $shadow-glitch-color: $washed-orange;
 $shadow2-glitch-color: $washed-red;
+
+/*ISOMETRIC ICONS COLORS*/
+$tile-color: $gray-100;
+$tile-lBorder-color: darken($tile-color, 12%);
+$tile-bBorder-color: darken($tile-color, 6%);
 
 /*FONT FAMILIES*/
 $title-font: "Montserrat";

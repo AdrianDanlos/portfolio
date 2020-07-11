@@ -128,7 +128,7 @@ header {
 .close span,
 .close i,
 .open:hover * {
-  color: $gray;
+  color: $gray-300;
 }
 
 .drawer {

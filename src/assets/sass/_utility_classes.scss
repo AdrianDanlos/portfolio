@@ -2,76 +2,105 @@
 .dark-text {
   color: $dark;
 }
+
 .dark-bg {
   background-color: $dark;
 }
+
 .dark-blue-text {
   color: $dark-blue;
 }
+
 .dark-blue-bg {
   background-color: $dark-blue;
 }
-.dark-gray-text {
-  color: $dark-gray;
+
+.gray400-text {
+  color: $gray-400;
 }
-.dark-gray-bg {
-  background-color: $dark-gray;
+
+.gray400-bg {
+  background-color: $gray-400;
 }
-.gray-text {
-  color: $gray;
+
+.gray300-text {
+  color: $gray-300;
 }
-.gray-bg {
-  background-color: $gray;
+
+.gray300-bg {
+  background-color: $gray-300;
 }
+
+.gray200-text {
+  color: $gray-200;
+}
+
+.gray200-bg {
+  background-color: $gray-200;
+}
+
+.gray100-text {
+  color: $gray-100;
+}
+
+.gray100-bg {
+  background-color: $gray-100;
+}
+
 .gray-blue-text {
   color: $gray-blue;
 }
+
 .gray-blue-bg {
   background-color: $gray-blue;
 }
-.light-text {
-  color: $light;
-}
-.light-bg {
-  background-color: $light;
-}
+
 .orange-text {
   color: $orange;
 }
+
 .orange-bg {
   background-color: $orange;
 }
+
 .light-orange-text {
   color: $light-orange;
 }
+
 .light-orange-bg {
   background-color: $light-orange;
 }
 
 /*FONT FAMILY UTILITY CLASSES*/
-.title-font{
+.title-font {
   font-family: $title-font;
 }
-.alternative-font{
+
+.alternative-font {
   font-family: $alternative-font;
 }
-.serif-font{
+
+.serif-font {
   font-family: $serif-font;
 }
 
 /*FONT WEIGHTS*/
-.thinest{
+.thinest {
   font-weight: $thinest;
 }
-.thin{
+
+.thin {
   font-weight: $thin;
 }
-.regular{
+
+.regular {
   font-weight: $regular;
 }
-.bold{
+
+.bold {
   font-weight: $bold;
 }
-.boldest{
+
+.boldest {
   font-weight: $boldest;
 }

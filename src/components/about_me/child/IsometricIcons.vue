@@ -61,7 +61,7 @@ export default {
       left: 0px;
       width: 100%;
       height: 4px;
-      background: #e6e6e6;
+      background: $tile-bBorder-color;
       transform-origin: top;
       transform: skewX(-41deg);
     }
@@ -70,7 +70,7 @@ export default {
       left: -4px;
       width: 4px;
       height: 100%;
-      background: #d1d1d1;
+      background: $tile-lBorder-color;
       transform-origin: right;
       transform: skewY(-49deg);
     }
@@ -78,10 +78,10 @@ export default {
       span {
         z-index: 1;
         transition: 0.5s;
-        color: #fff;
+        color: white;
         box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.05);
         i {
-          color: #e7e7e7;
+          color: $gray-100;
         }
       }
       span:nth-child(5) {
@@ -112,7 +112,7 @@ export default {
       width: 100%;
       height: 100%;
       @include flexCenter();
-      background: #f6f6f6;
+      background: $tile-color;
       transition: 0.2s;
       i {
         font-size: 30px !important;
@@ -122,7 +122,7 @@ export default {
   li:nth-child(2) {
     &:hover {
       i {
-        color: rgb(71, 71, 71);
+        color: $gray-400;
       }
     }
   }
