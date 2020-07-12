@@ -1,7 +1,7 @@
 <template>
   <v-sheet>
-    <v-container id="intro-container">
-      <v-row class="content-wrapper flex-column flex-lg-row mx-auto">
+    <v-container class="content-wrapper" id="intro-container">
+      <v-row class="flex-column flex-lg-row mx-auto">
         <v-col class="col-12 col-lg-10 order-last order-lg-first">
           <div class="d-flex flex-column">
             <p class="d-none d-sm-block orange-text serif-font">Hi, my name is</p>

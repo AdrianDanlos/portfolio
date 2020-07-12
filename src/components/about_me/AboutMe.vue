@@ -1,8 +1,8 @@
 <template>
   <v-sheet color="#ffffee">
-    <v-container class="flex-column" id="about-me-container">
+    <v-container class="flex-column content-wrapper" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="content-wrapper align-center flex-column flex-md-row mt-7 mt-sm-15">
+      <v-row class="align-center flex-column flex-md-row mt-7 mt-sm-15">
         <v-col class="col-12 col-md-6 pb-lg-5">
           <h4>A FEW WORDS ABOUT ME</h4>
           <h1
@@ -79,7 +79,7 @@
       </v-row>
 
       <!-- SECOND ROW -->
-      <v-row class="content-wrapper">
+      <v-row>
         <v-col class="col-md-6 arrow-container d-none d-md-block">
           <img id="img-arrow" src="/images/arrow.png" alt />
         </v-col>
@@ -147,6 +147,9 @@ export default {
 <style scoped lang="scss">
 .positionAbsolute {
   position: absolute;
+}
+.row{
+  width: 100%;
 }
 h1 {
   font-family: Montserrat;
