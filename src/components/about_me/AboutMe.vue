@@ -174,10 +174,7 @@ h1 {
     }
   }
   p {
-    font-weight: 300;
-    .special-text {
-      color: $orange;
-    }
+    font-weight: $thin;
   }
 }
 
@@ -188,13 +185,6 @@ h1 {
   }
 }
 
-h4,
-h3 {
-  font-family: Montserrat;
-  letter-spacing: 2px;
-  font-weight: $regular;
-  color: $gray-blue;
-}
 #img-about-me-container {
   @include flexCenter();
   img {
@@ -219,7 +209,7 @@ h3 {
     font-family: Montserrat;
     font-size: 50px;
     color: $gray-300;
-    font-weight: 100;
+    font-weight: $thinest;
     span {
       margin-left: 161px;
       margin-top: 10px;

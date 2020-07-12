@@ -65,6 +65,16 @@ export default {
   width: 100%;
   overflow-y: scroll;
 }
+h4,
+h3 {
+  font-family: Montserrat;
+  letter-spacing: 2px;
+  font-weight: $regular;
+  color: $gray-blue;
+}
+.special-text {
+  color: $orange;
+}
 @media (min-width: 1264px) {
   .container.content-wrapper {
     max-width: 1200px;

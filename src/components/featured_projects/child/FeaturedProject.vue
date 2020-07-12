@@ -1,15 +1,12 @@
 <template>
   <v-container>
     <v-row>
-      <v-col :class="{'order-2': reverse}">
-        <v-card color="transparent" :outlined="true">
-          <img
-            src="https://cdn.vox-cdn.com/thumbor/Y_7VBy5IfOIBtyEZB5hrd47eOgo=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/67018905/elon_musk_tesla_3036.0.jpg"
-            alt="project"
-          />
+      <v-col class="col-7" :class="{'order-2': reverse}">
+        <v-card elevation="1" color="transparent" :outlined="true">
+          <slot name="image"></slot>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col class="col-5">
         <v-card
           color="transparent"
           :outlined="true"
@@ -20,9 +17,9 @@
           <v-card-title class="pt-2" :class="reverse ? 'pl-0': 'pr-0'">
             <slot name="project-title"></slot>
           </v-card-title>
-          <v-card-text class="project-description pa-4 my-5">
+          <v-card elevation="4" class="project-description pa-4 my-5">
             <slot name="project-description"></slot>
-          </v-card-text>
+          </v-card>
           <div class="languages-used mb-5">
             <slot name="languages-used"></slot>
           </div>
@@ -46,6 +43,7 @@ export default {
 <style lang="scss">
 img {
   width: 100%;
+  margin-bottom: -6px;
 }
 .project-info {
   height: 100%;
@@ -55,9 +53,10 @@ img {
   }
   .project-description {
     width: 120%;
-    background: #013cff;
+    max-width: 120%;
+    background-color: $gray-100 !important;
     text-align: justify;
-    border-radius: 3px;
+    font-weight: $thin;
   }
 }
 </style>
