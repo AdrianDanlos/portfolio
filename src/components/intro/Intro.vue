@@ -36,7 +36,7 @@ export default {
 .row {
   position: relative;
 }
-.col {
+#intro-container, .col {
   @include flexCenter();
 }
 .name,

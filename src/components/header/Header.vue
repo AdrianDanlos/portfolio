@@ -61,7 +61,7 @@ export default {
 
       const result = await new Promise(resolve => {
         window.setTimeout(() => {
-          resolve(this.drawer ? "gray200-text" : "dark-text");
+          resolve(this.drawer ? "gray300-text" : "dark-text");
         }, timing);
       });
       this.menuColor = result;
@@ -128,7 +128,7 @@ header {
 .close span,
 .close i,
 .open:hover * {
-  color: $gray-300;
+  color: $gray-400;
 }
 
 .drawer {

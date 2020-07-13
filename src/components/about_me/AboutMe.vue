@@ -4,7 +4,7 @@
       <!-- FIRST ROW -->
       <v-row class="align-center flex-column flex-md-row mt-7 mt-sm-15">
         <v-col class="col-12 col-md-6 pb-lg-5">
-          <h4>A FEW WORDS ABOUT ME</h4>
+          <h4 class="mb-3">A FEW WORDS ABOUT ME</h4>
           <h1
             class="mb-4"
           >I'm a Frontend Developer who enjoys creating things that live on the internet, whether that be websites, applications, or anything in between.</h1>
@@ -148,17 +148,18 @@ export default {
 .positionAbsolute {
   position: absolute;
 }
-.row{
+.row {
   width: 100%;
 }
 h1 {
-  font-family: Montserrat;
-  color: $gray-400;
+  font-family: $title-font;
+  color: $gray-500;
   margin: 0;
 }
 #dynamic-container {
   position: relative;
   h3 {
+    letter-spacing: 2px;
     bottom: 0;
     z-index: 10;
     .underline-effect {
@@ -195,9 +196,10 @@ h1 {
   position: relative;
   #img-arrow {
     position: absolute;
-    left: 30px;
-    top: -40px;
+    left: 40px;
+    top: -35px;
     width: 110%;
+    transform: rotate(-3deg);
   }
 }
 .isometric-container {
@@ -206,9 +208,9 @@ h1 {
     justify-content: center;
     transform-style: preserve-3d;
     transform: rotate(-25deg) skew(25deg);
-    font-family: Montserrat;
+    font-family: $title-font;
     font-size: 50px;
-    color: $gray-300;
+    color: $gray-400;
     font-weight: $thinest;
     span {
       margin-left: 161px;

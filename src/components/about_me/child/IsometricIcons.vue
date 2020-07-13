@@ -81,7 +81,7 @@ export default {
         color: white;
         box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.05);
         i {
-          color: $gray-100;
+          color: $gray-200;
         }
       }
       span:nth-child(5) {
@@ -122,7 +122,7 @@ export default {
   li:nth-child(2) {
     &:hover {
       i {
-        color: $gray-400;
+        color: $gray-500;
       }
     }
   }

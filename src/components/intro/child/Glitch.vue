@@ -92,7 +92,7 @@ export default {
       color: $dark;
       &::before,
       &::after {
-        color: $gray-400;
+        color: $gray-500;
       }
       &::before {
         text-shadow: none;

@@ -1,0 +1,17 @@
+/*GLOBAL CSS*/
+/*GRID STRUCTURE: 1.V-SHEET(COMPONENT LVL / FULL WIDTH SHEET TO STYLE BACKGROUND) 2.CONTAINER (.CONTENT-WRAPPER) -> 3.ROW */
+/*Grid Padding on this elements -> CONTAINER & COLS*/
+h4,
+h3 {
+    font-family: $title-font;
+    font-weight: $regular;
+    color: $gray-blue;
+}
+h4{
+    letter-spacing: 12px;
+}
+@media (min-width: 1264px) {
+    .container.content-wrapper {
+        max-width: 1200px;
+    }
+}

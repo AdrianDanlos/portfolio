@@ -1,0 +1,19 @@
+/*MIXINS*/
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fullScreen {
+    width: 100%;
+    height: 100vh !important;
+}
+
+@mixin fullHeight {
+    min-height: 100vh;
+}
+
+@mixin sectionPushup {
+    padding-bottom: 50px;
+}

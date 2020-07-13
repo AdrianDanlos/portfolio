@@ -2,7 +2,7 @@
   <v-app>
     <main-loading v-if="!loaded"></main-loading>
     <!-- header -->
-    <header-vue></header-vue>
+    <!-- <header-vue></header-vue> -->
     <!-- content -->
     <v-main>
       <router-view></router-view>
@@ -13,11 +13,11 @@
 
 <script>
 import MainLoading from "./../src/components/main_loading/MainLoading";
-import HeaderVue from "./../src/components/header/Header";
+// import HeaderVue from "./../src/components/header/Header";
 export default {
   components: {
     MainLoading,
-    HeaderVue
+    // HeaderVue
   },
   name: "App",
   data() {
@@ -53,31 +53,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-/*GLOBAL CSS*/
-/*GRID STRUCTURE: 1.V-SHEET(COMPONENT LVL / FULL WIDTH SHEET TO STYLE BACKGROUND) 2.CONTAINER (.CONTENT-WRAPPER) -> 3.ROW */
-/*Grid Padding on this elements -> CONTAINER & COLS*/
-.container {
-  @include flexCenter();
-}
-.no-scroll {
-  position: fixed;
-  width: 100%;
-  overflow-y: scroll;
-}
-h4,
-h3 {
-  font-family: Montserrat;
-  letter-spacing: 2px;
-  font-weight: $regular;
-  color: $gray-blue;
-}
-.special-text {
-  color: $orange;
-}
-@media (min-width: 1264px) {
-  .container.content-wrapper {
-    max-width: 1200px;
-  }
-}
-</style>
