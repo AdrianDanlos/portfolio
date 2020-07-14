@@ -30,10 +30,13 @@
             </div>
           </div>
           <div>
-            <div class="languages-used d-flex flex-wrap mb-4" :class="{'justify-end': reverse}">
+            <div
+              class="languages-used d-flex flex-sm-wrap mb-4 mt-4 mt-sm-0"
+              :class="{'justify-sm-end': reverse}"
+            >
               <slot name="languages-used"></slot>
             </div>
-            <div class="links d-flex" :class="{'justify-end': reverse}">
+            <div class="links d-flex" :class="{'justify-sm-end': reverse}">
               <slot name="links"></slot>
             </div>
           </div>
@@ -88,9 +91,10 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
+      padding: 16px 0;
       span {
         font-family: $title-font;
-        font-size: 23px;
+        font-size: 18px;
         font-weight: $thin;
         color: white;
       }
@@ -120,6 +124,13 @@ export default {
     .push-to-right,
     .push-to-left {
       width: 100%;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .languages-used {
+    .google-maps {
+      width: min-content;
     }
   }
 }
