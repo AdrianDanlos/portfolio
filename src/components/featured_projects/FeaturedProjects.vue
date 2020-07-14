@@ -1,12 +1,12 @@
 <template>
-  <v-sheet color="#19182D">
+  <v-sheet>
     <v-container class="content-wrapper flex-column" id="featured-projects-container">
       <v-row class="mb-4">
         <v-col>
-          <h4 class="mt-sm-15">FEATURED PROJECTS</h4>
-          <div class="main-title gray-blue-text">
+          <h4 class="mt-sm-15 text-center text-sm-left px-1 px-sm-0">FEATURED PROJECTS</h4>
+          <div class="main-title gray-blue-text d-none d-sm-block">
             <span>Some Things I've Built</span>
-            <div class="decoration-line gray-blue-bg"></div>
+            <div class="decoration-line gray-blue-bg d-none d-md-block"></div>
           </div>
         </v-col>
       </v-row>
@@ -45,20 +45,20 @@
               </span>
             </template>
             <template v-slot:languages-used>
-              <span class="ml-4">Vue</span>
-              <span class="ml-4">VueX</span>
-              <span class="ml-4">Php</span>
-              <span class="ml-4">Laravel</span>
-              <span class="ml-4">Auth</span>
+              <span class="mr-4">Vue</span>
+              <span class="mr-4">VueX</span>
+              <span class="mr-4">Php</span>
+              <span class="mr-4">Laravel</span>
+              <span>Auth</span>
             </template>
             <template v-slot:links>
               <a target="_blank" href="https://github.com/AdrianDanlos/VueWorld">
-                <v-icon class="ml-4">mdi-github</v-icon>
+                <v-icon class="mr-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="http://vueworld.herokuapp.com/">
-                <v-icon class="ml-4">mdi-web</v-icon>
+                <v-icon class="mr-4">mdi-web</v-icon>
               </a>
-              <v-icon class="ml-4">mdi-arrow-right</v-icon>
+              <v-icon class="mr-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -86,9 +86,6 @@
                 <v-img height="100%" src="/images/projects/cloudroad/map.png"></v-img>
               </v-card>
             </v-hover>
-            <template v-slot:project-title>
-              <span>Cloud Road</span>
-            </template>
             <template v-slot:project-description>
               <span>
                 A web app designed to provide quicker
@@ -101,20 +98,20 @@
               </span>
             </template>
             <template v-slot:languages-used>
-              <span class="mr-4">GoogleMaps API</span>
-              <span class="mr-4">ChartJS</span>
-              <span class="mr-4">SASS</span>
-              <!-- <span class="mr-4">Dark Mode</span> -->
-              <span class="mr-4">Laravel</span>
+              <span>GoogleMaps API</span>
+              <span class="ml-4">ChartJS</span>
+              <span class="ml-4">SASS</span>
+              <!-- <span class="ml-4">Dark Mode</span> -->
+              <span class="ml-4">Laravel</span>
             </template>
             <template v-slot:links>
               <a target="_blank" href="https://github.com/AdrianDanlos/CloudRoad">
-                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-icon class="ml-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="http://onthethunder.herokuapp.com/">
-                <v-icon class="mr-4">mdi-web</v-icon>
+                <v-icon class="ml-4">mdi-web</v-icon>
               </a>
-              <v-icon class="mr-4">mdi-arrow-right</v-icon>
+              <v-icon class="ml-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -137,9 +134,6 @@
                 <v-img height="100%" src="/images/projects/apex/apex.jpg"></v-img>
               </v-card>
             </v-hover>
-            <template v-slot:project-title>
-              <span>Apex Legends Tracker</span>
-            </template>
             <template v-slot:project-description>
               <span>
                 A
@@ -148,18 +142,18 @@
               </span>
             </template>
             <template v-slot:languages-used>
-              <span class="ml-4">JS</span>
-              <span class="ml-4">Apex API</span>
-              <span class="ml-4">Firebase</span>
+              <span class="mr-4">JS</span>
+              <span class="mr-4">Apex API</span>
+              <span>Firebase</span>
             </template>
             <template v-slot:links>
               <a target="_blank" href="https://github.com/AdrianDanlos/ApexLegends.OPGG">
-                <v-icon class="ml-4">mdi-github</v-icon>
+                <v-icon class="mr-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="https://apex-opgg.herokuapp.com/">
-                <v-icon class="ml-4">mdi-web</v-icon>
+                <v-icon class="mr-4">mdi-web</v-icon>
               </a>
-              <v-icon class="ml-4">mdi-arrow-right</v-icon>
+              <v-icon class="mr-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -184,9 +178,6 @@
                 <v-img height="100%" src="/images/projects/fnexus/landing.png"></v-img>
               </v-card>
             </v-hover>
-            <template v-slot:project-title>
-              <span>Fnexus</span>
-            </template>
             <template v-slot:project-description>
               <span>
                 A web app dedicated to create a
@@ -200,17 +191,17 @@
               </span>
             </template>
             <template v-slot:languages-used>
-              <span class="mr-4">JS</span>
-              <span class="mr-4">Php</span>
-              <span class="mr-4">MySql</span>
-              <span class="mr-4">Vagrant</span>
-              <span class="mr-4">Email API</span>
+              <span>JS</span>
+              <span class="ml-4">Php</span>
+              <span class="ml-4">MySql</span>
+              <span class="ml-4">Vagrant</span>
+              <span class="ml-4">Email API</span>
             </template>
             <template v-slot:links>
               <a target="_blank" href="https://github.com/AdrianDanlos/Fnexus">
-                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-icon class="ml-4">mdi-github</v-icon>
               </a>
-              <v-icon class="mr-4">mdi-arrow-right</v-icon>
+              <v-icon class="ml-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -235,9 +226,6 @@
                 <v-img height="100%" src="/images/projects/manhattan/landing.jpg"></v-img>
               </v-card>
             </v-hover>
-            <template v-slot:project-title>
-              <span>Danlos Cities</span>
-            </template>
             <template v-slot:project-description>
               <span>
                 A Sci-fi -ish website of a company offering to build entire cities. Created to play around with fun
@@ -248,14 +236,14 @@
               </span>
             </template>
             <template v-slot:languages-used>
-              <span class="ml-4">UX/UI</span>
-              <span class="ml-4">Design</span>
-              <span class="ml-4">Animations</span>
+              <span class="mr-4">UX/UI</span>
+              <span class="mr-4">Design</span>
+              <span>Animations</span>
             </template>
             <template v-slot:links>
               <a target="_blank" href="#">
-                <v-icon class="ml-4">mdi-github</v-icon>
-                <v-icon class="ml-4">mdi-arrow-right</v-icon>
+                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-icon class="mr-4">mdi-arrow-right</v-icon>
               </a>
             </template>
           </featured-project>
@@ -275,28 +263,43 @@ export default {
 </script>
 
 <style lang="scss">
+
 #featured-projects-container {
   @include fullHeight();
-  .main-title {
-    font-family: $title-font;
-    font-weight: $thin;
-    font-size: 50px;
-    position: relative;
-    .decoration-line {
-      position: absolute;
-      height: 1px;
-      width: 50%;
-      top: 50%;
-      left: 50%;
-    }
-  }
-  .image-card {
-    transition: all 0.2s ease;
-    height: 330px;
-    // filter: grayscale(0.4);
-  }
-  a {
-    text-decoration: none;
+}
+.main-title {
+  font-family: $title-font;
+  font-weight: $thin;
+  font-size: 50px;
+  position: relative;
+  .decoration-line {
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    top: 50%;
+    left: 50%;
   }
 }
+.image-card {
+  transition: all 0.2s ease;
+  height: 330px;
+  // filter: grayscale(0.4);
+}
+a {
+  text-decoration: none;
+}
+@media (max-width: 1264px) {
+  .main-title {
+    .decoration-line {
+      width: 35%;
+      left: 65%;
+    }
+  }
+}
+@media (max-width: 600px) {
+  h4{
+    font-size: 30px;
+  }
+}
+
 </style>
