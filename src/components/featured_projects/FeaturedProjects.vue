@@ -13,7 +13,7 @@
       <!-- PROJECT 1 -->
       <v-row class="mb-15">
         <v-col class="px-0">
-          <featured-project>
+          <featured-project :projectNumber="1">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: 'rgb(22, 82, 46)' }"></div>
               <div class="side-title-container">
@@ -27,11 +27,9 @@
                 <span>D</span>
               </div>
             </template>
-            <v-hover class="image-card" v-slot:default="{ hover }">
-              <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
-                <v-img height="100%" src="/images/projects/vueworld/landing.jpg"></v-img>
-              </v-card>
-            </v-hover>
+            <slot>
+              <v-img height="100%" src="/images/projects/vueworld/landing.jpg"></v-img>
+            </slot>
             <template v-slot:project-title>
               <span>VueWorld</span>
             </template>
@@ -66,7 +64,7 @@
       <!-- PROJECT 2 -->
       <v-row class="mb-15">
         <v-col class="px-0">
-          <featured-project reverse>
+          <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: 'rgb(102, 142, 115)' }"></div>
               <div class="side-title-container">
@@ -81,11 +79,9 @@
                 <span>D</span>
               </div>
             </template>
-            <v-hover class="image-card" v-slot:default="{ hover }">
-              <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
-                <v-img height="100%" src="/images/projects/cloudroad/map.png"></v-img>
-              </v-card>
-            </v-hover>
+            <slot>
+              <v-img height="100%" src="/images/projects/cloudroad/map.png"></v-img>
+            </slot>
             <template v-slot:project-title>
               <span>CloudRoad</span>
             </template>
@@ -122,7 +118,7 @@
       <!-- PROJECT 3 -->
       <v-row class="mb-15">
         <v-col class="px-0">
-          <featured-project>
+          <featured-project :projectNumber="3">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#1E2337' }"></div>
               <div class="side-title-container">
@@ -139,11 +135,9 @@
                 <span>R</span>
               </div>
             </template>
-            <v-hover class="image-card" v-slot:default="{ hover }">
-              <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
-                <v-img height="100%" src="/images/projects/apex/apex.jpg"></v-img>
-              </v-card>
-            </v-hover>
+            <slot>
+              <v-img height="100%" src="/images/projects/apex/apex.jpg"></v-img>
+            </slot>
             <template v-slot:project-title>
               <span>Apex Legends Tracker</span>
             </template>
@@ -174,7 +168,7 @@
       <!-- PROJECT 4 -->
       <v-row class="mb-15">
         <v-col class="px-0">
-          <featured-project reverse>
+          <featured-project reverse :projectNumber="4">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#454976' }"></div>
               <div class="side-title-container">
@@ -186,11 +180,9 @@
                 <span>S</span>
               </div>
             </template>
-            <v-hover class="image-card" v-slot:default="{ hover }">
-              <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
-                <v-img height="100%" src="/images/projects/fnexus/landing.png"></v-img>
-              </v-card>
-            </v-hover>
+            <slot>
+              <v-img height="100%" src="/images/projects/fnexus/landing.png"></v-img>
+            </slot>
             <template v-slot:project-title>
               <span>Fnexus</span>
             </template>
@@ -225,7 +217,7 @@
       <!-- PROJECT 5 -->
       <v-row class="mb-15">
         <v-col class="px-0">
-          <featured-project>
+          <featured-project :projectNumber="5">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#4D728F' }"></div>
               <div class="side-title-container">
@@ -237,11 +229,9 @@
                 <span>S</span>
               </div>
             </template>
-            <v-hover class="image-card" v-slot:default="{ hover }">
-              <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
-                <v-img height="100%" src="/images/projects/manhattan/landing.jpg"></v-img>
-              </v-card>
-            </v-hover>
+            <slot>
+              <v-img height="100%" src="/images/projects/manhattan/landing.jpg"></v-img>
+            </slot>
             <template v-slot:project-title>
               <span>Danlos Cities</span>
             </template>

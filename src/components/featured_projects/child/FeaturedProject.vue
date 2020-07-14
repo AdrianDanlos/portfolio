@@ -8,7 +8,13 @@
         </v-card>
       </v-col>
       <v-col class="col-12 col-sm-6 col-md-7" :class="reverse ? 'pr-sm-0' : 'pl-sm-0'">
-        <slot></slot>
+        <router-link :to="{ name: 'FullProjects', params: { id: projectNumber }}">
+          <v-hover class="image-card" v-slot:default="{ hover }">
+            <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
+              <slot></slot>
+            </v-card>
+          </v-hover>
+        </router-link>
       </v-col>
       <v-col class="col-sm-5 col-md-4" :class="reverse ? 'pl-sm-0' : 'pr-sm-0'">
         <v-card
@@ -37,7 +43,9 @@
               <slot name="languages-used"></slot>
             </div>
             <div class="links d-flex" :class="{'justify-sm-end': reverse}">
-              <slot name="links"></slot>
+              <router-link :to="{ name: 'FullProjects', params: { id: projectNumber }}">
+                <slot name="links"></slot>
+              </router-link>
             </div>
           </div>
         </v-card>
@@ -49,7 +57,8 @@
 <script>
 export default {
   props: {
-    reverse: Boolean
+    reverse: Boolean,
+    projectNumber: Number
   }
 };
 </script>
