@@ -6,9 +6,11 @@ import vuetify from './plugins/vuetify';
 import 'normalize.css';
 
 //Shared componentes
-import Logo from './components/shared/MyLogo.vue';
+import Logo from './components/shared/MyLogo';
+import FullProjectLayout from './components/shared/FullProjectLayout';
 
 Vue.component('logo', Logo);
+Vue.component('FullProjectLayout', FullProjectLayout);
 
 
 Vue.config.productionTip = false
