@@ -8,7 +8,7 @@
         </v-card>
       </v-col>
       <v-col class="col-12 col-sm-6 col-md-7" :class="reverse ? 'pr-sm-0' : 'pl-sm-0'">
-        <router-link :to="{ name: 'FullProjects', params: { id: projectNumber }}">
+        <router-link :to="{ name: 'FullProject', params: { id: projectNumber }}">
           <v-hover class="image-card" v-slot:default="{ hover }">
             <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
               <slot></slot>
@@ -43,8 +43,9 @@
               <slot name="languages-used"></slot>
             </div>
             <div class="links d-flex" :class="{'justify-sm-end': reverse}">
-              <router-link :to="{ name: 'FullProjects', params: { id: projectNumber }}">
-                <slot name="links"></slot>
+              <slot name="web-links"></slot>
+              <router-link :to="{ name: 'FullProject', params: { id: projectNumber }}">
+                <v-icon :class="reverse ? 'ml-sm-4' : 'mr-4'">mdi-arrow-right</v-icon>
               </router-link>
             </div>
           </div>
@@ -63,7 +64,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   .push-to-right,
   .push-to-left {
@@ -83,36 +84,17 @@ export default {
     .v-image {
       border-radius: 4px;
     }
-    .shadow,
-    .side-title-container {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 100%;
-    }
-    .shadow {
-      opacity: 0.7;
-      border-radius: 4px;
-    }
-    .side-title-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      padding: 16px 0;
-      span {
-        font-family: $title-font;
-        font-size: 18px;
-        font-weight: $thin;
-        color: white;
-      }
-    }
+  }
+  .image-card {
+    transition: all 0.2s ease;
+    height: 330px;
   }
   .project-info {
     height: 100%;
-    .links i {
-      color: $gray-blue;
+    .links {
+      i {
+        color: $gray-blue;
+      }
     }
     .project-description {
       text-align: justify;
@@ -133,13 +115,6 @@ export default {
     .push-to-right,
     .push-to-left {
       width: 100%;
-    }
-  }
-}
-@media (max-width: 600px) {
-  .languages-used {
-    .google-maps {
-      width: min-content;
     }
   }
 }

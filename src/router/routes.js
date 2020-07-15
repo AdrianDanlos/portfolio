@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
-import FullProjects from '../views/FullProjects'
+import FullProject from '../views/FullProject'
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/project/:id',
-    name: 'FullProjects',
-    component: FullProjects,
+    name: 'FullProject',
+    component: FullProject,
   },
 ]
 

@@ -31,32 +31,25 @@
               <v-img height="100%" src="/images/projects/vueworld/landing.jpg"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>VueWorld</span>
+              <span>{{ projectNames[0] }}</span>
             </template>
             <template v-slot:project-description>
-              <span>
-                A
-                <span class="special-text">lodging</span> SPA that offers accomodation for your trips all around the world. It follows the philosophy of popular booking websites such as
-                <span
-                  class="special-text"
-                >Airbnb</span> and Hostelworld. You are not only booking an appartment, you are booking an experience. Come with us!
-              </span>
+              <project-desc-1></project-desc-1>
             </template>
             <template v-slot:languages-used>
-              <span class="mr-4">Vue</span>
-              <span class="mr-4">VueX</span>
-              <span class="mr-4">Php</span>
-              <span class="mr-4">Laravel</span>
-              <span>Auth</span>
+              <span
+                :class="{'mr-4': n !== project1.length}"
+                v-for="n in project1.length"
+                :key="n"
+              >{{project1[n-1]}}</span>
             </template>
-            <template v-slot:links>
+            <template v-slot:web-links>
               <a target="_blank" href="https://github.com/AdrianDanlos/VueWorld">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="http://vueworld.herokuapp.com/">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
-              <v-icon class="mr-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -83,34 +76,25 @@
               <v-img height="100%" src="/images/projects/cloudroad/map.png"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>CloudRoad</span>
+              <span>{{ projectNames[1] }}</span>
             </template>
             <template v-slot:project-description>
-              <span>
-                A web app designed to provide quicker
-                <span
-                  class="special-text"
-                >assistance to road incidents</span> by providing real-time data trough webcams, graphs, map visualization and
-                <span
-                  class="special-text"
-                >route algorithms</span> that allow technicians to solve incidents in a rapid and easy way.
-              </span>
+              <project-desc-2></project-desc-2>
             </template>
             <template v-slot:languages-used>
-              <span class="google-maps">GoogleMaps API</span>
-              <span class="ml-4">ChartJS</span>
-              <span class="ml-4">SASS</span>
-              <!-- <span class="ml-4">Dark Mode</span> -->
-              <span class="ml-4">Laravel</span>
+              <span
+                :class="{'google-maps': n === project2[0], 'ml-4': n !== 1 }"
+                v-for="n in project2.length"
+                :key="n"
+              >{{project2[n-1]}}</span>
             </template>
-            <template v-slot:links>
+            <template v-slot:web-links>
               <a target="_blank" href="https://github.com/AdrianDanlos/CloudRoad">
-                <v-icon class="mr-4 ml-sm-4">mdi-github</v-icon>
+                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="http://onthethunder.herokuapp.com/">
-                <v-icon class="mr-4 ml-sm-4">mdi-web</v-icon>
+                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-web</v-icon>
               </a>
-              <v-icon class="mr-4 ml-sm-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -139,28 +123,25 @@
               <v-img height="100%" src="/images/projects/apex/apex.jpg"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>Apex Legends Tracker</span>
+              <span>{{ projectNames[2] }}</span>
             </template>
             <template v-slot:project-description>
-              <span>
-                A
-                <span class="special-text">real-time statistic tracker</span> for Apex Legends
-                <span class="special-text">videogame</span>. Search for your username to display data about your rank, kills, wins, top3's.. Ideal for all players that would like to keep track of their in-game stats.
-              </span>
+              <project-desc-3></project-desc-3>
             </template>
             <template v-slot:languages-used>
-              <span class="mr-4">JS</span>
-              <span class="mr-4">Apex API</span>
-              <span>Firebase</span>
+              <span
+                :class="{'mr-4': n !== project3.length}"
+                v-for="n in project3.length"
+                :key="n"
+              >{{project3[n-1]}}</span>
             </template>
-            <template v-slot:links>
+            <template v-slot:web-links>
               <a target="_blank" href="https://github.com/AdrianDanlos/ApexLegends.OPGG">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
               <a target="_blank" href="https://apex-opgg.herokuapp.com/">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
-              <v-icon class="mr-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -184,32 +165,22 @@
               <v-img height="100%" src="/images/projects/fnexus/landing.png"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>Fnexus</span>
+              <span>{{ projectNames[3] }}</span>
             </template>
             <template v-slot:project-description>
-              <span>
-                A web app dedicated to create a
-                <span
-                  class="special-text"
-                >networking space for entrepreneurs</span>, giving them the posibility to promote themselves and contact other entrepreneurs. Fnexus enalbes them to show off their latest products gaining more
-                <span
-                  class="special-text"
-                >visibility</span> and
-                <span class="special-text">recognition</span>.
-              </span>
+              <project-desc-4></project-desc-4>
             </template>
             <template v-slot:languages-used>
-              <span>JS</span>
-              <span class="ml-4">Php</span>
-              <span class="ml-4">MySql</span>
-              <span class="ml-4">Vagrant</span>
-              <span class="ml-4">Email API</span>
+              <span
+                :class="{'ml-4': n !== 1 }"
+                v-for="n in project4.length"
+                :key="n"
+              >{{project4[n-1]}}</span>
             </template>
-            <template v-slot:links>
+            <template v-slot:web-links>
               <a target="_blank" href="https://github.com/AdrianDanlos/Fnexus">
-                <v-icon class="mr-4 ml-sm-4">mdi-github</v-icon>
+                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
-              <v-icon class="mr-4 ml-sm-4">mdi-arrow-right</v-icon>
             </template>
           </featured-project>
         </v-col>
@@ -233,26 +204,21 @@
               <v-img height="100%" src="/images/projects/manhattan/landing.jpg"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>Danlos Cities</span>
+              <span>{{ projectNames[4] }}</span>
             </template>
             <template v-slot:project-description>
-              <span>
-                A Sci-fi -ish website of a company offering to build entire cities. Created to play around with fun
-                <span
-                  class="special-text"
-                >design</span> concepts and ideas following a
-                <span class="special-text">minimalist</span> philosophy.
-              </span>
+              <project-desc-5></project-desc-5>
             </template>
             <template v-slot:languages-used>
-              <span class="mr-4">UX/UI</span>
-              <span class="mr-4">Design</span>
-              <span>Animations</span>
+              <span
+                :class="{'mr-4': n !== project5.length}"
+                v-for="n in project5.length"
+                :key="n"
+              >{{project5[n-1]}}</span>
             </template>
-            <template v-slot:links>
+            <template v-slot:web-links>
               <a target="_blank" href="#">
                 <v-icon class="mr-4">mdi-github</v-icon>
-                <v-icon class="mr-4">mdi-arrow-right</v-icon>
               </a>
             </template>
           </featured-project>
@@ -264,16 +230,45 @@
 
 <script>
 import FeaturedProject from "./child/FeaturedProject";
+import technologiesUsed from "./../shared/mixins/projects/technologiesUsed";
+import projectNames from "./../shared/mixins/projects/projectNames";
+
 export default {
+  mixins: [technologiesUsed, projectNames],
   components: {
     FeaturedProject
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #featured-projects-container {
   @include fullHeight();
+}
+.shadow,
+.side-title-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.shadow {
+  opacity: 0.7;
+  border-radius: 4px;
+}
+.side-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+  span {
+    font-family: $title-font;
+    font-size: 18px;
+    font-weight: $thin;
+    color: white;
+  }
 }
 .main-title {
   font-family: $title-font;
@@ -288,14 +283,7 @@ export default {
     left: 50%;
   }
 }
-.image-card {
-  transition: all 0.2s ease;
-  height: 330px;
-  // filter: grayscale(0.4);
-}
-a {
-  text-decoration: none;
-}
+
 @media (max-width: 1264px) {
   .main-title {
     .decoration-line {
@@ -307,6 +295,9 @@ a {
 @media (max-width: 600px) {
   h4 {
     font-size: 30px;
+  }
+  .google-maps {
+    width: min-content;
   }
 }
 </style>

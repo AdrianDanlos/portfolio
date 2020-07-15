@@ -7,9 +7,15 @@ h3 {
     font-weight: $regular;
     color: $gray-blue;
 }
-h4{
+
+h4 {
     letter-spacing: 12px;
 }
+
+a {
+    text-decoration: none;
+}
+
 @media (min-width: 1264px) {
     .container.content-wrapper {
         max-width: 1200px;
