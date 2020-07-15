@@ -2,7 +2,12 @@
   <v-sheet>
     <main>
       <v-row>
-        <v-col class="col-8"></v-col>
+        <v-col class="col-8">
+          <!-- <video v-if="currentProject == 1" autoplay loop muted>
+            <source src="/images/projects/vueworld/shuffle.mp4" type="video/mp4" />
+          </video> -->
+          <v-img v-for="n in imageURLs.length" :key="n" width="100%" :src="'/images/projects' + imageURLs[n-1]" alt="image"/>
+        </v-col>
         <v-col class="col-4">
           <v-navigation-drawer absolute permanent right width="100%" class="drawer pa-10">
             <div class="d-flex justify-space-between mb-8">
@@ -15,19 +20,27 @@
                 </v-tooltip>
               </router-link>
               <div>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-icon v-bind="attrs" v-on="on">mdi-arrow-left</v-icon>
-                  </template>
-                  <span>Previous</span>
-                </v-tooltip>
+                <router-link
+                  :to="{ name: 'FullProject', params: { id: parseInt(currentProject) - 1 }}"
+                >
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon v-bind="attrs" v-on="on">mdi-arrow-left</v-icon>
+                    </template>
+                    <span>Previous</span>
+                  </v-tooltip>
+                </router-link>
                 <v-icon>mdi-slash-forward</v-icon>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-icon v-bind="attrs" v-on="on">mdi-arrow-right</v-icon>
-                  </template>
-                  <span>Next</span>
-                </v-tooltip>
+                <router-link
+                  :to="{ name: 'FullProject', params: { id: parseInt(currentProject) + 1 }}"
+                >
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon v-bind="attrs" v-on="on">mdi-arrow-right</v-icon>
+                    </template>
+                    <span>Next</span>
+                  </v-tooltip>
+                </router-link>
               </div>
             </div>
             <p>Featured project</p>
@@ -59,14 +72,16 @@
 import technologiesUsed from "./../shared/mixins/projects/technologiesUsed";
 import projectNames from "./../shared/mixins/projects/projectNames";
 import webLinks from "./../shared/mixins/projects/webLinks";
+import imageURLs from "./../shared/mixins/projects/imageURLs";
 
 export default {
-  mixins: [technologiesUsed, projectNames, webLinks],
+  mixins: [technologiesUsed, projectNames, webLinks, imageURLs],
   data() {
     return {
       currentProject: this.$route.params.id,
       technologiesUsed: null,
       webLinks: null,
+      imageURLs: null,
       //We get the description of the current component as a string to render it in the template as a component
       projectDescComponent: "ProjectDesc" + this.$route.params.id
     };
@@ -78,6 +93,8 @@ export default {
     this.technologiesUsed = this[this.technologiesUsed];
     this.webLinks = "linksProject" + this.currentProject;
     this.webLinks = this[this.webLinks];
+    this.imageURLs = "imgsProject" + this.currentProject;
+    this.imageURLs = this[this.imageURLs];
   }
 };
 </script>
@@ -85,18 +102,18 @@ export default {
 <style scoped lang="scss">
 main {
   @include fullScreen();
-  border: 1px solid blue;
+  video {
+    width: 100%;
+  }
 }
 .row {
   height: 100%;
   .drawer {
     max-width: 33.33% !important;
+    position: fixed;
     .v-icon {
       font-size: 20px;
     }
   }
-}
-.col {
-  border: 1px solid red;
 }
 </style>
