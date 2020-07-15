@@ -44,10 +44,10 @@
               >{{project1[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" href="https://github.com/AdrianDanlos/VueWorld">
+              <a target="_blank" :href="project1.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" href="http://vueworld.herokuapp.com/">
+              <a target="_blank" :href="project1.host">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
             </template>
@@ -89,10 +89,10 @@
               >{{project2[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" href="https://github.com/AdrianDanlos/CloudRoad">
+              <a target="_blank" :href="project2.github">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" href="http://onthethunder.herokuapp.com/">
+              <a target="_blank" :href="project2.host">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-web</v-icon>
               </a>
             </template>
@@ -136,10 +136,10 @@
               >{{project3[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" href="https://github.com/AdrianDanlos/ApexLegends.OPGG">
+              <a target="_blank" :href="project3.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" href="https://apex-opgg.herokuapp.com/">
+              <a target="_blank" :href="project3.host">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
             </template>
@@ -178,7 +178,7 @@
               >{{project4[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" href="https://github.com/AdrianDanlos/Fnexus">
+              <a target="_blank" :href="project4.github">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
             </template>
@@ -217,7 +217,7 @@
               >{{project5[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" href="#">
+              <a target="_blank" :href="project5.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
             </template>
@@ -230,11 +230,12 @@
 
 <script>
 import FeaturedProject from "./child/FeaturedProject";
-import technologiesUsed from "./../shared/mixins/projects/technologiesUsed";
-import projectNames from "./../shared/mixins/projects/projectNames";
+import technologiesUsed from "./../../shared/mixins/projects/technologiesUsed";
+import projectNames from "./../../shared/mixins/projects/projectNames";
+import webLinks from "./../../shared/mixins/projects/webLinks";
 
 export default {
-  mixins: [technologiesUsed, projectNames],
+  mixins: [technologiesUsed, projectNames, webLinks],
   components: {
     FeaturedProject
   }
