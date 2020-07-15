@@ -38,16 +38,16 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== project1.length}"
-                v-for="n in project1.length"
+                :class="{'mr-4': n !== techsProject1.length}"
+                v-for="n in techsProject1.length"
                 :key="n"
-              >{{project1[n-1]}}</span>
+              >{{techsProject1[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="project1.github">
+              <a target="_blank" :href="linksProject1.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" :href="project1.host">
+              <a target="_blank" :href="linksProject1.host">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
             </template>
@@ -83,16 +83,16 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'google-maps': n === project2[0], 'ml-4': n !== 1 }"
-                v-for="n in project2.length"
+                :class="{'google-maps': n === techsProject2[0], 'ml-4': n !== 1 }"
+                v-for="n in techsProject2.length"
                 :key="n"
-              >{{project2[n-1]}}</span>
+              >{{techsProject2[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="project2.github">
+              <a target="_blank" :href="linksProject2.github">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" :href="project2.host">
+              <a target="_blank" :href="linksProject2.host">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-web</v-icon>
               </a>
             </template>
@@ -130,16 +130,16 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== project3.length}"
-                v-for="n in project3.length"
+                :class="{'mr-4': n !== techsProject3.length}"
+                v-for="n in techsProject3.length"
                 :key="n"
-              >{{project3[n-1]}}</span>
+              >{{techsProject3[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="project3.github">
+              <a target="_blank" :href="linksProject3.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
-              <a target="_blank" :href="project3.host">
+              <a target="_blank" :href="linksProject3.host">
                 <v-icon class="mr-4">mdi-web</v-icon>
               </a>
             </template>
@@ -173,12 +173,12 @@
             <template v-slot:languages-used>
               <span
                 :class="{'ml-4': n !== 1 }"
-                v-for="n in project4.length"
+                v-for="n in techsProject4.length"
                 :key="n"
-              >{{project4[n-1]}}</span>
+              >{{techsProject4[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="project4.github">
+              <a target="_blank" :href="linksProject4.github">
                 <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
               </a>
             </template>
@@ -211,13 +211,13 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== project5.length}"
-                v-for="n in project5.length"
+                :class="{'mr-4': n !== techsProject5.length}"
+                v-for="n in techsProject5.length"
                 :key="n"
-              >{{project5[n-1]}}</span>
+              >{{techsProject5[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="project5.github">
+              <a target="_blank" :href="linksProject5.github">
                 <v-icon class="mr-4">mdi-github</v-icon>
               </a>
             </template>

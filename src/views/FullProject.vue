@@ -36,14 +36,14 @@
             <div class="d-flex">
               <span
                 class="mr-4"
-                v-for="n in projectTechnologies.length"
+                v-for="n in technologiesUsed.length"
                 :key="n"
-              >{{projectTechnologies[n-1]}}</span>
+              >{{technologiesUsed[n-1]}}</span>
             </div>
-            <a v-if="('github' in project1)" target="_blank" :href="project1.github">
+            <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
               <v-icon class="mr-4">mdi-github</v-icon>
             </a>
-            <a v-if="('host' in project1)" target="_blank" :href="project1.host">
+            <a v-if="('host' in webLinks)" target="_blank" :href="webLinks.host">
               <v-icon class="mr-4">mdi-web</v-icon>
             </a>
 
@@ -65,16 +65,19 @@ export default {
   data() {
     return {
       currentProject: this.$route.params.id,
-      projectTechnologies: null,
+      technologiesUsed: null,
+      webLinks: null,
       //We get the description of the current component as a string to render it in the template as a component
       projectDescComponent: "ProjectDesc" + this.$route.params.id
     };
   },
   created() {
-    //We get the current project
-    this.projectTechnologies = "project" + this.currentProject;
-    //We get our project object from the string. "project1" -> project1
-    this.projectTechnologies = this[this.projectTechnologies];
+    //1.We get the techs of the current project
+    //2.We get our project object from the string. "techsProject1" -> techsProject1
+    this.technologiesUsed = "techsProject" + this.currentProject;
+    this.technologiesUsed = this[this.technologiesUsed];
+    this.webLinks = "linksProject" + this.currentProject;
+    this.webLinks = this[this.webLinks];
   }
 };
 </script>

@@ -1,22 +1,22 @@
 export default {
     data() {
         return {
-            project1: {
+            linksProject1: {
                 host: 'http://vueworld.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/VueWorld'
             },
-            project2: {
+            linksProject2: {
                 host: 'http://onthethunder.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/CloudRoad'
             },
-            project3: {
+            linksProject3: {
                 host: 'https://apex-opgg.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/ApexLegends.OPGG'
             },
-            project4: {
+            linksProject4: {
                 github: 'https://github.com/AdrianDanlos/Fnexus'
             },
-            project5: {
+            linksProject5: {
                 github: 'https://github.com/AdrianDanlos/DanlosCities'
             },
         }
