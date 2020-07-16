@@ -59,7 +59,7 @@
         <v-col class="px-0">
           <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
-              <div class="shadow" :style="{ background: 'rgb(102, 142, 115)' }"></div>
+              <div class="shadow" :style="{ background: '#274f62' }"></div>
               <div class="side-title-container">
                 <span>C</span>
                 <span>L</span>
@@ -73,7 +73,7 @@
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/cloudroad/map.png"></v-img>
+              <v-img height="100%" src="/images/projects/cloudroad/dark/verincidencia.png"></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[1] }}</span>
