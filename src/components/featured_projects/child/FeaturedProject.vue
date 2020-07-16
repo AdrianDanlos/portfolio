@@ -45,7 +45,9 @@
             <div class="links d-flex" :class="{'justify-sm-end': reverse}">
               <slot name="web-links"></slot>
               <router-link :to="{ name: 'FullProject', params: { id: projectNumber }}">
-                <v-icon :class="reverse ? 'ml-sm-4' : 'mr-4'">mdi-arrow-right</v-icon>
+                <v-btn :class="reverse ? 'mr-n2 ml-sm-4' : 'mr-4'" icon>
+                  <v-icon>mdi-arrow-right</v-icon>
+                </v-btn>
               </router-link>
             </div>
           </div>
@@ -115,6 +117,13 @@ export default {
     .push-to-right,
     .push-to-left {
       width: 100%;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    .image-card {
+      height: 230px;
     }
   }
 }

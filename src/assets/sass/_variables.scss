@@ -10,14 +10,14 @@ $gray-100: #fdfdfd;
 $orange: #ff6300e3;
 $dark-orange: #c14c00;
 $light-orange: #ff9c4b;
-$washed-orange: #ff620080;
-$washed-red: #ff00008e;
+// $purple:#4714B0;
+$purple: #3f51b5;
 
 /*GLITCH COLORS*/
 $primary-glitch-color: $orange;
 $secondary-glitch-color: $light-orange;
-$shadow-glitch-color: $washed-orange;
-$shadow2-glitch-color: $washed-red;
+$shadow-glitch-color: #ff620080;
+$shadow2-glitch-color: #ff00008e;
 
 /*ISOMETRIC ICONS COLORS*/
 $tile-color: $gray-200;
@@ -36,6 +36,10 @@ $regular: 400;
 $bold: 700;
 $boldest: 900;
 
+/*LIQUID BUTTON*/
+$btn-liquid-bg: rgb(180, 180, 180);
+$btn-liquid-shadow:rgba($btn-liquid-bg, .2); //Lower values when bg is a light color
+$btn-liquid-water: $purple;
 
 
 /*IMPORTS*/

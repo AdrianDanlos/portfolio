@@ -11,7 +11,7 @@
         </v-col>
       </v-row>
       <!-- PROJECT 1 -->
-      <v-row class="mb-15">
+      <v-row class="mb-5 mb-sm-15">
         <v-col class="px-0">
           <featured-project :projectNumber="1">
             <template v-slot:side-title>
@@ -45,17 +45,21 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject1.github">
-                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-btn class="ml-n2 mr-4" icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
               </a>
               <a target="_blank" :href="linksProject1.host">
-                <v-icon class="mr-4">mdi-web</v-icon>
+                <v-btn class="mr-4" icon>
+                  <v-icon>mdi-web</v-icon>
+                </v-btn>
               </a>
             </template>
           </featured-project>
         </v-col>
       </v-row>
       <!-- PROJECT 2 -->
-      <v-row class="mb-15">
+      <v-row class="mb-5 mb-sm-15">
         <v-col class="px-0">
           <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
@@ -90,17 +94,21 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject2.github">
-                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
               </a>
               <a target="_blank" :href="linksProject2.host">
-                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-web</v-icon>
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                  <v-icon>mdi-web</v-icon>
+                </v-btn>
               </a>
             </template>
           </featured-project>
         </v-col>
       </v-row>
       <!-- PROJECT 3 -->
-      <v-row class="mb-15">
+      <v-row class="mb-5 mb-sm-15">
         <v-col class="px-0">
           <featured-project :projectNumber="3">
             <template v-slot:side-title>
@@ -137,17 +145,21 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject3.github">
-                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-btn class="ml-n2 mr-4" icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
               </a>
               <a target="_blank" :href="linksProject3.host">
-                <v-icon class="mr-4">mdi-web</v-icon>
+                <v-btn class="mr-4" icon>
+                  <v-icon>mdi-web</v-icon>
+                </v-btn>
               </a>
             </template>
           </featured-project>
         </v-col>
       </v-row>
       <!-- PROJECT 4 -->
-      <v-row class="mb-15">
+      <v-row class="mb-5 mb-sm-15">
         <v-col class="px-0">
           <featured-project reverse :projectNumber="4">
             <template v-slot:side-title>
@@ -162,7 +174,7 @@
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/fnexus/landing.png"></v-img>
+              <v-img height="100%" src="/images/projects/fnexus/index.png"></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[3] }}</span>
@@ -179,14 +191,16 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject4.github">
-                <v-icon class="mr-4 mr-sm-0 ml-sm-4">mdi-github</v-icon>
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
               </a>
             </template>
           </featured-project>
         </v-col>
       </v-row>
       <!-- PROJECT 5 -->
-      <v-row class="mb-15">
+      <v-row class="mb-5 mb-sm-15">
         <v-col class="px-0">
           <featured-project :projectNumber="5">
             <template v-slot:side-title>
@@ -218,7 +232,9 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject5.github">
-                <v-icon class="mr-4">mdi-github</v-icon>
+                <v-btn class="ml-n2 mr-4" icon>
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
               </a>
             </template>
           </featured-project>
