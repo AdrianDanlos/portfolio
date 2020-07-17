@@ -1,12 +1,16 @@
 <template>
-  <span class="btn-container special-text">
+  <span class="btn-container">
     <slot></slot>
-    <div class="liquid"></div>
+    <div class="liquid" :class="bgColor"></div>
   </span>
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    bgColor: String
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -35,7 +39,6 @@ export default {};
   left: 0;
   width: 200px;
   height: 200px;
-  background: $btn-liquid-water;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
 }

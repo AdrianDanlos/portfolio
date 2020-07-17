@@ -56,7 +56,7 @@
 }
 
 .gray-blue-text {
-  color: $gray-blue;
+  color: $gray-blue !important;
 }
 
 .gray-blue-bg {
@@ -85,6 +85,13 @@
 
 .light-orange-bg {
   background-color: $light-orange;
+}
+
+.purple-text{
+  color: $purple;
+}
+.purple-bg{
+  background-color: $purple;
 }
 
 /*FONT FAMILY UTILITY CLASSES*/
