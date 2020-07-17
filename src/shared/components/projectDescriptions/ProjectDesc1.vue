@@ -7,3 +7,4 @@
     >Airbnb</span> and Hostelworld. You are not only booking an appartment, you are booking an experience. Come with us!
   </span>
 </template>
+

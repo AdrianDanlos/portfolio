@@ -77,7 +77,7 @@
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/cloudroad/dark/verincidencia.png"></v-img>
+              <v-img height="100%" src="/images/projects/cloudroad/dark/mapa.png"></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[1] }}</span>
@@ -94,7 +94,7 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject2.github">
-                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon>
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>
@@ -191,7 +191,7 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject4.github">
-                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon>
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>

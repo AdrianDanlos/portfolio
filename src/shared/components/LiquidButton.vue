@@ -1,5 +1,5 @@
 <template>
-  <span class="btn-container">
+  <span class="btn-container special-text">
     <slot></slot>
     <div class="liquid"></div>
   </span>

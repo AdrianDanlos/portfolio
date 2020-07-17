@@ -24,7 +24,7 @@
 }
 
 .gray400-text {
-  color: $gray-400;
+  color: $gray-400 !important;
 }
 
 .gray400-bg {
@@ -133,9 +133,6 @@
   overflow-y: scroll;
 }
 
-.special-text {
-  color: $dark-orange;
-}
 
 /*VUEJS FADE TRANSITIONS*/
 .fade-enter-active {

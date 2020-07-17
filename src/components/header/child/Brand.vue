@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column ml-3 alternative-font">
+  <div class="d-flex flex-column ml-3 title-font">
     <span class="name boldest">Adrian Danlos</span>
     <span class="rol regular">Frontend Developer</span>
   </div>

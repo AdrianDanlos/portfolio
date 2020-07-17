@@ -1,6 +1,6 @@
 <template>
   <span>
-    A web app designed to provide quicker
+    A back-office web app designed to provide quicker
     <span class="special-text">assistance to road incidents</span> by providing real-time data trough webcams, graphs, map visualization and
     <span
       class="special-text"

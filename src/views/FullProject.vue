@@ -75,14 +75,16 @@
                     class="project-description gray100-text thin d-block mt-5"
                     :is="projectDescComponent"
                   ></component>
-                  <div class="d-flex mt-5">
+                  <div class="d-flex align-center mt-5">
                     <span
                       class="mr-4 gray400-text"
                       v-for="n in technologiesUsed.length"
                       :key="n"
                     >{{technologiesUsed[n-1]}}</span>
                     <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
-                      <v-icon class="mr-4 gray-blue-text">mdi-github</v-icon>
+                      <v-btn class="mr-4" icon color="#3F51B5">
+                        <v-icon class="gray400-text">mdi-github</v-icon>
+                      </v-btn>
                     </a>
                   </div>
                   <div class="d-flex mt-6">
@@ -199,27 +201,27 @@ main {
       background-color: #0e0c16;
       aside {
         height: 100%;
-      }
-      .featured-text {
-        color: lighten($purple, 25%);
-      }
-      .back-home-icon {
-        padding: 5px;
-        border-radius: 50%;
-        background-color: $purple;
-      }
-      .project-description {
-        font-size: 17px;
-      }
-      .v-icon {
-        font-size: 20px;
-      }
-      hr {
-        border-color: lighten($purple, 25%);
-      }
-      .divider-project-number {
-        width: 95%;
-        border-color: $gray-100;
+        .featured-text {
+          color: lighten($purple, 25%);
+        }
+        .back-home-icon {
+          padding: 5px;
+          border-radius: 50%;
+          background-color: $purple;
+        }
+        .project-description {
+          font-size: 17px;
+        }
+        .v-icon {
+          font-size: 20px;
+        }
+        hr {
+          border-color: lighten($purple, 25%);
+        }
+        .divider-project-number {
+          width: 95%;
+          border-color: $gray-100;
+        }
       }
     }
   }

@@ -16,7 +16,7 @@ import MainLoading from "./../src/components/main_loading/MainLoading";
 // import HeaderVue from "./../src/components/header/Header";
 export default {
   components: {
-    MainLoading,
+    MainLoading
     // HeaderVue
   },
   name: "App",
@@ -52,4 +52,7 @@ export default {
   }
 };
 </script>
+
+
+
 

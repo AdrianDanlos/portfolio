@@ -24,7 +24,7 @@
         <a href="#">PROJECTS</a>
         <a href="#">CONTACT</a>
         <p class="copyright d-flex">
-          <span>© 2020 Made with</span>
+          <span>© 2020 Made with VueJS</span>
           <v-icon small class="mx-1">mdi-cards-heart</v-icon>
           <span>by Adrian Danlos.</span>
         </p>
