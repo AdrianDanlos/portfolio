@@ -5,19 +5,26 @@
         <v-col class="col-12">
           <header class="d-flex justify-center flex-column align-center">
             <h1 class="mt-14">SAY HELLO.</h1>
-            <form class="d-flex justify-center mt-2 w100">
+            <v-form
+              onsubmit="return false;"
+              ref="form"
+              v-model="valid"
+              lazy-validation
+              class="form d-flex justify-center mt-2 w100"
+            >
               <v-row v-if="currentStep === 1">
                 <v-col class="col-4 offset-4 pr-0 d-flex justify-center">
                   <v-text-field
-                    @keydown="validateEmail()"
+                    @keyup.enter="triggerNext"
                     class="email"
                     v-model="recruiterEmail"
                     label="Your Email"
+                    :rules="emailRules"
                     required
                   ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 pl-0 d-flex align-center">
-                  <v-btn @click="currentStep++" icon color="#5e7682">
+                  <v-btn @click="validate" icon color="#5e7682" ref="nextBtn">
                     <v-icon class="gray-blue-text">mdi-arrow-right</v-icon>
                   </v-btn>
                 </v-col>
@@ -29,7 +36,7 @@
                     v-model="recruiterMessage"
                     label="Write your message"
                     required
-                    maxlength="250"
+                    maxlength="220"
                   ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 liquid-button-container">
@@ -38,7 +45,7 @@
                   </liquid-button>
                 </v-col>
               </v-row>
-            </form>
+            </v-form>
             <span class="gray-blue-text">Step {{ currentStep }} / 2</span>
           </header>
         </v-col>
@@ -89,13 +96,22 @@ export default {
       recruiterEmail: null,
       recruiterMessage: null,
       defaultMessage:
-        "Got a project? Drop me a line if you want to work together on something exciting. Big or small. Web or mobile."
+        "Got a project? Drop me a line if you want to work together on something exciting. Big or small. Web or mobile.",
+      valid: true,
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      ]
     };
   },
   methods: {
-    validateEmail() {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(this.recruiterEmail).toLowerCase());
+    triggerNext() {
+      this.$refs.nextBtn.$el.click();
+    },
+    validate() {
+      if (this.$refs.form.validate()) {
+        this.currentStep++;
+      }
     }
   }
 };
@@ -108,12 +124,15 @@ export default {
   background-position: center;
   height: 1200px;
   header {
-    form {
+    .form {
       position: relative;
       .email,
       .message {
         width: 500px;
         max-width: 500px;
+      }
+      ::v-deep .error--text {
+        color: $error-text-color !important;
       }
       .liquid-button-container {
         ::v-deep .btn-container {

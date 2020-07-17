@@ -7,11 +7,12 @@ $gray-400: #878a8f;
 $gray-300: #d4d4d4;
 $gray-200: #f6f6f6;
 $gray-100: #fdfdfd;
+$red:#c91111;
 $orange: #ff6300e3;
 $dark-orange: #c14c00;
 $light-orange: #ff9c4b;
 $purple: #3f51b5;
-// $purple:#4714B0;
+
 
 /*GLITCH COLORS*/
 $primary-glitch-color: $orange;
@@ -23,6 +24,9 @@ $shadow2-glitch-color: #ff00008e;
 $tile-color: $gray-200;
 $tile-lBorder-color: darken($tile-color, 12%);
 $tile-bBorder-color: darken($tile-color, 6%);
+
+/*ERRORS*/
+$error-text-color: $red;
 
 /*FONT FAMILIES*/
 $title-font: "Montserrat";
