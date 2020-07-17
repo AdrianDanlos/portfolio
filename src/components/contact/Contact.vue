@@ -24,7 +24,7 @@
                   ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 pl-0 d-flex align-center">
-                  <v-btn @click="validate" icon color="#5e7682" ref="nextBtn">
+                  <v-btn class="ml-n6 mt-2" @click="validate" icon color="#5e7682" ref="nextBtn">
                     <v-icon class="gray-blue-text">mdi-arrow-right</v-icon>
                   </v-btn>
                 </v-col>
