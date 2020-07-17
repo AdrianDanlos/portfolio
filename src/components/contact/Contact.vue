@@ -8,7 +8,13 @@
             <form class="d-flex justify-center mt-2 w100">
               <v-row v-if="currentStep === 1">
                 <v-col class="col-4 offset-4 pr-0 d-flex justify-center">
-                  <v-text-field class="email" label="Your Email" required></v-text-field>
+                  <v-text-field
+                    @keydown="validateEmail()"
+                    class="email"
+                    v-model="recruiterEmail"
+                    label="Your Email"
+                    required
+                  ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 pl-0 d-flex align-center">
                   <v-btn @click="currentStep++" icon color="#5e7682">
@@ -18,10 +24,16 @@
               </v-row>
               <v-row v-if="currentStep === 2" class="align-center">
                 <v-col class="col-4 offset-4 pr-0 d-flex justify-center">
-                  <v-text-field class="message" label="Write your message" required></v-text-field>
+                  <v-text-field
+                    class="message"
+                    v-model="recruiterMessage"
+                    label="Write your message"
+                    required
+                    maxlength="250"
+                  ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 liquid-button-container">
-                  <liquid-button bgColor="gray-blue-bg">
+                  <liquid-button bgcolor="gray-blue-bg">
                     <span>SEND</span>
                   </liquid-button>
                 </v-col>
@@ -36,9 +48,29 @@
             <div class="pl-2 text-container">
               <h5 class="get-in-touch">Get in touch</h5>
               <h5 class="work-together">Let's work together.</h5>
-              <p>Got a project? Drop me a line if you want to work together on something exciting. Big or small. Mobile or web.</p>
-              <p>{{ email }}</p>
-              <p>{{ phone }}</p>
+              <p>{{recruiterMessage ? recruiterMessage : defaultMessage}}</p>
+              <a href="mailto:danlosadrian@gmail.com" target="_blank">
+                <p>
+                  <v-icon>mdi-email</v-icon>
+                  {{ email }}
+                </p>
+              </a>
+              <p>
+                <v-icon>mdi-phone</v-icon>
+                {{ phone }}
+              </p>
+              <a href="https://www.linkedin.com/in/adrian-danlos/" target="_blank">
+                <p>
+                  <v-icon>mdi-linkedin</v-icon>
+                  {{ linkedin }}
+                </p>
+              </a>
+              <a href="https://github.com/AdrianDanlos" target="_blank">
+                <p>
+                  <v-icon>mdi-github</v-icon>
+                  {{ github }}
+                </p>
+              </a>
             </div>
           </main>
         </v-col>
@@ -53,8 +85,18 @@ export default {
   mixins: [personalData],
   data() {
     return {
-      currentStep: 1
+      currentStep: 1,
+      recruiterEmail: null,
+      recruiterMessage: null,
+      defaultMessage:
+        "Got a project? Drop me a line if you want to work together on something exciting. Big or small. Web or mobile."
     };
+  },
+  methods: {
+    validateEmail() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.recruiterEmail).toLowerCase());
+    }
   }
 };
 </script>
@@ -84,9 +126,10 @@ export default {
   }
   main {
     position: absolute;
-    left: 51%;
+    left: 53%;
     top: 430px;
     width: 340px;
+    height: 600px;
     padding: 8px;
     transform: rotate(-8deg) skew(1deg);
     h1 {
@@ -120,6 +163,7 @@ export default {
       font-weight: $thin;
       margin-top: 25px;
       width: 100%;
+      word-break: break-all;
     }
   }
   h1 {
@@ -127,7 +171,7 @@ export default {
     letter-spacing: 6px;
     font-family: $title-font;
     color: $gray-blue;
-    font-weight: $regular;
+    font-weight: $thin;
   }
 }
 </style>

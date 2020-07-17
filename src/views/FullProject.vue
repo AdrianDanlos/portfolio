@@ -89,7 +89,7 @@
                   </div>
                   <div class="d-flex mt-6">
                     <a v-if="('host' in webLinks)" target="_blank" :href="webLinks.host">
-                      <liquid-button bgColor="gray-blue-bg">
+                      <liquid-button bgcolor="gray-blue-bg">
                         <span>visit</span>
                       </liquid-button>
                     </a>

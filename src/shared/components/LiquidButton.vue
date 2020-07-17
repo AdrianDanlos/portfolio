@@ -1,14 +1,14 @@
 <template>
   <span class="btn-container">
     <slot></slot>
-    <div class="liquid" :class="bgColor"></div>
+    <div class="liquid" :class="bgcolor"></div>
   </span>
 </template>
 
 <script>
 export default {
   props:{
-    bgColor: String
+    bgcolor: String
   }
 };
 </script>
