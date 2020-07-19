@@ -30,7 +30,7 @@ export default {
 
 <style scoped lang="scss">
 svg {
-  width: 55px;
+  width: 45px;
   font-size: 35px;
   font-weight: $regular;
   fill: none;

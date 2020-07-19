@@ -1,6 +1,6 @@
 <template>
   <div id="web-container">
-    <!-- <intro></intro> -->
+    <intro></intro>
     <!-- <about-me></about-me> -->
     <!-- <featured-projects></featured-projects> -->
     <contact></contact>
@@ -8,13 +8,13 @@
 </template>
 
 <script>
-// import Intro from "./../components/intro/Intro";
+import Intro from "./../components/intro/Intro";
 // import AboutMe from "./../components/about_me/AboutMe";
 // import FeaturedProjects from "./../components/featured_projects/FeaturedProjects";
 import Contact from "./../components/contact/Contact";
 export default {
   components: {
-    // Intro,
+    Intro,
     // AboutMe,
     // FeaturedProjects
     Contact

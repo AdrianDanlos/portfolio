@@ -2,7 +2,7 @@
   <v-app>
     <main-loading v-if="!loaded"></main-loading>
     <!-- header -->
-    <!-- <header-vue></header-vue> -->
+    <header-vue></header-vue>
     <!-- content -->
     <v-main>
       <router-view></router-view>
@@ -13,11 +13,11 @@
 
 <script>
 import MainLoading from "./../src/components/main_loading/MainLoading";
-// import HeaderVue from "./../src/components/header/Header";
+import HeaderVue from "./../src/components/header/Header";
 export default {
   components: {
-    MainLoading
-    // HeaderVue
+    MainLoading,
+    HeaderVue
   },
   name: "App",
   data() {

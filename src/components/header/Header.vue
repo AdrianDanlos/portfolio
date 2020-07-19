@@ -3,7 +3,7 @@
     <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9">
       <div class="d-flex align-center">
         <logo :class="menuColor"></logo>
-        <header-brand :class="menuColor"></header-brand>
+        <!-- <header-brand :class="menuColor"></header-brand> -->
       </div>
       <nav>
         <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer">
@@ -36,11 +36,11 @@
 
 
 <script>
-import HeaderBrand from "./child/Brand";
+// import HeaderBrand from "./child/Brand";
 
 export default {
   components: {
-    HeaderBrand
+    // HeaderBrand
   },
   data() {
     return {
@@ -128,10 +128,11 @@ header {
 .close span,
 .close i,
 .open:hover * {
-  color: $gray-400;
+  color: $gray-300 !important;
 }
 
 .drawer {
+  transition: all 0.5s ease;
   .menu {
     @include flexCenter();
     opacity: 0.9;
@@ -148,21 +149,13 @@ header {
         font-weight: $boldest;
       }
     }
-  }
-}
-.drawer {
-  transition: all 0.5s ease;
-}
-.copyright {
-  font-size: 14px;
-  font-weight: $thin;
-  position: absolute;
-  bottom: 0;
-  user-select: none;
-}
-@media (max-width: 380px) {
-  ::v-deep .logo-container svg {
-    width: 50px;
+    .copyright {
+      font-size: 14px;
+      font-weight: $thin;
+      position: absolute;
+      bottom: 0;
+      user-select: none;
+    }
   }
 }
 </style>

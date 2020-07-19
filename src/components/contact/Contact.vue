@@ -123,6 +123,7 @@ export default {
   background-size: cover;
   background-position: center;
   height: 1200px;
+  position: relative;
   header {
     .form {
       position: relative;
