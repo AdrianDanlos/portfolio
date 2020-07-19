@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <v-container class="content-wrapper flex-column my-16" id="featured-projects-container">
+    <v-container class="content-wrapper flex-column" id="featured-projects-container">
       <v-row class="pb-sm-4">
         <v-col class="pb-0 pb-sm-3">
           <section-title class="mt-sm-15 text-center text-sm-left px-1 px-sm-0">

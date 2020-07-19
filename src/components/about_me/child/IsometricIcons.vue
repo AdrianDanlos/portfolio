@@ -116,6 +116,7 @@ export default {
       transition: 0.2s;
       i {
         font-size: 30px !important;
+        color: $gray-200;
       }
     }
   }
@@ -132,8 +133,14 @@ export default {
         z-index: 6;
       }
       &:hover {
+        &::before {
+          background: $vue-bBorder-color;
+        }
+        &::after {
+          background: $vue-lBorder-color;
+        }
         span {
-          background: #40b883;
+          background: $vue-color;
         }
       }
     }
@@ -142,8 +149,14 @@ export default {
         z-index: 5;
       }
       &:hover {
+        &::before {
+          background: $js-bBorder-color;
+        }
+        &::after {
+          background: $js-lBorder-color;
+        }
         span {
-          background: #efd61f;
+          background: $js-color;
         }
       }
     }
@@ -152,8 +165,14 @@ export default {
         z-index: 4;
       }
       &:hover {
+        &::before {
+          background: $laravel-bBorder-color;
+        }
+        &::after {
+          background: $laravel-lBorder-color;
+        }
         span {
-          background: #e65b49;
+          background: $laravel-color;
         }
       }
     }
@@ -164,8 +183,14 @@ export default {
         z-index: 3;
       }
       &:hover {
+        &::before {
+          background: $php-bBorder-color;
+        }
+        &::after {
+          background: $php-lBorder-color;
+        }
         span {
-          background: #4d598f;
+          background: $php-color;
         }
       }
     }
@@ -174,8 +199,14 @@ export default {
         z-index: 2;
       }
       &:hover {
+        &::before {
+          background: $html-bBorder-color;
+        }
+        &::after {
+          background: $html-lBorder-color;
+        }
         span {
-          background: #f88838;
+          background: $html-color;
         }
       }
     }
@@ -184,8 +215,14 @@ export default {
         z-index: 1;
       }
       &:hover {
+        &::before {
+          background: $sass-bBorder-color;
+        }
+        &::after {
+          background: $sass-lBorder-color;
+        }
         span {
-          background: #c66395;
+          background: $sass-color;
         }
       }
     }

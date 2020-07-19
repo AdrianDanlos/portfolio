@@ -1,13 +1,15 @@
 <template>
   <v-sheet>
-    <v-container class="flex-column content-wrapper" id="about-me-container">
+    <v-container class="flex-column content-wrapper mt-7 mt-sm-14" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="align-center flex-column flex-md-row mt-7 mt-sm-15">
+      <v-row class="align-center flex-column flex-md-row">
         <v-col class="col-12 col-md-6 pb-lg-5">
           <section-title class="mb-10">
             <span>
               A few words
-              <underline><span>about</span></underline>&nbsp;me
+              <underline>
+                <span>about</span>
+              </underline>&nbsp;me
             </span>
           </section-title>
           <h1

@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <div>
-                  <p class="featured-text serif-font mb-1">Featured project</p>
+                  <p class="featured-text light-purple-text serif-font mb-1">Featured project</p>
                   <h2 class="mb-4 gray100-text regular">{{projectNames[currentProject - 1]}}</h2>
                   <v-divider></v-divider>
                   <component
@@ -77,19 +77,19 @@
                   ></component>
                   <div class="d-flex align-center mt-5">
                     <span
-                      class="mr-4 gray400-text"
+                      class="mr-4 light-purple-text"
                       v-for="n in technologiesUsed.length"
                       :key="n"
                     >{{technologiesUsed[n-1]}}</span>
                     <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
                       <v-btn class="mr-4" icon color="#3F51B5">
-                        <v-icon class="gray400-text">mdi-github</v-icon>
+                        <v-icon class="light-purple-text">mdi-github</v-icon>
                       </v-btn>
                     </a>
                   </div>
                   <div class="d-flex mt-6">
                     <a v-if="('host' in webLinks)" target="_blank" :href="webLinks.host">
-                      <liquid-button bgcolor="gray-blue-bg">
+                      <liquid-button bgcolor="purple-bg">
                         <span>visit</span>
                       </liquid-button>
                     </a>
@@ -201,9 +201,6 @@ main {
       background-color: #0e0c16;
       aside {
         height: 100%;
-        .featured-text {
-          color: lighten($purple, 25%);
-        }
         .back-home-icon {
           padding: 5px;
           border-radius: 50%;
@@ -216,7 +213,7 @@ main {
           font-size: 20px;
         }
         hr {
-          border-color: lighten($purple, 25%);
+          border-color: $light-purple;
         }
         .divider-project-number {
           width: 95%;

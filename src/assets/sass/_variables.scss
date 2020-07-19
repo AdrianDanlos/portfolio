@@ -7,11 +7,11 @@ $gray-400: #747679;
 $gray-300: #d4d4d4;
 $gray-200: #f6f6f6;
 $gray-100: #fdfdfd;
-$red:#c91111;
 $orange: #ff6300e3;
-$dark-orange:  #d93d00; //#c14c00
+$dark-orange: #d93d00;
 $light-orange: #ff9c4b;
 $purple: #3f51b5;
+$light-purple: lighten($purple, 25%);
 
 
 /*GLITCH COLORS*/
@@ -21,12 +21,44 @@ $shadow-glitch-color: #ff620080;
 $shadow2-glitch-color: #ff00008e;
 
 /*ISOMETRIC ICONS COLORS*/
-$tile-color: $gray-200;
-$tile-lBorder-color: darken($tile-color, 12%);
-$tile-bBorder-color: darken($tile-color, 6%);
+@function setBorderColors($color, $side) {
+    @if $side==left {
+        @return lighten($color, 22%);
+    }
+    @else {
+        @return lighten($color, 8%);
+    }
+}
+
+/*Default tile*/
+$tile-color: $purple;
+$tile-lBorder-color: setBorderColors($tile-color, left);
+$tile-bBorder-color: setBorderColors($tile-color, bottom);
+
+/*Tile technologies*/
+$vue-color: #40b883;
+$js-color:#ffca1d;
+$laravel-color:#e65b49;
+$php-color:#4D588E;
+$html-color:#f88838;
+$sass-color:#c66395;
+
+/*Tile borders*/
+$vue-lBorder-color: setBorderColors($vue-color, left);
+$vue-bBorder-color: setBorderColors($vue-color, bottom);
+$js-lBorder-color: setBorderColors($js-color, left);
+$js-bBorder-color: setBorderColors($js-color, bottom);
+$laravel-lBorder-color: setBorderColors($laravel-color, left);
+$laravel-bBorder-color: setBorderColors($laravel-color, bottom);
+$php-lBorder-color: setBorderColors($php-color, left);
+$php-bBorder-color: setBorderColors($php-color, bottom);
+$html-lBorder-color: setBorderColors($html-color, left);
+$html-bBorder-color: setBorderColors($html-color, bottom);
+$sass-lBorder-color: setBorderColors($sass-color, left);
+$sass-bBorder-color: setBorderColors($sass-color, bottom);
 
 /*ERRORS*/
-$error-text-color: $red;
+$error-text-color: #c91111;
 
 /*FONT FAMILIES*/
 $title-font: "Montserrat";
@@ -50,4 +82,3 @@ $btn-liquid-shadow:rgba($btn-liquid-bg, .2); //Lower values when bg is a light c
 @import './utility_classes';
 @import './mixins';
 @import './global';
-
