@@ -24,10 +24,8 @@
         </v-col>
       </v-row>
       <div class="d-none d-md-block scroll-to-icon"></div>
-      <aside class="d-none d-sm-block">
-        <div class="email-container">
-          <p>{{email}}</p>
-        </div>
+      <aside class="d-none d-md-flex align-center flex-column" :style="[showAside ? {opacity: 1} : {opacity: 0}]">
+        <p>{{email}}</p>
         <div class="vertical-divider"></div>
       </aside>
     </v-container>
@@ -41,6 +39,23 @@ export default {
   mixins: [PersonalData],
   components: {
     Glitch
+  },
+  data() {
+    return {
+      showAside: true,
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  methods: {
+    onScroll() {
+      window.top.scrollY > 3333 ? this.showAside = false : this.showAside = true;
+      console.log(window.top.scrollY);
+    }
   }
 };
 </script>
@@ -55,26 +70,23 @@ export default {
 }
 #intro-container {
   aside {
-    .email-container {
-      position: fixed;
-      right: -55px;
-      bottom: 200px;
-      z-index: 1000;
-      font-size: 14px;
-      p {
-        transform: rotate(90deg);
-        letter-spacing: 1px;
-        margin: 0;
-      }
+    position: fixed;
+    right: -55px;
+    bottom: 0;
+    z-index: 1000;
+    font-size: 14px;
+    transition: opacity 0.5s;
+    p {
+      transform: rotate(90deg);
+      letter-spacing: 1px;
+      margin: 0;
     }
+
     .vertical-divider {
       width: 1px;
       height: 100px;
+      margin: 100px 0 0 -4px;
       background: $gray-400;
-      position: fixed;
-      right: 40px;
-      bottom: 0;
-      z-index: 1000;
     }
   }
   .name,
