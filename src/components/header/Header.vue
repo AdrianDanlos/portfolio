@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       drawer: null,
-      menuColor: "dark-text"
+      menuColor: "dark-text",
     };
   },
   methods: {
@@ -80,7 +80,7 @@ export default {
     drawer: function() {
       this.setHeaderColor();
       this.hideScrollY();
-    }
+    },
   }
 };
 </script>

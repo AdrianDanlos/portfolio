@@ -23,7 +23,7 @@
           <img src="/images/me.png" alt="Adrian" />
         </v-col>
       </v-row>
-      <div class="d-none d-md-block scroll-to-icon"></div>
+      <scroll-icon class="d-none d-md-block"></scroll-icon>
       <aside class="d-none d-md-flex align-center flex-column" :style="[showAside ? {opacity: 1} : {opacity: 0}]">
         <p>{{email}}</p>
         <div class="vertical-divider"></div>
@@ -124,35 +124,6 @@ export default {
       font-weight: $regular;
     }
   }
-  .scroll-to-icon {
-    position: absolute;
-    top: 85vh;
-    width: 20px;
-    height: 30px;
-    box-shadow: inset 0 0 0 2px $dark;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out 0s;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-  .scroll-to-icon:after {
-    content: "";
-    width: 4px;
-    height: 6px;
-    background: $dark;
-    margin-left: 8px;
-    top: 8px;
-    border-radius: 2px;
-    -webkit-animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-name: scroll;
-    animation-name: scroll;
-    position: absolute;
-  }
 }
 
 @media (max-width: 1263px) {
@@ -196,15 +167,4 @@ export default {
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 </style>

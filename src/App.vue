@@ -2,7 +2,7 @@
   <v-app>
     <main-loading v-if="!loaded"></main-loading>
     <!-- header -->
-    <header-vue></header-vue>
+    <header-vue v-if="showHeader"></header-vue>
     <!-- content -->
     <v-main>
       <router-view></router-view>
@@ -22,7 +22,8 @@ export default {
   name: "App",
   data() {
     return {
-      loaded: false
+      loaded: false,
+      showHeader: true
     };
   },
   methods: {
@@ -49,6 +50,13 @@ export default {
   },
   mounted() {
     this.animateLoading();
+  },
+  watch: {
+    $route: function() {
+      this.$route.name === "FullProject"
+        ? (this.showHeader = false)
+        : (this.showHeader = true);
+    }
   }
 };
 </script>

@@ -94,6 +94,7 @@
                       </liquid-button>
                     </a>
                   </div>
+                  <scroll-icon class="d-block d-md-none"></scroll-icon>
                 </div>
               </section>
               <div class="d-flex align-center">
