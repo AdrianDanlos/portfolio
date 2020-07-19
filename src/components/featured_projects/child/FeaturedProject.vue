@@ -100,8 +100,7 @@ export default {
     }
     .project-description {
       text-align: justify;
-      font-size: 15px;
-      color: $gray-blue;
+      color: $gray-400;
     }
     .languages-used {
       color: $gray-blue;

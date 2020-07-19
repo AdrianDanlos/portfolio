@@ -1,10 +1,15 @@
 <template>
-  <v-sheet color="#ffffee">
+  <v-sheet>
     <v-container class="flex-column content-wrapper" id="about-me-container">
       <!-- FIRST ROW -->
       <v-row class="align-center flex-column flex-md-row mt-7 mt-sm-15">
         <v-col class="col-12 col-md-6 pb-lg-5">
-          <h4 class="mb-3">A FEW WORDS ABOUT ME</h4>
+          <section-title class="mb-10">
+            <span>
+              A few words
+              <underline><span>about</span></underline>&nbsp;me
+            </span>
+          </section-title>
           <h1
             class="mb-4"
           >I'm a Frontend Developer who enjoys creating things that live on the internet, whether that be websites, applications, or anything in between.</h1>
@@ -175,7 +180,7 @@ h1 {
     }
   }
   p {
-    font-weight: $thin;
+    color: $gray-400;
   }
 }
 

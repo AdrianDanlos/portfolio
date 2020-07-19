@@ -54,7 +54,7 @@ export default {
   methods: {
     onScroll() {
       window.top.scrollY > 3333 ? this.showAside = false : this.showAside = true;
-      console.log(window.top.scrollY);
+      // console.log(window.top.scrollY);
     }
   }
 };
@@ -71,22 +71,23 @@ export default {
 #intro-container {
   aside {
     position: fixed;
-    right: -55px;
+    right: -50px;
     bottom: 0;
     z-index: 1000;
-    font-size: 14px;
     transition: opacity 0.5s;
     p {
       transform: rotate(90deg);
       letter-spacing: 1px;
       margin: 0;
+      color: $gray-blue;
+      font-size: 13px;
     }
 
     .vertical-divider {
       width: 1px;
       height: 100px;
       margin: 100px 0 0 -4px;
-      background: $gray-400;
+      background: $gray-blue;
     }
   }
   .name,
