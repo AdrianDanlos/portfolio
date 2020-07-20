@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 .btn-container {
   position: relative;
-  padding: 20px 50px;
+  padding: 15px 35px;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
@@ -49,8 +49,8 @@ export default {
   width: 200%;
   height: 200%;
   position: absolute;
-  top: 0;
-  left: 50%;
+  top: -5px;
+  left: 39%;
   transform: translate(-50%, -75%);
   background: #000;
 }

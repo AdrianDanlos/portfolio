@@ -1,16 +1,8 @@
 <template>
   <v-sheet>
     <main>
-      <v-row>
-        <v-col class="col-8 py-0 pr-1">
-          <v-btn
-            :color="darkMode ? 'indigo lighten-4' : '#251f3d'"
-            fixed
-            class="theme-btn"
-            :class="darkMode ? 'black--text': 'white--text'"
-            v-if="'dark' in imageURLs"
-            @click="switchColorMode()"
-          >{{ darkMode ? 'Light Theme' : 'Dark Theme' }}</v-btn>
+      <v-row class="ma-0">
+        <v-col class="order-1 order-lg-0 col-12 col-lg-8 pa-0 py-lg-0">
           <div v-if="currentProject == 5">
             <video-project-5></video-project-5>
           </div>
@@ -25,78 +17,96 @@
             <video-project-1></video-project-1>
           </div>
         </v-col>
-        <v-col class="col-4">
-          <v-navigation-drawer absolute permanent right width="100%" class="drawer pa-10">
+        <v-col class="col-12 col-lg-4 pa-0 pa-lg-3">
+          <v-navigation-drawer
+            absolute
+            touchless
+            permanent
+            right
+            width="100%"
+            class="drawer pa-5 pa-sm-10"
+          >
             <aside class="d-flex flex-column justify-space-between">
-              <section>
-                <div class="d-flex justify-space-between mb-8">
-                  <router-link :to="{ name: 'Home'}">
-                    <v-tooltip bottom>
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-icon
-                          color="white"
-                          class="back-home-icon"
-                          v-bind="attrs"
-                          v-on="on"
-                        >mdi-arrow-left</v-icon>
-                      </template>
-                      <span>Go back home</span>
-                    </v-tooltip>
-                  </router-link>
+              <section class="h100 d-flex flex-column justify-space-between justify-sm-start">
+                <div>
+                  <div class="d-flex justify-space-between mb-8">
+                    <router-link :to="{ name: 'Home'}">
+                      <v-tooltip bottom>
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-icon
+                            color="white"
+                            class="back-home-icon"
+                            v-bind="attrs"
+                            v-on="on"
+                          >mdi-arrow-left</v-icon>
+                        </template>
+                        <span>Go back home</span>
+                      </v-tooltip>
+                    </router-link>
+                    <div>
+                      <router-link
+                        :to="{ name: 'FullProject', params: { id: getPrevOrNextId('prev') }}"
+                      >
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-left</v-icon>
+                          </template>
+                          <span>Previous</span>
+                        </v-tooltip>
+                      </router-link>
+                      <v-icon class="gray300-text">mdi-slash-forward</v-icon>
+                      <router-link
+                        :to="{ name: 'FullProject', params: { id: getPrevOrNextId('next') }}"
+                      >
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-right</v-icon>
+                          </template>
+                          <span>Next</span>
+                        </v-tooltip>
+                      </router-link>
+                    </div>
+                  </div>
                   <div>
-                    <router-link
-                      :to="{ name: 'FullProject', params: { id: getPrevOrNextId('prev') }}"
-                    >
-                      <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-left</v-icon>
-                        </template>
-                        <span>Previous</span>
-                      </v-tooltip>
-                    </router-link>
-                    <v-icon class="gray300-text">mdi-slash-forward</v-icon>
-                    <router-link
-                      :to="{ name: 'FullProject', params: { id: getPrevOrNextId('next') }}"
-                    >
-                      <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-right</v-icon>
-                        </template>
-                        <span>Next</span>
-                      </v-tooltip>
-                    </router-link>
+                    <p class="featured-text light-purple-text serif-font mb-1">Featured project</p>
+                    <h2 class="mb-4 gray100-text regular">{{projectNames[currentProject - 1]}}</h2>
+                    <v-divider></v-divider>
+                    <component
+                      class="project-description gray100-text thin d-block mt-5"
+                      :is="projectDescComponent"
+                    ></component>
+                    <div class="d-flex align-center mt-5 flex-wrap">
+                      <span
+                        class="mr-4 light-purple-text"
+                        v-for="n in technologiesUsed.length"
+                        :key="n"
+                      >{{technologiesUsed[n-1]}}</span>
+                      <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
+                        <v-btn class="mr-4" icon>
+                          <v-icon class="light-purple-text">mdi-github</v-icon>
+                        </v-btn>
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <p class="featured-text light-purple-text serif-font mb-1">Featured project</p>
-                  <h2 class="mb-4 gray100-text regular">{{projectNames[currentProject - 1]}}</h2>
-                  <v-divider></v-divider>
-                  <component
-                    class="project-description gray100-text thin d-block mt-5"
-                    :is="projectDescComponent"
-                  ></component>
-                  <div class="d-flex align-center mt-5">
-                    <span
-                      class="mr-4 light-purple-text"
-                      v-for="n in technologiesUsed.length"
-                      :key="n"
-                    >{{technologiesUsed[n-1]}}</span>
-                    <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
-                      <v-btn class="mr-4" icon color="#3F51B5">
-                        <v-icon class="light-purple-text">mdi-github</v-icon>
-                      </v-btn>
-                    </a>
-                  </div>
-                  <div class="d-flex mt-6">
-                    <a v-if="('host' in webLinks)" target="_blank" :href="webLinks.host">
-                      <liquid-button bgcolor="purple-bg">
-                        <span>visit</span>
-                      </liquid-button>
-                    </a>
-                  </div>
-                  <scroll-icon class="d-block d-md-none"></scroll-icon>
+                <div v-if="('host' in webLinks)" class="d-flex my-6">
+                  <a target="_blank" :href="webLinks.host">
+                    <liquid-button bgcolor="purple-bg">
+                      <span>visit</span>
+                    </liquid-button>
+                  </a>
+                  <v-btn
+                    depressed
+                    outlined
+                    :color="darkMode ? 'white' : '#98a2db'"
+                    class="theme-btn ml-4"
+                    :class="darkMode ? 'gray-200-text': 'light-purple-text'"
+                    v-if="'dark' in imageURLs"
+                    @click="switchColorMode()"
+                  >{{ darkMode ? 'Light' : 'Dark' }}</v-btn>
                 </div>
               </section>
+              <scroll-icon class="d-none d-sm-block d-lg-none"></scroll-icon>
               <div class="d-flex align-center">
                 <hr class="divider-project-number" />
                 <span class="ml-4 gray100-text">{{ '0' + currentProject }}</span>
@@ -187,17 +197,24 @@ export default {
 main {
   @include fullScreen();
   .row {
-    height: 100%;
     ::v-deep video {
       width: 100%;
     }
     .theme-btn {
-      z-index: 100;
-      top: 7px;
-      right: 33.9%;
+      font-family: Montserrat;
+      font-weight: 700;
+      height: auto;
+      font-size: 16px;
+      max-width: 152px;
+      flex: 1 1 auto;
+      letter-spacing: 8px;
+      ::v-deep span {
+        margin-right: -8px; //Same value as letter spacing
+      }
     }
     .drawer {
       max-width: 33.33%;
+      height: 100vh !important;
       position: fixed;
       background-color: #0e0c16;
       aside {
@@ -213,6 +230,10 @@ main {
         .v-icon {
           font-size: 20px;
         }
+        .btn-github {
+          justify-content: inherit;
+          color: $purple;
+        }
         hr {
           border-color: $light-purple;
         }
@@ -220,6 +241,22 @@ main {
           width: 95%;
           border-color: $gray-100;
         }
+        ::v-deep .scroll-to-icon {
+          box-shadow: inset 0 0 0 2px $gray-300;
+          &::after {
+            background: $gray-300;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1264px) {
+  main {
+    .row {
+      .drawer {
+        max-width: 100%;
+        position: initial;
       }
     }
   }

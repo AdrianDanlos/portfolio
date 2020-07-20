@@ -2,10 +2,20 @@
   <div class="scroll-to-icon"></div>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 <style lang="scss" scoped>
 .scroll-to-icon {
   position: absolute;
   top: 85vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 20px;
   height: 30px;
   box-shadow: inset 0 0 0 2px $dark;

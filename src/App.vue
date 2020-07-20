@@ -46,16 +46,20 @@ export default {
       setTimeout(() => {
         this.loaded = true;
       }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
+    },
+    showOrHideHeader() {
+      this.$route.name === "FullProject"
+        ? (this.showHeader = false)
+        : (this.showHeader = true);
     }
   },
   mounted() {
     this.animateLoading();
+    this.showOrHideHeader();
   },
   watch: {
     $route: function() {
-      this.$route.name === "FullProject"
-        ? (this.showHeader = false)
-        : (this.showHeader = true);
+      this.showOrHideHeader();
     }
   }
 };
