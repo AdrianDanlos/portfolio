@@ -6,21 +6,23 @@
           <header class="d-flex justify-center flex-column align-center">
             <h1 class="mt-14">SAY HELLO.</h1>
             <v-form
+              @submit.prevent="sendEmail"
               onsubmit="return false;"
               ref="form"
               v-model="valid"
               lazy-validation
               class="form d-flex justify-center mt-2 w100"
             >
-              <v-row v-if="currentStep === 1">
+              <v-row :class="{'d-none': currentStep === 2}">
                 <v-col class="col-4 offset-4 pr-0 d-flex justify-center">
                   <v-text-field
-                    @keyup.enter="triggerNext"
+                    name="user_email"
                     class="email"
-                    v-model="recruiterEmail"
                     label="Your Email"
-                    :rules="emailRules"
+                    v-model="recruiterEmail"
+                    @keyup.enter="triggerNext"
                     required
+                    :rules="emailRules"
                   ></v-text-field>
                 </v-col>
                 <v-col class="col-4 pt-0 pl-0 d-flex align-center">
@@ -31,18 +33,24 @@
               </v-row>
               <v-row v-if="currentStep === 2" class="align-center">
                 <v-col class="col-4 offset-4 pr-0 d-flex justify-center">
-                  <v-text-field
+                  <v-textarea
+                    name="message"
                     class="message"
-                    v-model="recruiterMessage"
                     label="Write your message"
+                    v-model="recruiterMessage"
+                    autofocus
                     required
-                    maxlength="220"
-                  ></v-text-field>
+                    counter
+                    :rules="messageRules"
+                    maxlength="281"
+                  ></v-textarea>
                 </v-col>
                 <v-col class="col-4 pt-0 liquid-button-container">
-                  <liquid-button bgcolor="gray-blue-bg">
-                    <span>SEND</span>
-                  </liquid-button>
+                  <button v-if="valid">
+                    <liquid-button bgcolor="gray-blue-bg">
+                      <span>SEND</span>
+                    </liquid-button>
+                  </button>
                 </v-col>
               </v-row>
             </v-form>
@@ -88,6 +96,8 @@
 
 <script>
 import personalData from "./../../shared/mixins/personalData";
+import emailjs from "emailjs-com";
+
 export default {
   mixins: [personalData],
   data() {
@@ -101,7 +111,8 @@ export default {
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
+      ],
+      messageRules: [v => (v && v.length <= 280) || "Max 280 characters"]
     };
   },
   methods: {
@@ -112,6 +123,23 @@ export default {
       if (this.$refs.form.validate()) {
         this.currentStep++;
       }
+    },
+    sendEmail: e => {
+      emailjs
+        .sendForm(
+          "contact_service",
+          "contact_form",
+          e.target,
+          "user_OaXWIe7otvExuMDlomK64"
+        )
+        .then(
+          result => {
+            console.log("SUCCESS!", result.status, result.text);
+          },
+          error => {
+            console.log("FAILED...", error);
+          }
+        );
     }
   }
 };
@@ -140,6 +168,9 @@ export default {
           width: 180px;
           padding: 15px 50px;
           margin-bottom: 16px;
+        }
+        button:focus {
+          outline: 0;
         }
       }
     }

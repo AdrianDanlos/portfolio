@@ -3,14 +3,7 @@
     <main>
       <v-row class="ma-0">
         <v-col class="order-1 order-lg-0 col-12 col-lg-8 pa-0 py-lg-0">
-          <div v-if="currentProject == 1" class="d-none d-lg-block devices-container">
-            <div class="mobile"></div>
-            <div class="tablet"></div>
-            <div class="laptop"></div>
-            <strong>XS</strong>
-            <strong>MD</strong>
-            <strong>LG</strong>
-          </div>
+          <devices-3-d v-if="currentProject == 1" class="d-none d-lg-block"></devices-3-d>
           <div v-if="currentProject == 5">
             <video-project-5></video-project-5>
           </div>
@@ -134,12 +127,14 @@ import webLinks from "./../shared/mixins/projects/webLinks";
 import imageURLs from "./../shared/mixins/projects/imageURLs";
 import VideoProject1 from "./../components/full_projects/video_components/VideoProject1";
 import VideoProject5 from "./../components/full_projects/video_components/VideoProject5";
+import Devices3D from "./../components/full_projects/Devices3D";
 
 export default {
   mixins: [technologiesUsed, projectNames, webLinks, imageURLs],
   components: {
     VideoProject1,
-    VideoProject5
+    VideoProject5,
+    Devices3D
   },
   data() {
     return {
@@ -202,113 +197,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.devices-container {
-  position: relative;
-  height: 100vh;
-  min-height: 900px;
-  strong {
-    font-size: 57px;
-    font-family: $title-font;
-    position: absolute;
-    top: 793px;
-    left: 674px;
-    color: #5a5a5a;
-    z-index: 1000;
-    transform: rotate(3deg) skewY(-3deg) skewX(-3deg);
-  }
-  strong:nth-of-type(1) {
-    top: 752px;
-    left: 701px;
-  }
-  strong:nth-of-type(2) {
-    top: 157px;
-    left: 2%;
-  }
-  strong:nth-of-type(3) {
-    top: 66px;
-    left: 89%;
-  }
-  .mobile {
-    width: 180px;
-    height: 346px;
-    background-image: url("/images/projects/vueworld/mobile.png");
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgb(219, 219, 219);
-    position: absolute;
-    left: 510px;
-    top: 470px;
-    transform: rotate(3deg) skewY(-3deg) skewX(-3deg);
-    box-shadow: rgb(55 55 55 / 58%) 7px 8px 10px 0px;
-    z-index: 3;
-    &::after {
-      content: "";
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      width: 4px;
-      height: 100%;
-      background: #e0e0e0;
-      transform-origin: right;
-      transform: skewY(-49deg);
-    }
-  }
-  .tablet {
-    width: 400px;
-    height: 495px;
-    background-image: url("/images/projects/vueworld/tablet.jpg");
-    background-size: cover;
-    background-position: center;
-    border: 1px solid #eee;
-    position: absolute;
-    left: 80px;
-    top: 230px;
-    transform: rotate(3deg) skewY(-3deg) skewX(-3deg);
-    box-shadow: rgb(55 55 55 / 58%) 7px 8px 10px 0px;
-    z-index: 2;
-    &::after {
-      content: "";
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      width: 4px;
-      height: 100%;
-      background: #e0e0e0;
-      transform-origin: right;
-      transform: skewY(-49deg);
-    }
-  }
-  .laptop {
-    width: 84%;
-    height: 525px;
-    background-image: url("/images/projects/vueworld/landing.jpg");
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgb(219, 219, 219);
-    position: absolute;
-    margin-left: auto;
-    margin-right: 5%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    top: 140px;
-    transform: rotate(3deg) skewY(-3deg) skewX(-3deg);
-    box-shadow: rgb(55 55 55 / 58%) 7px 8px 10px 0px;
-    z-index: 1;
-    &::after {
-      content: "";
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      width: 4px;
-      height: 100%;
-      background: #e0e0e0;
-      transform-origin: right;
-      transform: skewY(-49deg);
-    }
-  }
-}
-
 main {
   @include fullScreen();
   .row {
@@ -317,7 +205,7 @@ main {
     }
     .theme-btn {
       font-family: Montserrat;
-      font-weight: 700;
+      font-weight: $bold;
       height: auto;
       font-size: 16px;
       max-width: 152px;
