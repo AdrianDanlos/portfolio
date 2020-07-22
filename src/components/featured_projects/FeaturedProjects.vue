@@ -3,8 +3,14 @@
     <v-container class="content-wrapper flex-column" id="featured-projects-container">
       <v-row class="pb-sm-4">
         <v-col class="pb-0 pb-sm-3">
-          <section-title class="mt-sm-15 text-center text-sm-left px-1 px-sm-0">
-            <span>Some <underline>projects</underline> I've built</span>
+          <section-title class="mt-sm-15 mb-4 text-center text-sm-left px-1 px-sm-0">
+            <span>
+              <span class="z-index-priority">Some</span>&nbsp;
+              <underline>
+                <span>projects</span>
+              </underline>&nbsp;
+              <span class="z-index-priority">I have built</span>
+            </span>
           </section-title>
         </v-col>
       </v-row>
@@ -259,6 +265,15 @@ export default {
 <style lang="scss" scoped>
 #featured-projects-container {
   @include fullHeight();
+}
+::v-deep .underline-container {
+  .text {
+    &::after {
+      content: "projects";
+      bottom: -88px;
+      left: -131px;
+    }
+  }
 }
 .shadow,
 .side-title-container {

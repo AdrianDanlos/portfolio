@@ -4,12 +4,13 @@
       <!-- FIRST ROW -->
       <v-row class="align-center flex-column flex-md-row">
         <v-col class="col-12 col-md-6 pb-lg-5">
-          <section-title class="mb-10">
+          <section-title class="mb-16">
             <span>
-              A few words
+              <span class="z-index-priority">A few words</span>&nbsp;
               <underline>
                 <span>about</span>
-              </underline>&nbsp;me
+              </underline>&nbsp;
+              <span class="z-index-priority">me</span>
             </span>
           </section-title>
           <h1
@@ -162,6 +163,16 @@ h1 {
   font-family: $title-font;
   color: $gray-500;
   margin: 0;
+}
+
+::v-deep .underline-container {
+  .text {
+    &::after {
+      content: "about";
+      bottom: -88px;
+      left: -286px;
+    }
+  }
 }
 #dynamic-container {
   position: relative;

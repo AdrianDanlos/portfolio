@@ -13,7 +13,8 @@
               lazy-validation
               class="form d-flex justify-center mt-2 w100"
             >
-              <v-row v-if="currentStep === 1" class="w100">
+              <!-- We use d-none instead of v-if so emailjs library can retrieve the user_email text field from the DOM -->
+              <v-row :class="{'d-none': currentStep !== 1}" class="w100">
                 <v-col class="col-9 col-md-4 offset-1 offset-md-4 pr-0 d-flex justify-center">
                   <v-text-field
                     name="user_email"
@@ -214,6 +215,7 @@ export default {
         font-family: $title-font;
         font-weight: $bold;
         white-space: nowrap;
+        font-size: 14px;
       }
     }
   }
@@ -290,7 +292,7 @@ export default {
         letter-spacing: 5px;
       }
       .text-container {
-        transform: rotate(-.5deg) skew(0deg);
+        transform: rotate(-0.5deg) skew(0deg);
       }
       i {
         font-size: 15px;

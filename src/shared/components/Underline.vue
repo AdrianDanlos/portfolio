@@ -13,15 +13,26 @@
   display: inline-block;
   .underline {
     position: absolute;
-    width: 75%;
+    width: 100%;
     height: 10px;
     border-radius: 30px;
     background: lighten($light-orange, 5%);
     bottom: 2px;
     right: 5%;
+    z-index: 1;
   }
   .text {
     position: relative;
+    span {
+      position: relative;
+      z-index: 1000;
+    }
+    &::after {
+      position: absolute;
+      color: lighten($purple, 48%);
+      font-size: 140px;
+      font-weight: $bold;
+    }
   }
 }
 </style>
