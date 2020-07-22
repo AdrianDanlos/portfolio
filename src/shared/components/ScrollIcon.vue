@@ -3,19 +3,13 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
 .scroll-to-icon {
-  position: absolute;
+  @include centerAbsolute();
   top: 85vh;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
   width: 20px;
   height: 30px;
   box-shadow: inset 0 0 0 2px $dark;
@@ -31,7 +25,7 @@ export default {
   width: 4px;
   height: 6px;
   background: $dark;
-  margin-left: 8px;
+  margin-left: -2px;
   top: 8px;
   border-radius: 2px;
   -webkit-animation-duration: 1.5s;

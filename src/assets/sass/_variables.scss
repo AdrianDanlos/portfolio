@@ -31,7 +31,7 @@ $shadow2-glitch-color: #ff00008e;
 }
 
 /*Default tile*/
-$tile-color: $purple;
+$tile-color: $purple; //#3F3D56
 $tile-lBorder-color: setBorderColors($tile-color, left);
 $tile-bBorder-color: setBorderColors($tile-color, bottom);
 

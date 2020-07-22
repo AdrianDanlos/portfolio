@@ -23,11 +23,7 @@
         <a href="#">ABOUT</a>
         <a href="#">PROJECTS</a>
         <a href="#">CONTACT</a>
-        <p class="copyright d-flex">
-          <span>© 2020 Made with VueJS</span>
-          <v-icon small class="mx-1">mdi-cards-heart</v-icon>
-          <span>by Adrian Danlos.</span>
-        </p>
+        <footer-vue color="gray-blue-text"></footer-vue>
       </v-sheet>
     </v-navigation-drawer>
   </div>
@@ -61,7 +57,7 @@ export default {
 
       const result = await new Promise(resolve => {
         window.setTimeout(() => {
-          resolve(this.drawer ? "gray300-text" : "dark-text");
+          resolve(this.drawer ? "gray200-text" : "dark-text");
         }, timing);
       });
       this.menuColor = result;
@@ -148,13 +144,6 @@ header {
         color: white;
         font-weight: $boldest;
       }
-    }
-    .copyright {
-      font-size: 14px;
-      font-weight: $thin;
-      position: absolute;
-      bottom: 0;
-      user-select: none;
     }
   }
 }

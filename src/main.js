@@ -11,6 +11,7 @@ import LiquidButton from './shared/components/LiquidButton';
 import SectionTitle from './shared/components/SectionTitle';
 import Underline from './shared/components/Underline';
 import ScrollIcon from './shared/components/ScrollIcon';
+import FooterVue from './shared/components/FooterVue';
 import ProjectDesc1 from './shared/components/projectDescriptions/ProjectDesc1'
 import ProjectDesc2 from './shared/components/projectDescriptions/ProjectDesc2'
 import ProjectDesc3 from './shared/components/projectDescriptions/ProjectDesc3'
@@ -22,6 +23,7 @@ Vue.component('LiquidButton', LiquidButton);
 Vue.component('SectionTitle', SectionTitle);
 Vue.component('Underline', Underline);
 Vue.component('ScrollIcon', ScrollIcon);
+Vue.component('FooterVue', FooterVue);
 Vue.component('ProjectDesc1', ProjectDesc1);
 Vue.component('ProjectDesc2', ProjectDesc2);
 Vue.component('ProjectDesc3', ProjectDesc3);

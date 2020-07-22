@@ -55,14 +55,11 @@
     z-index: 2;
   }
   .laptop {
+    @include centerAbsolute();
     width: 84%;
     height: 525px;
     background-image: url("/images/projects/vueworld/landing.jpg");
-    margin-left: auto;
     margin-right: 5%;
-    left: 0;
-    right: 0;
-    text-align: center;
     top: 140px;
     z-index: 1;
   }

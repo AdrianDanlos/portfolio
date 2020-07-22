@@ -179,3 +179,20 @@
   {
   opacity: 0;
 }
+
+
+/*CONTACT TRANSITIONS*/
+.form-enter-active {
+  transition: opacity .7s
+}
+.form-leave-active {
+  transition: opacity .7s;
+}
+
+.form-enter,
+.form-leave-to
+  {
+  opacity: 0;
+}
+
+
