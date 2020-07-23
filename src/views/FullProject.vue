@@ -2,6 +2,7 @@
   <v-sheet>
     <main>
       <v-row class="ma-0">
+        <!-- GALLERY -->
         <v-col class="order-1 order-lg-0 col-12 col-lg-8 pa-0 py-lg-0">
           <devices-3-d v-if="currentProject == 1" class="d-none d-lg-block"></devices-3-d>
           <div v-if="currentProject == 5">
@@ -17,7 +18,11 @@
           <div v-if="currentProject == 1">
             <video-project-1></video-project-1>
           </div>
+          <router-link :to="{ name: 'FullProject', params: { id: getPrevOrNextId('next') }}">
+            <next-project></next-project>
+          </router-link>
         </v-col>
+        <!-- GALLERY END -->
         <v-col class="col-12 col-lg-4 pa-0 pa-lg-3">
           <v-navigation-drawer
             absolute
@@ -128,13 +133,15 @@ import imageURLs from "./../shared/mixins/projects/imageURLs";
 import VideoProject1 from "./../components/full_projects/video_components/VideoProject1";
 import VideoProject5 from "./../components/full_projects/video_components/VideoProject5";
 import Devices3D from "./../components/full_projects/Devices3D";
+import NextProject from "./../components/full_projects/NextProject";
 
 export default {
   mixins: [technologiesUsed, projectNames, webLinks, imageURLs],
   components: {
     VideoProject1,
     VideoProject5,
-    Devices3D
+    Devices3D,
+    NextProject,
   },
   data() {
     return {
@@ -143,7 +150,7 @@ export default {
       webLinks: null,
       imageURLs: null,
       projectDescComponent: "ProjectDesc" + this.$route.params.id,
-      darkMode: false
+      darkMode: false,
     };
   },
   methods: {
@@ -176,12 +183,12 @@ export default {
     },
     switchColorMode() {
       this.darkMode = !this.darkMode;
-    }
+    },
   },
   computed: {
     getColorMode() {
       return this.darkMode ? this.imageURLs.dark : this.imageURLs.light;
-    }
+    },
   },
   created() {
     this.updateComponent();
@@ -191,8 +198,8 @@ export default {
       if (to !== from) {
         this.updateComponent();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
