@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <v-container class="content-wrapper flex-column mt-sm-16 mb-8">
+    <v-container class="content-wrapper flex-column my-sm-16">
       <v-row>
         <v-col class="col-12">
           <section-title class="mb-16">
@@ -18,11 +18,25 @@
         <v-col class="col-8">
           <v-row>
             <v-col class="col-2 pt-1 z-index-priority">
-              <p
-                @click="currentJob === 0 ? animation() : '', currentJob = 1"
-                class="jobs-item"
-              >Present</p>
-              <p @click="currentJob = 0" class="jobs-item">2019 - 2020</p>
+              <div class="d-flex">
+                <div id="job-border-out">
+                  <div
+                    id="job-border-in"
+                    class="w100 absolute purple-bg"
+                    :class="{top: selectorIsTop, bottom: !selectorIsTop}"
+                  ></div>
+                </div>
+                <div>
+                  <p
+                    @click="borderTransition('top'), currentJob = 0, selectorIsTop = true"
+                    class="jobs-item"
+                  >2019 - 2020</p>
+                  <p
+                    @click="goAnimation(), borderTransition('bottom'), currentJob = 1, selectorIsTop = false"
+                    class="jobs-item"
+                  >Present</p>
+                </div>
+              </div>
             </v-col>
             <v-col v-if="currentJob === 0" class="col-10">
               <h4 class="mb-2">
@@ -90,80 +104,91 @@ export default {
   data() {
     return {
       currentJob: 0,
+      selectorIsTop: true,
     };
   },
   methods: {
-    animation() {
-      setTimeout(() => {
-        var ml4 = {};
-        ml4.opacityIn = [0, 1];
-        ml4.scaleIn = [0.2, 1];
-        ml4.scaleOut = 3;
-        ml4.durationIn = 800;
-        ml4.durationOut = 600;
-        ml4.delay = 500;
+    goAnimation() {
+      if (this.currentJob === 0) {
+        setTimeout(() => {
+          var ml4 = {};
+          ml4.opacityIn = [0, 1];
+          ml4.scaleIn = [0.2, 1];
+          ml4.scaleOut = 3;
+          ml4.durationIn = 800;
+          ml4.durationOut = 600;
+          ml4.delay = 500;
 
-        this.$anime
-          .timeline({ loop: false })
-          .add({
-            targets: ".ml4 .letters-1",
-            opacity: ml4.opacityIn,
-            scale: ml4.scaleIn,
-            duration: ml4.durationIn,
-          })
-          .add({
-            targets: ".ml4 .letters-1",
-            opacity: 0,
-            scale: ml4.scaleOut,
-            duration: ml4.durationOut,
-            easing: "easeInExpo",
-            delay: ml4.delay,
-          })
-          .add({
-            targets: ".ml4 .letters-2",
-            opacity: ml4.opacityIn,
-            scale: ml4.scaleIn,
-            duration: ml4.durationIn,
-          })
-          .add({
-            targets: ".ml4 .letters-2",
-            opacity: 0,
-            scale: ml4.scaleOut,
-            duration: ml4.durationOut,
-            easing: "easeInExpo",
-            delay: ml4.delay,
-          })
-          .add({
-            targets: ".ml4 .letters-3",
-            opacity: ml4.opacityIn,
-            scale: ml4.scaleIn,
-            duration: ml4.durationIn,
-          })
-          .add({
-            targets: ".ml4 .letters-3",
-            opacity: 0,
-            scale: ml4.scaleOut,
-            duration: ml4.durationOut,
-            easing: "easeInExpo",
-            delay: ml4.delay,
-          })
-          .add({
-            targets: ".ml4 .letters-4",
-            opacity: ml4.opacityIn,
-            scale: ml4.scaleIn,
-            duration: ml4.durationIn,
-          })
-          .add({
-            targets: ".ml4 .letters-4",
-            easing: "easeInExpo",
-          });
-        // .add({
-        //   targets: ".ml4",
-        //   opacity: 0,
-        //   duration: 500,
-        //   delay: 500,
-        // });
-      }, 10);
+          this.$anime
+            .timeline({ loop: false })
+            .add({
+              targets: ".ml4 .letters-1",
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn,
+            })
+            .add({
+              targets: ".ml4 .letters-1",
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay,
+            })
+            .add({
+              targets: ".ml4 .letters-2",
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn,
+            })
+            .add({
+              targets: ".ml4 .letters-2",
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay,
+            })
+            .add({
+              targets: ".ml4 .letters-3",
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn,
+            })
+            .add({
+              targets: ".ml4 .letters-3",
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay,
+            })
+            .add({
+              targets: ".ml4 .letters-4",
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn,
+            })
+            .add({
+              targets: ".ml4 .letters-4",
+              easing: "easeInExpo",
+            });
+          // .add({
+          //   targets: ".ml4",
+          //   opacity: 0,
+          //   duration: 500,
+          //   delay: 500,
+          // });
+        }, 10);
+      }
+    },
+    borderTransition(direction) {
+      switch (direction) {
+        case "top":
+          break;
+        case "bottom":
+          break;
+      }
     },
   },
 };
@@ -177,14 +202,27 @@ export default {
     }
   }
 }
+.top {
+  top: 0;
+}
+.bottom {
+  top: 50%;
+}
 h4,
 h5,
 .ml4 {
   color: $gray-500;
 }
-
+#job-border-out {
+  width: 2px;
+  background: $gray-300;
+  position: relative;
+  #job-border-in {
+    height: 50%;
+    transition: all .3s;
+  }
+}
 .jobs-item {
-  border-left: 2px solid $gray-300;
   padding: 10px;
   margin-bottom: 0;
   font-size: 15px;
@@ -206,7 +244,7 @@ ul {
     i {
       margin-right: 20px;
       font-size: 15px;
-      color: $dark-orange !important;
+      color: $purple !important;
     }
   }
 }
