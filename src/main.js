@@ -4,6 +4,9 @@ import router from './router/routes'
 import store from './store/store'
 import vuetify from './plugins/vuetify';
 import 'normalize.css';
+import VueAnime from 'vue-animejs';
+ 
+Vue.use(VueAnime)
 
 //Shared componentes
 import Logo from './shared/components/MyLogo';

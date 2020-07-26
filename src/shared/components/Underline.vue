@@ -29,6 +29,7 @@
     }
     &::after {
       position: absolute;
+      bottom: -88px;
       color: lighten($purple, 48%);
       font-size: 140px;
       font-weight: $bold;

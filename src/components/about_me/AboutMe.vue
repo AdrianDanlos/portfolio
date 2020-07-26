@@ -1,10 +1,10 @@
 <template>
   <v-sheet>
-    <v-container class="flex-column content-wrapper mt-7 mt-sm-14" id="about-me-container">
+    <v-container class="flex-column content-wrapper mt-7 mt-sm-15" id="about-me-container">
       <!-- FIRST ROW -->
       <v-row class="align-center flex-column flex-md-row">
         <v-col class="col-12 col-md-6 pb-lg-5">
-          <section-title class="mb-16">
+          <section-title :style="{'margin-bottom': '70px'}">
             <span>
               <span class="z-index-priority">A few words</span>&nbsp;
               <underline>
@@ -25,7 +25,7 @@
                   Despite being specialized on Frontend technologies I have a broad experience building performant
                   <span
                     class="special-text"
-                  >end-to-end applications</span>. In 2019 I joined the engineering team at Ibai Sistems where I had the opportunity to work on a
+                  >end-to-end applications</span>. In 2019 I joined the engineering team at IbaiScanbit where I had the opportunity to work on a
                   <span
                     class="special-text"
                   >wide variety of projects</span>.
@@ -169,7 +169,6 @@ h1 {
   .text {
     &::after {
       content: "about";
-      bottom: -88px;
       left: -286px;
     }
   }
