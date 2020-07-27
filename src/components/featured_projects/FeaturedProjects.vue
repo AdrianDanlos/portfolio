@@ -16,7 +16,7 @@
       </v-row>
       <!-- PROJECT 1 -->
       <v-row class="mb-5 mb-sm-15">
-        <v-col class="px-0">
+        <v-col>
           <featured-project :projectNumber="1">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: 'rgb(22, 82, 46)' }"></div>
@@ -64,7 +64,7 @@
       </v-row>
       <!-- PROJECT 2 -->
       <v-row class="mb-5 mb-sm-15">
-        <v-col class="px-0">
+        <v-col>
           <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#274f62' }"></div>
@@ -113,7 +113,7 @@
       </v-row>
       <!-- PROJECT 3 -->
       <v-row class="mb-5 mb-sm-15">
-        <v-col class="px-0">
+        <v-col>
           <featured-project :projectNumber="3">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#1E2337' }"></div>
@@ -164,7 +164,7 @@
       </v-row>
       <!-- PROJECT 4 -->
       <v-row class="mb-5 mb-sm-15">
-        <v-col class="px-0">
+        <v-col>
           <featured-project reverse :projectNumber="4">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#454976' }"></div>
@@ -205,7 +205,7 @@
       </v-row>
       <!-- PROJECT 5 -->
       <v-row class="mb-5 mb-sm-15">
-        <v-col class="px-0">
+        <v-col>
           <featured-project :projectNumber="5">
             <template v-slot:side-title>
               <div class="shadow" :style="{ background: '#4D728F' }"></div>

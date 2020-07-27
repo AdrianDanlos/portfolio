@@ -58,7 +58,7 @@
                   class="col-12 col-md-3 col-lg-4 pt-0 liquid-button-container d-flex justify-center justify-lg-start"
                 >
                   <button v-if="valid">
-                    <liquid-button bgcolor="purple-bg">
+                    <liquid-button bgcolor="light-violet-bg">
                       <span>SEND</span>
                     </liquid-button>
                   </button>

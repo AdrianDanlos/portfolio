@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="px-0">
     <v-row :class="reverse ? 'push-to-right flex-row-reverse' : 'push-to-left'">
       <v-col class="col-1 d-none d-sm-block" :class="reverse ? 'pr-0' : 'pl-0'">
         <v-card class="side-title-card">
@@ -61,8 +61,8 @@
 export default {
   props: {
     reverse: Boolean,
-    projectNumber: Number
-  }
+    projectNumber: Number,
+  },
 };
 </script>
 
@@ -93,11 +93,6 @@ export default {
   }
   .project-info {
     height: 100%;
-    .links {
-      i {
-        color: $gray-blue;
-      }
-    }
     .project-description {
       text-align: justify;
       color: $gray-400;

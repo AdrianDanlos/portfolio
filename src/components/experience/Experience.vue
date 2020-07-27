@@ -22,7 +22,7 @@
                 <div id="job-border-out">
                   <div
                     id="job-border-in"
-                    class="w100 absolute purple-bg"
+                    class="w100 absolute"
                     :class="{top: selectorIsTop, bottom: !selectorIsTop}"
                   ></div>
                 </div>
@@ -41,7 +41,7 @@
             <v-col v-if="currentJob === 0" class="col-10">
               <h4 class="mb-2">
                 FullStack Developer
-                <span class="purple-text">@IbaiScanbit</span>
+                <span class="company">@IbaiScanbit</span>
               </h4>
               <h5 class="mb-5">1 year, 2019 - 2020</h5>
               <ul>
@@ -59,13 +59,12 @@
             <v-col v-if="currentJob === 1" class="col-10">
               <h4 class="mb-2">
                 FullStack Developer
-                <span class="purple-text">@YourCompany</span>
+                <span class="company">@YourCompany</span>
               </h4>
               <h1 class="ml4">
-                <span class="letters letters-1">Ready</span>
-                <span class="letters letters-2">Set</span>
-                <span class="letters letters-3">Go!</span>
-                <span class="letters letters-4">Contact me</span>
+                <span class="letters letters-1">Don't be</span>
+                <span class="letters letters-2">A stranger</span>
+                <span class="letters letters-3">Contact me</span>
               </h1>
             </v-col>
           </v-row>
@@ -157,20 +156,6 @@ export default {
             })
             .add({
               targets: ".ml4 .letters-3",
-              opacity: 0,
-              scale: ml4.scaleOut,
-              duration: ml4.durationOut,
-              easing: "easeInExpo",
-              delay: ml4.delay,
-            })
-            .add({
-              targets: ".ml4 .letters-4",
-              opacity: ml4.opacityIn,
-              scale: ml4.scaleIn,
-              duration: ml4.durationIn,
-            })
-            .add({
-              targets: ".ml4 .letters-4",
               easing: "easeInExpo",
             });
           // .add({
@@ -220,6 +205,7 @@ h5,
   #job-border-in {
     height: 50%;
     transition: all .3s;
+    background-color: $light-violet;
   }
 }
 .jobs-item {
@@ -232,7 +218,9 @@ h5,
 h4 {
   font-family: $title-font;
 }
-
+.company{
+  color: $light-violet;
+}
 ul {
   padding: 0;
   li {
@@ -244,7 +232,7 @@ ul {
     i {
       margin-right: 20px;
       font-size: 15px;
-      color: $purple !important;
+      color: $light-violet !important;
     }
   }
 }

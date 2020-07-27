@@ -176,6 +176,9 @@ h1 {
 #dynamic-container {
   position: relative;
   h3 {
+    font-family: $title-font;
+    font-weight: $regular;
+    color: $light-violet;
     letter-spacing: 2px;
     bottom: 0;
     z-index: 10;
@@ -186,7 +189,7 @@ h1 {
         display: block;
         width: 0;
         height: 2px;
-        background: $gray-blue;
+        background: $light-violet;
         transition: width 0.3s;
       }
     }
