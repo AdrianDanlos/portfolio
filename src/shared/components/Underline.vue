@@ -36,4 +36,24 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .underline-container {
+    .text {
+      &::after {
+        font-size: 110px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .underline-container {
+    .text {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
 </style>

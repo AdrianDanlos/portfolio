@@ -3,7 +3,7 @@
     <v-container class="content-wrapper flex-column my-sm-16">
       <v-row>
         <v-col class="col-12">
-          <section-title class="mb-16">
+          <section-title class="mb-sm-16">
             <span>
               <span class="z-index-priority">My</span>&nbsp;
               <underline class="main-title">
@@ -15,9 +15,9 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col class="col-8">
+        <v-col class="col-12 col-sm-8">
           <v-row>
-            <v-col class="col-2 pt-1 z-index-priority">
+            <v-col class="col-sm-2 pt-1 z-index-priority">
               <div class="d-flex">
                 <div id="job-border-out">
                   <div
@@ -38,7 +38,7 @@
                 </div>
               </div>
             </v-col>
-            <v-col v-if="currentJob === 0" class="col-10">
+            <v-col v-if="currentJob === 0" class="col-12 col-sm-10">
               <h4 class="mb-2">
                 FullStack Developer
                 <span class="company">@IbaiScanbit</span>
@@ -69,8 +69,49 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col class="col-4">
+        <v-col class="col-sm-4">
           <v-img src="/images/nomad.svg"></v-img>
+        </v-col>
+      </v-row>
+      <!-- Recomendation quotes -->
+      <v-row class="mt-16 recomendations">
+        <v-col class="col-12 col-sm-6 pr-sm-12">
+          <quotes>
+            <template v-slot:text>
+              <p class="ma-0 text-container">
+                <strong>...Implemented and developed on his own for the clients...</strong>
+                <span
+                  class="text"
+                >We must indicate that his integration in the work team has been totally satisfactory, as well as his attitude and participation in the projects, being active and cooperative.</span>
+              </p>
+            </template>
+            <template v-slot:author>
+              <div class="author">
+                <div class="dash"></div>
+                <span class="name">Izaskun Ucar,&nbsp;</span>
+                <span class="light-violet-text">Project Manager @IbaiScanbit</span>
+              </div>
+            </template>
+          </quotes>
+        </v-col>
+        <v-col class="col-12 col-sm-6 pl-sm-12">
+          <quotes>
+            <template v-slot:text>
+              <p class="ma-0 text-container">
+                <strong>His participation in the different projects developed has been remarkable...</strong>
+                <span
+                  class="text"
+                >...contributing to their high level. Not only has he contributed academically but he has also been able to lead the work team.</span>
+              </p>
+            </template>
+            <template v-slot:author>
+              <div class="author">
+                <div class="dash"></div>
+                <span class="name">Nieves Ruiz Nogueras,&nbsp;</span>
+                <span class="light-violet-text">Computer Science Professor</span>
+              </div>
+            </template>
+          </quotes>
         </v-col>
       </v-row>
       <v-row class="mt-16 mb-10">
@@ -98,8 +139,10 @@
 
 <script>
 import clientsImagesURLs from "./../../shared/mixins/clients/clientsImagesURLs";
+import Quotes from "./../experience/child/Quotes";
 export default {
   mixins: [clientsImagesURLs],
+  components: { Quotes },
   data() {
     return {
       currentJob: 0,
@@ -204,7 +247,7 @@ h5,
   position: relative;
   #job-border-in {
     height: 50%;
-    transition: all .3s;
+    transition: all 0.3s;
     background-color: $light-violet;
   }
 }
@@ -218,7 +261,7 @@ h5,
 h4 {
   font-family: $title-font;
 }
-.company{
+.company {
   color: $light-violet;
 }
 ul {
@@ -249,6 +292,32 @@ ul {
     opacity: 0;
     width: fit-content;
     font-family: Montserrat;
+  }
+}
+.recomendations {
+  strong {
+    color: $light-violet;
+    font-size: 25px;
+    margin-bottom: 25px;
+    display: block;
+  }
+  .text {
+    color: $gray-400;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    color: $gray-500;
+    .dash {
+      width: 25px;
+      height: 2px;
+      background-color: $gray-400;
+      margin-right: 10px;
+    }
+    .name {
+      white-space: break-spaces;
+    }
   }
 }
 </style>
