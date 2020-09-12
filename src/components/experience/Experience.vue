@@ -255,7 +255,6 @@ h5,
   padding: 10px;
   margin-bottom: 0;
   font-size: 15px;
-  cursor: pointer;
   color: $gray-400;
 }
 h4 {

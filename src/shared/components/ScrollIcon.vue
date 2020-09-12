@@ -14,7 +14,6 @@ export default {};
   height: 30px;
   box-shadow: inset 0 0 0 2px $dark;
   border-radius: 25px;
-  cursor: pointer;
   transition: all 0.2s ease-in-out 0s;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);

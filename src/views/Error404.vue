@@ -313,7 +313,6 @@ nav {
       border-radius: 2px;
       opacity: 0.5;
       transition: all 0.4s ease;
-      cursor: pointer;
 
       &:hover {
         opacity: 1;
@@ -376,7 +375,6 @@ nav {
       display: none;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
 
       @include sm {
         display: flex;
@@ -590,7 +588,6 @@ nav {
           height: 40px;
           padding: 0 30px;
           border-radius: 50px;
-          cursor: pointer;
           box-shadow: 0px 15px 20px rgba($bg-02, 0.5);
           z-index: 3;
           color: $bg-01;

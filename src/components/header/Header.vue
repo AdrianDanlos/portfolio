@@ -92,7 +92,6 @@ header {
   div,
   nav {
     z-index: 10;
-    cursor: pointer;
     user-select: none;
   }
 }
