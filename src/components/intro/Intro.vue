@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     onScroll() {
-      window.top.scrollY > 3333 ? this.showAside = false : this.showAside = true;
+      window.top.scrollY > 4400 ? this.showAside = false : this.showAside = true;
       // console.log(window.top.scrollY);
     }
   }

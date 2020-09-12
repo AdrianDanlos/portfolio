@@ -22,7 +22,9 @@
         <a href="#">HOME</a>
         <a href="#">ABOUT</a>
         <a href="#">PROJECTS</a>
+        <a href="#">WORK</a>
         <a href="#">CONTACT</a>
+        <a href="#">RESUME</a>
         <footer-vue color="gray-blue-text"></footer-vue>
       </v-sheet>
     </v-navigation-drawer>

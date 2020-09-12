@@ -75,7 +75,7 @@
       </v-row>
       <!-- Recomendation quotes -->
       <v-row class="mt-16 recomendations">
-        <v-col class="col-12 col-sm-6 pr-sm-12">
+        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pr-sm-12">
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
@@ -86,15 +86,15 @@
               </p>
             </template>
             <template v-slot:author>
-              <div class="author">
-                <div class="dash"></div>
+              <div class="author flex-column flex-sm-row">
+                <div class="dash d-none d-sm-block"></div>
                 <span class="name">Izaskun Ucar,&nbsp;</span>
                 <span class="light-violet-text">Project Manager @IbaiScanbit</span>
               </div>
             </template>
           </quotes>
         </v-col>
-        <v-col class="col-12 col-sm-6 pl-sm-12">
+        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pr-sm-12 mt-16 mt-sm-0">
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
@@ -105,8 +105,8 @@
               </p>
             </template>
             <template v-slot:author>
-              <div class="author">
-                <div class="dash"></div>
+              <div class="author flex-column flex-sm-row">
+                <div class="dash d-none d-sm-block"></div>
                 <span class="name">Nieves Ruiz Nogueras,&nbsp;</span>
                 <span class="light-violet-text">Computer Science Professor</span>
               </div>
@@ -124,12 +124,12 @@
         </v-col>
       </v-row>
       <v-row class="align-center">
-        <v-col v-for="n in clients.length" :key="n" class="col-3 pb-8">
+        <v-col v-for="n in clients.length" :key="n" class="d-flex d-sm-block justify-center col-6 col-sm-3 pb-8">
           <img
             class="w100"
             :src="'/images/clients/' + (clients[n-1])"
             alt="clients"
-            :style="[n === clients.length ? {width: '80px'} : {width: '65%'}]"
+            :style="[n === clients.length ? {width: '40%'} : {width: '65%'}]"
           />
         </v-col>
       </v-row>
@@ -309,6 +309,8 @@ ul {
     align-items: center;
     margin-top: 25px;
     color: $gray-500;
+    font-family: $title-font;
+    font-size: 15px;
     .dash {
       width: 25px;
       height: 2px;

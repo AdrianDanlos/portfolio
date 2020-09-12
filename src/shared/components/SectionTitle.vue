@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>
+    <h4 class="text-center text-sm-left">
       <slot></slot>
     </h4>
   </div>

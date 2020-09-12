@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import FullProject from '../views/FullProject'
+import Error404 from '../views/Error404'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
     path: '/project/:id',
     name: 'FullProject',
     component: FullProject,
+  },
+  {
+    path: '*',
+    name: 'Error404',
+    component: Error404,
   },
 ]
 
