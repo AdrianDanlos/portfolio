@@ -14,8 +14,9 @@
               class="intro-long-text mt-0 mt-lg-4"
             >As an enthusiast for progress my goal is to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
             <p class="call-to-action">
-              View Projects
-              <span class="d-inline-block mx-4">or</span> Contact Me
+              <a href="#">View Projects</a>
+              <span class="d-inline-block mx-4">or</span>
+              <a href="#contact-container">Contact Me</a>
             </p>
           </div>
         </v-col>
@@ -24,7 +25,10 @@
         </v-col>
       </v-row>
       <scroll-icon class="d-none d-md-block"></scroll-icon>
-      <aside class="d-none d-md-flex align-center flex-column" :style="[showAside ? {opacity: 1} : {opacity: 0}]">
+      <aside
+        class="d-none d-md-flex align-center flex-column"
+        :style="[showAside ? {opacity: 1} : {opacity: 0}]"
+      >
         <p>{{email}}</p>
         <div class="vertical-divider"></div>
       </aside>
@@ -38,12 +42,12 @@ import PersonalData from "./../../shared/mixins/personalData";
 export default {
   mixins: [PersonalData],
   components: {
-    Glitch
+    Glitch,
   },
   data() {
     return {
       showAside: true,
-    }
+    };
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
@@ -53,10 +57,12 @@ export default {
   },
   methods: {
     onScroll() {
-      window.top.scrollY > 4400 ? this.showAside = false : this.showAside = true;
+      window.top.scrollY > 4400
+        ? (this.showAside = false)
+        : (this.showAside = true);
       // console.log(window.top.scrollY);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -81,6 +87,11 @@ export default {
       margin: 0;
       color: $gray-blue;
       font-size: 13px;
+      transition: 0.3s;
+      &:hover {
+        margin-bottom: 10px;
+        color: $purple;
+      }
     }
 
     .vertical-divider {
@@ -166,5 +177,4 @@ export default {
     @include sectionPushup();
   }
 }
-
 </style>

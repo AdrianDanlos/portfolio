@@ -83,8 +83,3 @@ $btn-liquid-shadow:rgba($btn-liquid-bg, .2); //Lower values when bg is a light c
 @import './utility_classes';
 @import './mixins';
 @import './global';
-
-// VUETIFY STYLES OVERRIDE
-a{
-    cursor: none !important;
-}

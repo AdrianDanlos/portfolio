@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-hidden nav-container">
     <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9">
-      <div class="d-flex align-center">
+      <div class="d-flex align-center" @mouseover="cursorHover" @mouseleave="cursorLeave">
         <logo :class="menuColor"></logo>
         <!-- <header-brand :class="menuColor"></header-brand> -->
       </div>
@@ -17,14 +17,25 @@
       </nav>
     </header>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary width="100vw" class="drawer">
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      width="100vw"
+      class="drawer"
+      :style="{ backgroundImage: 'url(' + '/images/drawer/' + drawerBg + '.jpg' + ')' }"
+    >
       <v-sheet height="100%" class="flex-column menu">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">WORK</a>
-        <a href="#">CONTACT</a>
-        <a href="#">RESUME</a>
+        <a href="#" @mouseover="drawerBg = 'home'" @mouseleave="drawerBg = 'none'">HOME</a>
+        <a href="#" @mouseover="drawerBg = 'about'" @mouseleave="drawerBg = 'none'">ABOUT</a>
+        <a href="#" @mouseover="drawerBg = 'projects'" @mouseleave="drawerBg = 'none'">PROJECTS</a>
+        <a href="#" @mouseover="drawerBg = 'work'" @mouseleave="drawerBg = 'none'">WORK</a>
+        <a
+          href="#contact-container"
+          @mouseover="drawerBg = 'contact'"
+          @mouseleave="drawerBg = 'none'"
+        >CONTACT</a>
+        <a href="#" @mouseover="drawerBg = 'resume'" @mouseleave="drawerBg = 'none'">RESUME</a>
         <footer-vue color="gray-blue-text"></footer-vue>
       </v-sheet>
     </v-navigation-drawer>
@@ -35,8 +46,10 @@
 
 <script>
 // import HeaderBrand from "./child/Brand";
+import cursorEvents from "./../../shared/mixins/cursorEvents";
 
 export default {
+  mixins: [cursorEvents],
   components: {
     // HeaderBrand
   },
@@ -44,6 +57,7 @@ export default {
     return {
       drawer: null,
       menuColor: "dark-text",
+      drawerBg: "none",
     };
   },
   methods: {
@@ -57,7 +71,7 @@ export default {
         timing = this.drawer ? 50 : 350;
       }
 
-      const result = await new Promise(resolve => {
+      const result = await new Promise((resolve) => {
         window.setTimeout(() => {
           resolve(this.drawer ? "gray200-text" : "dark-text");
         }, timing);
@@ -72,14 +86,14 @@ export default {
       } else {
         html.classList.remove("no-scroll");
       }
-    }
+    },
   },
   watch: {
-    drawer: function() {
+    drawer: function () {
       this.setHeaderColor();
       this.hideScrollY();
     },
-  }
+  },
 };
 </script>
 
@@ -129,7 +143,9 @@ header {
 }
 
 .drawer {
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
+  background-position: center;
+  background-size: cover;
   .menu {
     @include flexCenter();
     opacity: 0.9;

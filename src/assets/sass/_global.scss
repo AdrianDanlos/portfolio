@@ -1,12 +1,14 @@
-/*GLOBAL CSS*/
+/*GLOBAL CSS & VUETIFY STYLES OVERRIDE*/
+
 /*GRID STRUCTURE: 1.V-SHEET(COMPONENT LVL / FULL WIDTH SHEET TO STYLE BACKGROUND) 2.CONTAINER (.CONTENT-WRAPPER) -> 3.ROW */
 /*Grid Padding on this elements -> CONTAINER & COLS*/
-
 
 a {
     text-decoration: none;
     color: inherit !important;
+    cursor: none !important;
 }
+
 
 @media (min-width: 1264px) {
     .container.content-wrapper {

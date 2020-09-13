@@ -96,6 +96,7 @@ export default {
     window.addEventListener("mousemove", this.cursor);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
+    document.querySelector('html').style.scrollBehavior = "smooth";
   },
   watch: {
     $route: function () {
