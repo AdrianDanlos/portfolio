@@ -19,7 +19,7 @@ export default {};
     width: 100px;
     height: 60px;
     content: "";
-    opacity: 0.05;
+    opacity: 0.04;
   }
   &::before {
     background-image: url("/images/start-quote.png");

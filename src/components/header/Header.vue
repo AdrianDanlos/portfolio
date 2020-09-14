@@ -145,7 +145,7 @@ export default {
 
 <style scoped lang="scss">
 .nav-container {
-  position: fixed;
+  position: fixed; //Remove fixed to be able to inspect elements on the browser for debugging
   z-index: 2000;
   @include fullScreen();
 }
