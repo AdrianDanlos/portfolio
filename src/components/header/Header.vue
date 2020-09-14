@@ -26,16 +26,15 @@
       :style="{ backgroundImage: 'url(' + '/images/drawer/' + drawerBg + '.jpg' + ')' }"
     >
       <v-sheet height="100%" class="flex-column menu">
-        <a href="#" @mouseover="drawerBg = 'home'" @mouseleave="drawerBg = 'none'">HOME</a>
-        <a href="#" @mouseover="drawerBg = 'about'" @mouseleave="drawerBg = 'none'">ABOUT</a>
-        <a href="#" @mouseover="drawerBg = 'projects'" @mouseleave="drawerBg = 'none'">PROJECTS</a>
-        <a href="#" @mouseover="drawerBg = 'work'" @mouseleave="drawerBg = 'none'">WORK</a>
         <a
-          href="#contact-container"
-          @mouseover="drawerBg = 'contact'"
+          v-for="n in 6"
+          :key="n"
+          href="#"
+          @mouseover="drawerBg = menuOptions[n - 1]"
           @mouseleave="drawerBg = 'none'"
-        >CONTACT</a>
-        <a href="#" @mouseover="drawerBg = 'resume'" @mouseleave="drawerBg = 'none'">RESUME</a>
+          @click="n != 6 ? redirect(n) : null"
+          @click.stop="drawer = !drawer"
+        >{{menuOptions[n - 1]}}</a>
         <footer-vue color="gray-blue-text"></footer-vue>
       </v-sheet>
     </v-navigation-drawer>
@@ -58,6 +57,14 @@ export default {
       drawer: null,
       menuColor: "dark-text",
       drawerBg: "none",
+      menuOptions: [
+        "HOME",
+        "ABOUT",
+        "PROJECTS",
+        "EXPERIENCE",
+        "CONTACT",
+        "RESUME",
+      ],
     };
   },
   methods: {
@@ -86,6 +93,39 @@ export default {
       } else {
         html.classList.remove("no-scroll");
       }
+    },
+    redirect(n) {
+      let el;
+
+      switch (n) {
+        case 1:
+          el = document.getElementById("web-container");
+          break;
+        case 2:
+          el = document.getElementById("about-me-container");
+          break;
+        case 3:
+          el = document.getElementById("featured-projects-container");
+          break;
+        case 4:
+          el = document.getElementById("experience-container");
+          break;
+        case 5:
+          el = document.getElementById("contact-container");
+          break;
+      }
+
+      //Calculate element coordinates
+      for (
+        var lx = 0, ly = 0;
+        el != null;
+        lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent
+      );
+
+      //Redirect to desired coordinate
+      n !== 5 ? window.scrollTo(lx, ly - 90) : window.scrollTo(lx, ly);
+
+      //console.log({ x: lx, y: ly });
     },
   },
   watch: {
