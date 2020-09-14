@@ -83,12 +83,12 @@ export default {
       outerCursor.style.transform =
         "translate(" + (e.clientX - pos) + "px, " + (e.clientY - pos) + "px)";
     },
-    adjustOuterCursorSize(size){
+    adjustOuterCursorSize(size) {
       let outerCursor = document.querySelector(".outer-cursor");
 
       outerCursor.style.width = size + "px";
       outerCursor.style.height = size + "px";
-    }
+    },
   },
   mounted() {
     this.animateLoading();
@@ -96,7 +96,7 @@ export default {
     window.addEventListener("mousemove", this.cursor);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
-    document.querySelector('html').style.scrollBehavior = "smooth";
+    document.querySelector("html").style.scrollBehavior = "smooth";
   },
   watch: {
     $route: function () {
@@ -111,7 +111,7 @@ export default {
 *:hover {
   cursor: none !important;
 }
-a{
+a {
   cursor: none !important;
 }
 .inner-cursor,

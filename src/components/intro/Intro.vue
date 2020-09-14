@@ -79,7 +79,7 @@ export default {
     position: fixed;
     right: -50px;
     bottom: 0;
-    z-index: 1000;
+    z-index: 2000;
     transition: opacity 0.5s;
     p {
       transform: rotate(90deg);

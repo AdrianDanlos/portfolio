@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-hidden nav-container">
-    <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9">
+    <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9" id="navbar">
       <div class="d-flex align-center" @mouseover="cursorHover" @mouseleave="cursorLeave">
         <logo :class="menuColor"></logo>
         <!-- <header-brand :class="menuColor"></header-brand> -->
@@ -57,14 +57,7 @@ export default {
       drawer: null,
       menuColor: "dark-text",
       drawerBg: "none",
-      menuOptions: [
-        "HOME",
-        "ABOUT",
-        "PROJECTS",
-        "EXPERIENCE",
-        "CONTACT",
-        "RESUME",
-      ],
+      menuOptions: ["HOME", "ABOUT", "PROJECTS", "WORK", "CONTACT", "RESUME"],
     };
   },
   methods: {
@@ -122,11 +115,24 @@ export default {
         lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent
       );
 
-      //Redirect to desired coordinate
-      n !== 5 ? window.scrollTo(lx, ly - 90) : window.scrollTo(lx, ly);
-
-      //console.log({ x: lx, y: ly });
+      //Redirect to desired coordinate. We need the timeout to avoid window.scrollTo bug that redirects to the start of the page, ignoring the values given.
+      setTimeout(() => {
+        n !== 5 ? window.scrollTo(lx, ly - 90) : window.scrollTo(lx, ly);
+      }, 1);
+      // console.log({ x: lx, y: ly });
     },
+  },
+  mounted() {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-90px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
   },
   watch: {
     drawer: function () {
@@ -139,10 +145,21 @@ export default {
 
 <style scoped lang="scss">
 .nav-container {
-  position: absolute;
+  position: fixed;
+  z-index: 2000;
   @include fullScreen();
 }
 header {
+  position: fixed;
+  z-index: 3000;
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: -ms-fill-available;
+  width: -o-fill-available;
+  width: fill-available;
+  transition: top 0.3s;
+  transition: top 0.5s ease-in-out;
   div,
   nav {
     z-index: 10;
@@ -183,7 +200,7 @@ header {
 }
 
 .drawer {
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease, background-image 0s;
   background-position: center;
   background-size: cover;
   .menu {
