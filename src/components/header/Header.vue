@@ -123,16 +123,19 @@ export default {
     },
   },
   mounted() {
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
-      let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-      } else {
-        document.getElementById("navbar").style.top = "-90px";
-      }
-      prevScrollpos = currentScrollPos;
-    };
+    let navbar = document.getElementById("navbar");
+    if (navbar) {
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          navbar.style.top = "0";
+        } else {
+          navbar.style.top = "-90px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    }
   },
   watch: {
     drawer: function () {
@@ -145,7 +148,7 @@ export default {
 
 <style scoped lang="scss">
 .nav-container {
-  position: fixed; //Remove fixed to be able to inspect elements on the browser for debugging
+  position: absolute;
   z-index: 2000;
   @include fullScreen();
 }
@@ -159,7 +162,6 @@ header {
   width: -o-fill-available;
   width: fill-available;
   transition: top 0.3s;
-  transition: top 0.5s ease-in-out;
   div,
   nav {
     z-index: 10;
@@ -203,6 +205,8 @@ header {
   transition: all 0.5s ease, background-image 0s;
   background-position: center;
   background-size: cover;
+  position: fixed;
+  z-index: 2000;
   .menu {
     @include flexCenter();
     opacity: 0.9;

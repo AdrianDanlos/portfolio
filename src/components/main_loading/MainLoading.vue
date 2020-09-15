@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      loaded: null
+      loaded: null,
     };
   },
   mounted() {
@@ -17,7 +17,7 @@ export default {
     setTimeout(() => {
       this.loaded = true;
     }, 0);
-  }
+  },
 };
 </script>
 
@@ -25,8 +25,6 @@ export default {
 .main-loading-container {
   @include fullScreen();
   @include flexCenter();
-  position: absolute;
-  z-index: 20;
 }
 ::v-deep polygon {
   stroke-width: 3;
@@ -36,7 +34,7 @@ export default {
 ::v-deep svg {
   width: 95px !important;
   color: white;
-  transition: width .3s ease;
+  transition: width 0.3s ease;
 }
 ::v-deep .svg-text {
   opacity: 0;

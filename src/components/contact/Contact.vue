@@ -132,9 +132,9 @@ export default {
         "Got a project? Drop me a line if you want to work together on something exciting. Big or small. Web or mobile.",
       valid: true,
       emailRules: [
-        v => !!v || "E-mail is required",
-        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      ],
       // messageRules: [v => (v && v.length <= 260) || "Max 260 characters"]
     };
   },
@@ -157,7 +157,7 @@ export default {
         this.currentStep++;
       }
     },
-    sendEmail: function(e) {
+    sendEmail: function (e) {
       this.emailSent = true;
       this.currentStep = 3;
       emailjs
@@ -168,16 +168,16 @@ export default {
           "user_OaXWIe7otvExuMDlomK64"
         )
         .then(
-          result => {
+          (result) => {
             console.log("SUCCESS!", result.status, result.text);
           },
-          error => {
+          (error) => {
             this.emailError = true;
             console.log("FAILED...", error);
           }
         );
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -269,6 +269,7 @@ export default {
     font-weight: $thin;
   }
 }
+
 @media (max-width: 600px) {
   .img-container {
     height: 550px;

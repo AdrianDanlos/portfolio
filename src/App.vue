@@ -3,13 +3,14 @@
     <div class="inner-cursor"></div>
     <div class="outer-cursor"></div>
     <main-loading v-if="!loaded"></main-loading>
-    <!-- header -->
-    <header-vue v-if="showHeader"></header-vue>
-    <!-- content -->
-    <v-main>
-      <router-view></router-view>
-    </v-main>
-    <!-- footer -->
+    <div v-if="loaded">
+      <!-- header -->
+      <header-vue v-if="showHeader"></header-vue>
+      <!-- content -->
+      <v-main>
+        <router-view></router-view>
+      </v-main>
+    </div>
   </v-app>
 </template>
 
@@ -50,10 +51,16 @@ export default {
         this.loaded = true;
       }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
     },
-    showOrHideHeader() {
-      this.$route.name === "FullProject"
-        ? (this.showHeader = false)
-        : (this.showHeader = true);
+    showOrHideFeatures() {
+      let scroll = document.querySelector("html");
+
+      if (this.$route.name === "FullProject") {
+        this.showHeader = false;
+        scroll.style.scrollBehavior = "auto";
+      } else {
+        this.showHeader = true;
+        scroll.style.scrollBehavior = "smooth";
+      }
     },
     cursor(e) {
       let innerCursor = document.querySelector(".inner-cursor");
@@ -92,15 +99,14 @@ export default {
   },
   mounted() {
     this.animateLoading();
-    this.showOrHideHeader();
+    this.showOrHideFeatures();
     window.addEventListener("mousemove", this.cursor);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
-    document.querySelector("html").style.scrollBehavior = "smooth";
   },
   watch: {
     $route: function () {
-      this.showOrHideHeader();
+      this.showOrHideFeatures();
     },
   },
 };

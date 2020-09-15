@@ -167,6 +167,7 @@ export default {
       //We get the description of the current component as a string to render it in the template as a component
       this.projectDescComponent = "ProjectDesc" + this.$route.params.id;
       this.darkMode = false;
+      this.avoidScrollRestoration();
     },
     getPrevOrNextId(direction) {
       switch (direction) {
@@ -183,6 +184,14 @@ export default {
     },
     switchColorMode() {
       this.darkMode = !this.darkMode;
+    },
+    avoidScrollRestoration() {
+      // This prevents the page from scrolling down to where it was previously.
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
+      window.scrollTo(0, 0);
     },
   },
   computed: {
