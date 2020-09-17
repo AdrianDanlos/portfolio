@@ -90,7 +90,7 @@ export default {
       transition: 0.3s;
       &:hover {
         margin-bottom: 10px;
-        color: $purple;
+        color: $light-violet;
       }
     }
 

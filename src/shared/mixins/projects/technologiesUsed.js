@@ -2,9 +2,9 @@ export default {
     data() {
         return {
             techsProject1: ['Vue', 'VueX', 'Php', 'Laravel', 'Auth'],
-            techsProject2: ['GoogleMaps Api', 'ChartJS', 'SASS', 'Laravel'],
+            techsProject2: ['Java', 'JSP', 'JS', 'Hibernate'],
             techsProject3: ['JS', 'Apex API', 'Firebase'],
-            techsProject4: ['JS', 'Php', 'MySql', 'Vagrant', 'Email API'],
+            techsProject4: ['GoogleMaps Api', 'ChartJS', 'SASS', 'Laravel'],
             techsProject5: ['UX/UI', 'Design', 'Animations']
         }
     }

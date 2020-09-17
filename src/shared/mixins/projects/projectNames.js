@@ -1,7 +1,7 @@
 export default {
     data() {
         return {
-            projectNames: ['VueWorld', 'CloudRoad', 'Apex Legends Tracker', 'Fnexus', 'Danlos Cities'],
+            projectNames: ['VueWorld', 'UJI Repository', 'Apex Legends Tracker', 'CloudRoad', 'Danlos Cities'],
         }
     }
 };

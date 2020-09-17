@@ -67,21 +67,19 @@
         <v-col>
           <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
-              <div class="shadow" :style="{ background: '#274f62' }"></div>
+              <div class="shadow" :style="{ background: '#454976' }"></div>
               <div class="side-title-container">
-                <span>C</span>
-                <span>L</span>
-                <span>O</span>
                 <span>U</span>
-                <span class="mb-4">D</span>
+                <span>J</span>
+                <span class="mb-4">I</span>
                 <span>R</span>
+                <span>E</span>
+                <span>P</span>
                 <span>O</span>
-                <span>A</span>
-                <span>D</span>
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/cloudroad/dark/mapa.png"></v-img>
+              <v-img height="100%" src="/images/projects/uji/3.png"></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[1] }}</span>
@@ -97,11 +95,6 @@
               >{{techsProject2[n-1]}}</span>
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="linksProject2.github">
-                <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon>
-                  <v-icon>mdi-github</v-icon>
-                </v-btn>
-              </a>
               <a target="_blank" :href="linksProject2.host">
                 <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
                   <v-icon>mdi-web</v-icon>
@@ -167,28 +160,31 @@
         <v-col>
           <featured-project reverse :projectNumber="4">
             <template v-slot:side-title>
-              <div class="shadow" :style="{ background: '#454976' }"></div>
+              <div class="shadow" :style="{ background: '#274f62' }"></div>
               <div class="side-title-container">
-                <span>F</span>
-                <span>N</span>
-                <span>E</span>
-                <span>X</span>
+                <span>C</span>
+                <span>L</span>
+                <span>O</span>
                 <span>U</span>
-                <span>S</span>
+                <span class="mb-4">D</span>
+                <span>R</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/fnexus/index.png"></v-img>
+              <v-img height="100%" src="/images/projects/cloudroad/dark/mapa.png"></v-img>
             </slot>
             <template v-slot:project-title>
-              <span>{{ projectNames[3] }}</span>
+              <span>{{ projectNames[1] }}</span>
             </template>
             <template v-slot:project-description>
               <project-desc-4></project-desc-4>
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'ml-4': n !== 1 }"
+                :class="{'google-maps': n === techsProject4[0], 'ml-4': n !== 1 }"
                 v-for="n in techsProject4.length"
                 :key="n"
               >{{techsProject4[n-1]}}</span>
@@ -197,6 +193,11 @@
               <a target="_blank" :href="linksProject4.github">
                 <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon>
                   <v-icon>mdi-github</v-icon>
+                </v-btn>
+              </a>
+              <a target="_blank" :href="linksProject4.host">
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                  <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
             </template>
@@ -257,8 +258,8 @@ import webLinks from "./../../shared/mixins/projects/webLinks";
 export default {
   mixins: [technologiesUsed, projectNames, webLinks],
   components: {
-    FeaturedProject
-  }
+    FeaturedProject,
+  },
 };
 </script>
 

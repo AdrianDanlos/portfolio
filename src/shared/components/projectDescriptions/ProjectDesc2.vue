@@ -1,9 +1,11 @@
 <template>
   <span>
-    An enterprise web app designed to provide quicker
-    <span class="special-text">assistance to road incidents</span> by providing real-time data trough webcams, graphs, map visualization and
-    <span
-      class="special-text"
-    >route algorithms</span> that allow technicians to solve incidents in a rapid and easy way.
+    A
+    <span class="special-text">digital repository</span>
+    built for
+    <span class="special-text">Jaume I university </span>that serves as a digital archives system, focused on the long-term storage, access and preservation of scholarly and published digital content. Built with
+    <span class="special-text">Dspace open source package</span>.
   </span>
 </template>
+
+

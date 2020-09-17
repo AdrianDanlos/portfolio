@@ -6,15 +6,15 @@ export default {
                 github: 'https://github.com/AdrianDanlos/VueWorld'
             },
             linksProject2: {
-                host: 'http://onthethunder.herokuapp.com/',
-                github: 'https://github.com/AdrianDanlos/CloudRoad'
+                host: 'http://repositori.uji.es/',
             },
             linksProject3: {
                 host: 'https://apex-opgg.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/ApexLegends.OPGG'
             },
             linksProject4: {
-                github: 'https://github.com/AdrianDanlos/Fnexus'
+                host: 'http://onthethunder.herokuapp.com/',
+                github: 'https://github.com/AdrianDanlos/CloudRoad'
             },
             linksProject5: {
                 github: 'https://github.com/AdrianDanlos/DanlosCities'

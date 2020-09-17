@@ -36,7 +36,10 @@
               <section class="h100 d-flex flex-column justify-space-between justify-sm-start">
                 <div>
                   <div class="d-flex justify-space-between mb-8">
-                    <router-link :to="{ name: 'Home'}">
+                    <router-link
+                      :to="{ name: 'Home'}"
+                      @click.native="scrollFix('#featured-projects-container')"
+                    >
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on, attrs }">
                           <v-icon
@@ -193,6 +196,11 @@ export default {
       // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
       window.scrollTo(0, 0);
     },
+    //Implementation to be able to go to a specific anchor when redirecting to another router view
+    scrollFix(hashbang)
+    {
+      location.hash = hashbang;
+    }
   },
   computed: {
     getColorMode() {
@@ -201,6 +209,11 @@ export default {
   },
   created() {
     this.updateComponent();
+  },
+  mounted() {
+    //Implementation to be able to go to a specific anchor when redirecting to another router view
+    // From testing, without a brief timeout, it won't work.
+    setTimeout(() => this.scrollFix(this.$route.hash), 1);
   },
   watch: {
     $route(to, from) {
