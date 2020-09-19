@@ -50,7 +50,7 @@ export default {
       //Hide main loading component
       setTimeout(() => {
         this.loaded = true;
-      }, 3000); //3000 aprox --- 2s (2000) is the animation time of the loading logo
+      }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
     },
     showOrHideFeatures() {
       let scroll = document.querySelector("html");
@@ -67,7 +67,7 @@ export default {
       if (e.clientX && e.clientY) {
         this.cursorMoved = true;
 
-        //We need the setTimeout to avoid vuejs errors cause by changing the DOM manually
+        //We need the setTimeout to avoid vuejs errors caused by changing the DOM manually
         //To react to window events there is no other way than manually changing the DOM
         setTimeout(() => {
           let innerCursor = document.querySelector(".inner-cursor");
