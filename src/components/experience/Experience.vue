@@ -58,15 +58,15 @@
                 </li>
               </ul>
             </v-col>
-            <v-col v-if="currentJob === 1" class="col-10">
-              <h4 class="mb-2">
-                FullStack Developer
-                <span class="company">@YourCompany</span>
+            <v-col v-if="currentJob === 1" class="col-12 col-sm-10 px-0 px-sm-3">
+              <h4 class="mb-2 ml-3 ml-sm-0">
+                Frontend Developer
+                <span class="light-violet-text">@YourCompany</span>
               </h4>
               <h1 class="ml4">
                 <span class="letters letters-1">Don't be</span>
                 <span class="letters letters-2">A stranger</span>
-                <span class="letters letters-3">Contact me</span>
+                <span class="letters letters-3" @mouseover="cursorHover" @mouseleave="cursorLeave" @click="redirect(5)">Contact me</span>
               </h1>
             </v-col>
           </v-row>
@@ -325,6 +325,14 @@ ul {
     .name {
       white-space: break-spaces;
     }
+  }
+}
+@media (max-width: 600px) {
+  .ml4 {
+    height: 120px;
+    overflow: hidden;
+    margin: 0;
+    font-size: 3em;
   }
 }
 </style>

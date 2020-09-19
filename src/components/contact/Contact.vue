@@ -73,6 +73,7 @@
                     v-if="valid"
                     @mouseover="cursorHover(); setCursorContrast()"
                     @mouseleave="cursorLeave(); removeCursorContrast()"
+                    @click="removeCursorContrast()"
                   >
                     <liquid-button bgcolor="light-violet-bg">
                       <span>SEND</span>

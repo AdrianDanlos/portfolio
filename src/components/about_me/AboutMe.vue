@@ -2,9 +2,9 @@
   <v-sheet>
     <v-container class="flex-column content-wrapper mt-7 mt-sm-15" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="align-center flex-column flex-md-row">
+      <v-row class="align-center flex-column flex-md-row ml-0 ml-sm-n3">
         <v-col class="col-12 col-md-6 pb-lg-5">
-          <section-title :style="{'margin-bottom': '70px'}">
+          <section-title class="mb-6 mb-sm-16">
             <span>
               <span class="z-index-priority">A few words</span>&nbsp;
               <underline>
@@ -87,7 +87,7 @@
       </v-row>
 
       <!-- SECOND ROW -->
-      <v-row>
+      <v-row class="ml-0 ml-sm-n3">
         <v-col class="col-md-6 arrow-container d-none d-md-block">
           <img id="img-arrow" src="/images/arrow.png" alt />
         </v-col>

@@ -2,7 +2,7 @@
   <footer>
     <span :class="color">Built with VueJS by Adrian Danlos</span>
     <v-icon small :class="color" class="mx-1">mdi-cards-heart</v-icon>
-    <span :class="color">2020</span>
+    <span :class="color">{{new Date().getFullYear()}}</span>
   </footer>
 </template>
 

@@ -45,7 +45,7 @@
 
 <script>
 // import HeaderBrand from "./child/Brand";
-import redirects from "./../../shared/mixins/redirects"
+import redirects from "./../../shared/mixins/redirects";
 
 export default {
   mixins: [redirects],
@@ -187,6 +187,15 @@ header {
         color: white;
         font-weight: $boldest;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .drawer {
+    background-image: none !important;
+    .menu a {
+      font-size: 40px;
     }
   }
 }
