@@ -30,7 +30,7 @@
           v-for="n in 6"
           :key="n"
           href="#"
-          @mouseover="drawerBg = menuOptions[n - 1]; cursorHover()"
+          @mouseover="drawerBg = menuOptions[n - 1].toLowerCase(); cursorHover()"
           @mouseleave="drawerBg = 'none'; cursorLeave()"
           @click="n != 6 ? redirect(n) : null"
           @click.stop="drawer = !drawer"

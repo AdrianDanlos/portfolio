@@ -5,5 +5,7 @@
     <span
       class="special-text"
     >route algorithms</span> that allow technicians to solve incidents in a rapid and easy way.
+    <p class="mb-0 mt-4">User: operario1@operario1.com</p>
+    <p>Password: 12345678</p>
   </span>
 </template>

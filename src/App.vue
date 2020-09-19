@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <div class="inner-cursor"></div>
-    <div class="outer-cursor"></div>
+    <div class="inner-cursor" v-if="cursorMoved"></div>
+    <div class="outer-cursor" v-if="cursorMoved"></div>
     <main-loading v-if="!loaded"></main-loading>
     <div v-if="loaded">
       <!-- header -->
@@ -28,6 +28,7 @@ export default {
       loaded: false,
       showHeader: true,
       click: false,
+      cursorMoved: false,
     };
   },
   methods: {
@@ -62,16 +63,28 @@ export default {
         scroll.style.scrollBehavior = "smooth";
       }
     },
-    cursor(e) {
-      let innerCursor = document.querySelector(".inner-cursor");
+    cursorChange(e) {
+      if (e.clientX && e.clientY) {
+        this.cursorMoved = true;
 
-      innerCursor.style.transform =
-        "translate(" + (e.clientX - 3.25) + "px, " + (e.clientY - 3.25) + "px)";
+        //We need the setTimeout to avoid vuejs errors cause by changing the DOM manually
+        //To react to window events there is no other way than manually changing the DOM
+        setTimeout(() => {
+          let innerCursor = document.querySelector(".inner-cursor");
 
-      if (this.click) {
-        this.adjustOuterCursorPosition(e, 9.75);
-      } else {
-        this.adjustOuterCursorPosition(e, 17.25);
+          innerCursor.style.transform =
+            "translate(" +
+            (e.clientX - 3.25) +
+            "px, " +
+            (e.clientY - 3.25) +
+            "px)";
+
+          if (this.click) {
+            this.adjustOuterCursorPosition(e, 9.75);
+          } else {
+            this.adjustOuterCursorPosition(e, 17.25);
+          }
+        }, 0);
       }
     },
     cursorClick(e) {
@@ -100,43 +113,45 @@ export default {
   mounted() {
     this.animateLoading();
     this.showOrHideFeatures();
-    window.addEventListener("mousemove", this.cursor);
+    //First cursor call to hide it until it has been moved by the user
+    window.addEventListener("load", this.cursorChange);
+    window.addEventListener("mousemove", this.cursorChange);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
   },
   watch: {
     $route: function () {
       this.showOrHideFeatures();
+      //Whenever the route changes we set the cursor back to normal. Otherwise mouseleave event never triggers on the clicked element.
+      this.cursorLeave();
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .inner-cursor,
 .outer-cursor {
-    position: fixed;
-    z-index: 10000;
-    border-radius: 50%;
-    pointer-events: none;
+  position: fixed;
+  z-index: 10000;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .inner-cursor {
-    height: 7px;
-    width: 7px;
-    background-color: $light-violet;
-    transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96),
-        width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  height: 7px;
+  width: 7px;
+  background-color: $light-violet;
+  transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96),
+    width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 
 .outer-cursor {
-    height: 35px;
-    width: 35px;
-    border: 1px solid $light-violet;
-    transition: 0.1s;
+  height: 35px;
+  width: 35px;
+  border: 1px solid $light-violet;
+  transition: 0.1s;
 }
-
 </style>
 
 
