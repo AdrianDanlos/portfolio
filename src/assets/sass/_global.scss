@@ -3,6 +3,12 @@
 /*GRID STRUCTURE: 1.V-SHEET(COMPONENT LVL / FULL WIDTH SHEET TO STYLE BACKGROUND) 2.CONTAINER (.CONTENT-WRAPPER) -> 3.ROW */
 /*Grid Padding on this elements -> CONTAINER & COLS*/
 
+
+*,
+*:hover {
+    cursor: none !important;
+}
+
 a {
     text-decoration: none;
     color: inherit !important;

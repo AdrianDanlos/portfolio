@@ -14,9 +14,9 @@
               class="intro-long-text mt-0 mt-lg-4"
             >As an enthusiast for progress my goal is to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
             <p class="call-to-action">
-              <a href="#">View Projects</a>
+              <a href="#" @mouseover="cursorHover" @mouseleave="cursorLeave" @click="redirect(3)">View Projects</a>
               <span class="d-inline-block mx-4">or</span>
-              <a href="#contact-container">Contact Me</a>
+              <a href="#contact-container" @mouseover="cursorHover" @mouseleave="cursorLeave" @click="redirect(5)">Contact Me</a>
             </p>
           </div>
         </v-col>
@@ -39,6 +39,7 @@
 <script>
 import Glitch from "./child/Glitch";
 import PersonalData from "./../../shared/mixins/personalData";
+
 export default {
   mixins: [PersonalData],
   components: {

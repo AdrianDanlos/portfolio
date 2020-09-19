@@ -26,7 +26,7 @@
                     :class="{top: selectorIsTop, bottom: !selectorIsTop}"
                   ></div>
                 </div>
-                <div>
+                <div @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <p
                     @click="borderTransition('top'), currentJob = 0, selectorIsTop = true"
                     class="jobs-item"
@@ -41,7 +41,9 @@
             <v-col v-if="currentJob === 0" class="col-12 col-sm-10">
               <h4 class="mb-2">
                 FullStack Developer
-                <span class="company">@IbaiScanbit</span>
+                <a href="https://ibaiscanbit.com/en/" target="_blank" @mouseover="cursorHover" @mouseleave="cursorLeave">
+                  <span class="company">@IbaiScanbit</span>
+                </a>
               </h4>
               <h5 class="mb-5">1 year, 2019 - 2020</h5>
               <ul>
@@ -124,7 +126,11 @@
         </v-col>
       </v-row>
       <v-row class="align-center">
-        <v-col v-for="n in clients.length" :key="n" class="d-flex d-sm-block justify-center col-6 col-sm-3 pb-8">
+        <v-col
+          v-for="n in clients.length"
+          :key="n"
+          class="d-flex d-sm-block justify-center col-6 col-sm-3 pb-8"
+        >
           <img
             class="w100"
             :src="'/images/clients/' + (clients[n-1])"

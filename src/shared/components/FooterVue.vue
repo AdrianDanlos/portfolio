@@ -1,8 +1,8 @@
 <template>
   <footer>
-    <span :class="color">© 2020 Made with VueJS</span>
+    <span :class="color">Built with VueJS by Adrian Danlos</span>
     <v-icon small :class="color" class="mx-1">mdi-cards-heart</v-icon>
-    <span :class="color">by Adrian Danlos.</span>
+    <span :class="color">2020</span>
   </footer>
 </template>
 

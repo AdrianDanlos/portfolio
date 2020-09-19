@@ -49,12 +49,12 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject1.github">
-                <v-btn class="ml-n2 mr-4" icon>
+                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>
               <a target="_blank" :href="linksProject1.host">
-                <v-btn class="mr-4" icon>
+                <v-btn class="mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -96,7 +96,7 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject2.host">
-                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -142,12 +142,12 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject3.github">
-                <v-btn class="ml-n2 mr-4" icon>
+                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave"> 
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>
               <a target="_blank" :href="linksProject3.host">
-                <v-btn class="mr-4" icon>
+                <v-btn class="mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -191,12 +191,12 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject4.github">
-                <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon>
+                <v-btn class="mr-4 mr-sm-0 ml-n2 ml-sm-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>
               <a target="_blank" :href="linksProject4.host">
-                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon>
+                <v-btn class="mr-4 mr-sm-0 ml-sm-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -237,7 +237,7 @@
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject5.github">
-                <v-btn class="ml-n2 mr-4" icon>
+                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>

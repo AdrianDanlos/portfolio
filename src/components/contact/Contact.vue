@@ -24,10 +24,20 @@
                     @keyup.enter="triggerNext"
                     required
                     :rules="emailRules"
+                    @mouseover="cursorHover"
+                    @mouseleave="cursorLeave"
                   ></v-text-field>
                 </v-col>
                 <v-col class="col-2 col-md-4 pt-0 pl-0 d-flex align-center">
-                  <v-btn class="ml-lg-n6 mt-2" @click="validate" icon color="#5e7682" ref="nextBtn">
+                  <v-btn
+                    class="ml-lg-n6 mt-2"
+                    @click="validate"
+                    icon
+                    color="#5e7682"
+                    ref="nextBtn"
+                    @mouseover="cursorHover"
+                    @mouseleave="cursorLeave"
+                  >
                     <v-icon class="gray-blue-text">mdi-arrow-right</v-icon>
                   </v-btn>
                 </v-col>
@@ -46,6 +56,8 @@
                       autofocus
                       required
                       counter
+                      @mouseover="cursorHover"
+                      @mouseleave="cursorLeave"
                     ></v-text-field>
                     <h5
                       v-else
@@ -57,7 +69,11 @@
                   v-if="!emailSent"
                   class="col-12 col-md-3 col-lg-4 pt-0 liquid-button-container d-flex justify-center justify-lg-start"
                 >
-                  <button v-if="valid">
+                  <button
+                    v-if="valid"
+                    @mouseover="cursorHover(); setCursorContrast()"
+                    @mouseleave="cursorLeave(); removeCursorContrast()"
+                  >
                     <liquid-button bgcolor="light-violet-bg">
                       <span>SEND</span>
                     </liquid-button>
@@ -87,7 +103,7 @@
               <a href="mailto:danlosadrian@gmail.com" target="_blank">
                 <p>
                   <v-icon>mdi-email</v-icon>
-                  {{ email }}
+                  <span @mouseover="cursorHover" @mouseleave="cursorLeave">{{ email }}</span>
                 </p>
               </a>
               <p>
@@ -97,13 +113,13 @@
               <a href="https://www.linkedin.com/in/adrian-danlos/" target="_blank">
                 <p>
                   <v-icon>mdi-linkedin</v-icon>
-                  {{ linkedin }}
+                  <span @mouseover="cursorHover" @mouseleave="cursorLeave">{{ linkedin }}</span>
                 </p>
               </a>
               <a href="https://github.com/AdrianDanlos" target="_blank">
                 <p>
                   <v-icon>mdi-github</v-icon>
-                  {{ github }}
+                  <span @mouseover="cursorHover" @mouseleave="cursorLeave">{{ github }}</span>
                 </p>
               </a>
             </div>
@@ -176,6 +192,14 @@ export default {
             console.log("FAILED...", error);
           }
         );
+    },
+    setCursorContrast() {
+      let outerCursor = document.querySelector(".outer-cursor");
+      outerCursor.style.borderColor = "white";
+    },
+    removeCursorContrast() {
+      let outerCursor = document.querySelector(".outer-cursor");
+      outerCursor.style.borderColor = "#6b759c";
     },
   },
 };

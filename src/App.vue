@@ -113,33 +113,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-*,
-*:hover {
-  cursor: none !important;
-}
-a {
-  cursor: none !important;
-}
+
 .inner-cursor,
 .outer-cursor {
-  position: fixed;
-  z-index: 10000;
-  border-radius: 50%;
-  pointer-events: none;
+    position: fixed;
+    z-index: 10000;
+    border-radius: 50%;
+    pointer-events: none;
 }
+
 .inner-cursor {
-  height: 7px;
-  width: 7px;
-  background-color: $light-violet;
-  transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96),
-    width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    height: 7px;
+    width: 7px;
+    background-color: $light-violet;
+    transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96),
+        width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
+
 .outer-cursor {
-  height: 35px;
-  width: 35px;
-  border: 1px solid $light-violet;
-  transition: 0.1s;
+    height: 35px;
+    width: 35px;
+    border: 1px solid $light-violet;
+    transition: 0.1s;
 }
+
 </style>
 
 

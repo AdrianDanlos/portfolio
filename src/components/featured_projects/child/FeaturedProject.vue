@@ -10,7 +10,7 @@
       <v-col class="col-12 col-sm-6 col-md-7" :class="reverse ? 'pr-sm-0' : 'pl-sm-0'">
         <router-link :to="{ name: 'FullProject', params: { id: projectNumber }}">
           <v-hover class="image-card" v-slot:default="{ hover }">
-            <v-card ripple :elevation="hover ? 24 : 10" color="transparent">
+            <v-card ripple :elevation="hover ? 24 : 10" color="transparent" @mouseover="cursorHover" @mouseleave="cursorLeave">
               <slot></slot>
             </v-card>
           </v-hover>
@@ -45,7 +45,7 @@
             <div class="links d-flex" :class="{'justify-sm-end': reverse}">
               <slot name="web-links"></slot>
               <router-link :to="{ name: 'FullProject', params: { id: projectNumber }}">
-                <v-btn :class="reverse ? 'mr-n2 ml-sm-4' : 'mr-4'" icon>
+                <v-btn :class="reverse ? 'mr-n2 ml-sm-4' : 'mr-4'" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
                   <v-icon>mdi-arrow-right</v-icon>
                 </v-btn>
               </router-link>
