@@ -193,14 +193,6 @@ export default {
           }
         );
     },
-    setCursorContrast() {
-      let outerCursor = document.querySelector(".outer-cursor");
-      outerCursor.style.borderColor = "white";
-    },
-    removeCursorContrast() {
-      let outerCursor = document.querySelector(".outer-cursor");
-      outerCursor.style.borderColor = "#6b759c";
-    },
   },
 };
 </script>

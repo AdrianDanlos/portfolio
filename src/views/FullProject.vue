@@ -47,6 +47,8 @@
                             class="back-home-icon"
                             v-bind="attrs"
                             v-on="on"
+                            @mouseover="cursorHover"
+                            @mouseleave="cursorLeave"
                           >mdi-arrow-left</v-icon>
                         </template>
                         <span>Go back home</span>
@@ -58,7 +60,13 @@
                       >
                         <v-tooltip bottom>
                           <template v-slot:activator="{ on, attrs }">
-                            <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-left</v-icon>
+                            <v-icon
+                              class="gray300-text"
+                              v-bind="attrs"
+                              v-on="on"
+                              @mouseover="cursorHover"
+                              @mouseleave="cursorLeave"
+                            >mdi-arrow-left</v-icon>
                           </template>
                           <span>Previous</span>
                         </v-tooltip>
@@ -69,7 +77,13 @@
                       >
                         <v-tooltip bottom>
                           <template v-slot:activator="{ on, attrs }">
-                            <v-icon class="gray300-text" v-bind="attrs" v-on="on">mdi-arrow-right</v-icon>
+                            <v-icon
+                              class="gray300-text"
+                              v-bind="attrs"
+                              v-on="on"
+                              @mouseover="cursorHover"
+                              @mouseleave="cursorLeave"
+                            >mdi-arrow-right</v-icon>
                           </template>
                           <span>Next</span>
                         </v-tooltip>
@@ -92,14 +106,23 @@
                       >{{technologiesUsed[n-1]}}</span>
                       <a v-if="('github' in webLinks)" target="_blank" :href="webLinks.github">
                         <v-btn class="mr-4" icon>
-                          <v-icon class="light-purple-text">mdi-github</v-icon>
+                          <v-icon
+                            class="light-purple-text"
+                            @mouseover="cursorHover"
+                            @mouseleave="cursorLeave"
+                          >mdi-github</v-icon>
                         </v-btn>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div v-if="('host' in webLinks)" class="d-flex my-6">
-                  <a target="_blank" :href="webLinks.host">
+                  <a
+                    target="_blank"
+                    :href="webLinks.host"
+                    @mouseover="cursorHover(); setCursorContrast()"
+                    @mouseleave="cursorLeave(); removeCursorContrast()"
+                  >
                     <liquid-button bgcolor="purple-bg">
                       <span>visit</span>
                     </liquid-button>
@@ -112,6 +135,8 @@
                     :class="darkMode ? 'gray-200-text': 'light-purple-text'"
                     v-if="'dark' in imageURLs"
                     @click="switchColorMode()"
+                    @mouseover="cursorHover"
+                    @mouseleave="cursorLeave"
                   >{{ darkMode ? 'Light' : 'Dark' }}</v-btn>
                 </div>
               </section>
@@ -197,10 +222,9 @@ export default {
       window.scrollTo(0, 0);
     },
     //Implementation to be able to go to a specific anchor when redirecting to another router view
-    scrollFix(hashbang)
-    {
+    scrollFix(hashbang) {
       location.hash = hashbang;
-    }
+    },
   },
   computed: {
     getColorMode() {

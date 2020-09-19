@@ -21,11 +21,9 @@ import ProjectDesc3 from './shared/components/projectDescriptions/ProjectDesc3'
 import ProjectDesc4 from './shared/components/projectDescriptions/ProjectDesc4'
 import ProjectDesc5 from './shared/components/projectDescriptions/ProjectDesc5'
 import cursorEvents from './shared/mixins/cursorEvents'
-import redirects from './shared/mixins/redirects'
 
 //Global Mixins
 Vue.mixin(cursorEvents);
-Vue.mixin(redirects);
 
 //Global Components
 Vue.component('logo', Logo);

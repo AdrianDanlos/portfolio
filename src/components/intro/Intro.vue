@@ -38,10 +38,11 @@
 
 <script>
 import Glitch from "./child/Glitch";
-import PersonalData from "./../../shared/mixins/personalData";
+import personalData from "./../../shared/mixins/personalData";
+import redirects from "./../../shared/mixins/redirects";
 
 export default {
-  mixins: [PersonalData],
+  mixins: [personalData, redirects],
   components: {
     Glitch,
   },

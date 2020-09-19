@@ -5,16 +5,24 @@ export default {
             let outerCursor = document.querySelector(".outer-cursor");
 
             innerCursor.style.display = "none";
-            outerCursor.style.width = 50 + "px";
-            outerCursor.style.height = 50 + "px";
+            outerCursor.style.width = 45 + "px";
+            outerCursor.style.height = 45 + "px";
         },
-        cursorLeave(){
+        cursorLeave() {
             let innerCursor = document.querySelector(".inner-cursor");
             let outerCursor = document.querySelector(".outer-cursor");
 
             innerCursor.style.display = "block";
             outerCursor.style.width = 35 + "px";
             outerCursor.style.height = 35 + "px";
-        }
+        },
+        setCursorContrast() {
+            let outerCursor = document.querySelector(".outer-cursor");
+            outerCursor.style.borderColor = "white";
+        },
+        removeCursorContrast() {
+            let outerCursor = document.querySelector(".outer-cursor");
+            outerCursor.style.borderColor = "#6b759c";
+        },
     },
 }

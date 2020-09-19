@@ -49,7 +49,7 @@ export default {
       //Hide main loading component
       setTimeout(() => {
         this.loaded = true;
-      }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
+      }, 3000); //3000 aprox --- 2s (2000) is the animation time of the loading logo
     },
     showOrHideFeatures() {
       let scroll = document.querySelector("html");

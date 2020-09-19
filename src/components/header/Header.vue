@@ -45,8 +45,10 @@
 
 <script>
 // import HeaderBrand from "./child/Brand";
+import redirects from "./../../shared/mixins/redirects"
 
 export default {
+  mixins: [redirects],
   components: {
     // HeaderBrand
   },
