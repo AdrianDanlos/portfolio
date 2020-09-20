@@ -118,7 +118,6 @@ export default {
     window.addEventListener("mousemove", this.cursorChange);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
-    document.querySelector('head title').textContent = 'Adrian Danlos';
   },
   watch: {
     $route: function () {

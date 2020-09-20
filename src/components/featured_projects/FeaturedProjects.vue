@@ -235,13 +235,6 @@
                 :key="n"
               >{{techsProject5[n-1]}}</span>
             </template>
-            <template v-slot:web-links>
-              <a target="_blank" :href="linksProject5.github">
-                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
-                  <v-icon>mdi-github</v-icon>
-                </v-btn>
-              </a>
-            </template>
           </featured-project>
         </v-col>
       </v-row>
