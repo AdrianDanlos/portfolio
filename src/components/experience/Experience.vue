@@ -145,9 +145,11 @@
 
 <script>
 import clientsImagesURLs from "./../../shared/mixins/clients/clientsImagesURLs";
+import redirects from "./../../shared/mixins/redirects";
 import Quotes from "./../experience/child/Quotes";
+
 export default {
-  mixins: [clientsImagesURLs],
+  mixins: [clientsImagesURLs, redirects],
   components: { Quotes },
   data() {
     return {

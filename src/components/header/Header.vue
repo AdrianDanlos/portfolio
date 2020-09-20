@@ -1,7 +1,12 @@
 <template>
   <div class="overflow-hidden nav-container">
     <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9" id="navbar">
-      <div class="d-flex align-center" @mouseover="cursorHover" @mouseleave="cursorLeave" @click="redirect(1)">
+      <div
+        class="d-flex align-center"
+        @mouseover="cursorHover"
+        @mouseleave="cursorLeave"
+        @click="redirect(1)"
+      >
         <logo :class="menuColor"></logo>
         <!-- <header-brand :class="menuColor"></header-brand> -->
       </div>
@@ -32,7 +37,7 @@
           href="#"
           @mouseover="drawerBg = menuOptions[n - 1].toLowerCase(); cursorHover()"
           @mouseleave="drawerBg = 'none'; cursorLeave()"
-          @click="n != 6 ? redirect(n) : null"
+          @click="n !== 6 ? redirect(n) : openResume()"
           @click.stop="drawer = !drawer"
         >{{menuOptions[n - 1]}}</a>
         <footer-vue color="gray-blue-text"></footer-vue>
@@ -86,6 +91,12 @@ export default {
       } else {
         html.classList.remove("no-scroll");
       }
+    },
+    openResume() {
+      window.open(
+        "https://drive.google.com/file/d/1HVRa9Q8EJMx6oQFvnIQGveuiu2l17Ljy/view?usp=sharing",
+        "_blank"
+      );
     },
   },
   mounted() {

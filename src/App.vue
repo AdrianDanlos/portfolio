@@ -2,7 +2,9 @@
   <v-app>
     <div class="inner-cursor" v-if="cursorMoved"></div>
     <div class="outer-cursor" v-if="cursorMoved"></div>
-    <main-loading v-if="!loaded"></main-loading>
+    <transition name="fade">
+      <main-loading v-if="!loaded"></main-loading>
+    </transition>
     <div v-if="loaded">
       <!-- header -->
       <header-vue v-if="showHeader"></header-vue>
