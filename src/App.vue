@@ -50,7 +50,7 @@ export default {
       //Hide main loading component
       setTimeout(() => {
         this.loaded = true;
-      }, 1); //3000 aprox --- 2s (2000) is the animation time of the loading logo
+      }, 3000); //3000 aprox --- 2s (2000) is the animation time of the loading logo
     },
     showOrHideFeatures() {
       let scroll = document.querySelector("html");
@@ -118,6 +118,7 @@ export default {
     window.addEventListener("mousemove", this.cursorChange);
     window.addEventListener("mousedown", this.cursorClick);
     window.addEventListener("mouseup", this.cursorRelease);
+    document.querySelector('head title').textContent = 'Adrian Danlos';
   },
   watch: {
     $route: function () {
