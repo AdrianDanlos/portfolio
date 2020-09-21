@@ -94,7 +94,7 @@ export default {
     },
     openResume() {
       window.open(
-        "https://drive.google.com/file/d/1HVRa9Q8EJMx6oQFvnIQGveuiu2l17Ljy/view?usp=sharing",
+        "https://drive.google.com/file/d/1kyuOcjPTBD9pDbegQEvu7yvTCcH6p2wE/view?usp=sharing",
         "_blank"
       );
     },
