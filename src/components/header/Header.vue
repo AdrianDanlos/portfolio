@@ -1,6 +1,10 @@
 <template>
   <div class="overflow-hidden nav-container">
-    <header class="d-flex align-center justify-space-between my-4 mx-6 ma-sm-9" id="navbar">
+    <header
+      class="d-flex align-center justify-space-between mb-4 ma-sm-9 px-6 px-sm-0 py-4 py-sm-0"
+      id="navbar"
+      :class="{headerBg: !drawer}"
+    >
       <div
         class="d-flex align-center"
         @mouseover="cursorHover"
@@ -11,7 +15,7 @@
         <!-- <header-brand :class="menuColor"></header-brand> -->
       </div>
       <nav @mouseover="cursorHover" @mouseleave="cursorLeave">
-        <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer">
+        <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer" >
           <span class="d-none d-sm-block mr-2 font-weight-bold dark-text">MENU</span>
           <v-icon large>mdi-menu</v-icon>
         </div>
@@ -203,6 +207,10 @@ header {
 }
 
 @media (max-width: 600px) {
+  .headerBg {
+    background: rgba(255, 255, 255, 0.8);
+    transition: top 0.3s, background ease-in 1.25s;
+  }
   .drawer {
     background-image: none !important;
     .menu a {

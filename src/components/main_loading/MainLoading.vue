@@ -26,6 +26,12 @@ export default {
   @include fullScreen();
   @include flexCenter();
 }
+.logo-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 ::v-deep polygon {
   stroke-width: 3;
   transition: all 2s cubic-bezier(0.645, 0.045, 0.955, 1), color 1s ease;

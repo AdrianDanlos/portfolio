@@ -1,7 +1,13 @@
 <template>
   <v-app>
-    <div class="inner-cursor" v-if="cursorMoved"></div>
-    <div class="outer-cursor" v-if="cursorMoved" :style="[isChrome ? {transition: 'all 0.1s'} : null]"></div>
+    <div v-if="!isSmallScreen">
+      <div class="inner-cursor" v-if="cursorMoved"></div>
+      <div
+        class="outer-cursor"
+        v-if="cursorMoved"
+        :style="[isChrome ? {transition: 'all 0.1s'} : null]"
+      ></div>
+    </div>
     <transition name="fade">
       <main-loading v-if="!loaded"></main-loading>
     </transition>
@@ -32,6 +38,7 @@ export default {
       click: false,
       cursorMoved: false,
       isChrome: false,
+      isSmallScreen: false,
     };
   },
   methods: {
@@ -115,13 +122,20 @@ export default {
   },
   mounted() {
     window.chrome ? (this.isChrome = true) : (this.isChrome = false);
+    if (screen.width > 1264) {
+      this.isSmallScreen = false;
+      //Cursor changes
+      //First cursor call to hide it until it has been moved by the user
+      window.addEventListener("load", this.cursorChange);
+      window.addEventListener("mousemove", this.cursorChange);
+      window.addEventListener("mousedown", this.cursorClick);
+      window.addEventListener("mouseup", this.cursorRelease);
+    } else {
+      this.isSmallScreen = true;
+    }
+
     this.animateLoading();
     this.showOrHideFeatures();
-    //First cursor call to hide it until it has been moved by the user
-    window.addEventListener("load", this.cursorChange);
-    window.addEventListener("mousemove", this.cursorChange);
-    window.addEventListener("mousedown", this.cursorClick);
-    window.addEventListener("mouseup", this.cursorRelease);
   },
   watch: {
     $route: function () {

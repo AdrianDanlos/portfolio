@@ -2,7 +2,7 @@
   <v-sheet>
     <v-container class="flex-column content-wrapper mt-7 mt-sm-15" id="about-me-container">
       <!-- FIRST ROW -->
-      <v-row class="align-center flex-column flex-md-row ml-0 ml-sm-n3">
+      <v-row class="align-center flex-column flex-md-row ml-0 ml-md-n3">
         <v-col class="col-12 col-md-6 pb-lg-5">
           <section-title class="mb-6 mb-sm-16">
             <span>
@@ -87,7 +87,7 @@
       </v-row>
 
       <!-- SECOND ROW -->
-      <v-row class="ml-0 ml-sm-n3">
+      <v-row class="ml-0 ml-md-n3">
         <v-col class="col-md-6 arrow-container d-none d-md-block">
           <img id="img-arrow" src="/images/arrow.png" alt />
         </v-col>
@@ -106,7 +106,7 @@
 import IsometricIcons from "./child/IsometricIcons";
 export default {
   components: {
-    IsometricIcons
+    IsometricIcons,
   },
   data() {
     return {
@@ -118,7 +118,7 @@ export default {
       technologiesLargeText: "Always Learning",
       technologiesSmallText: "CORE",
       //We want to get the height of the container on render and fix it at that height so we can easily transition texts without disturbing the layout.
-      dynamicContainerHeight: null
+      dynamicContainerHeight: null,
     };
   },
   methods: {
@@ -141,14 +141,14 @@ export default {
       } else {
         this.technologies.unshift(largeText);
       }
-    }
+    },
   },
   mounted() {
     this.chooseTechText();
     this.dynamicContainerHeight =
       document.getElementById("dynamic-container").offsetHeight + 10;
     this.loaded = true;
-  }
+  },
 };
 </script>
 
@@ -274,6 +274,9 @@ h1 {
         margin-top: 0;
       }
     }
+  }
+  h1 {
+    font-size: 1.5em;
   }
   h3 {
     @include flexCenter();

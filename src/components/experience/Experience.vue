@@ -41,7 +41,12 @@
             <v-col v-if="currentJob === 0" class="col-12 col-sm-10">
               <h4 class="mb-2">
                 FullStack Developer
-                <a href="https://ibaiscanbit.com/en/" target="_blank" @mouseover="cursorHover" @mouseleave="cursorLeave">
+                <a
+                  href="https://ibaiscanbit.com/en/"
+                  target="_blank"
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
                   <span class="company">@IbaiScanbit</span>
                 </a>
               </h4>
@@ -66,7 +71,12 @@
               <h1 class="ml4">
                 <span class="letters letters-1">Don't be</span>
                 <span class="letters letters-2">A stranger</span>
-                <span class="letters letters-3" @mouseover="cursorHover" @mouseleave="cursorLeave" @click="redirect(5)">Contact me</span>
+                <span
+                  class="letters letters-3"
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                  @click="redirect(5)"
+                >Contact me</span>
               </h1>
             </v-col>
           </v-row>
@@ -77,7 +87,7 @@
       </v-row>
       <!-- Recomendation quotes -->
       <v-row class="mt-16 recomendations">
-        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pr-sm-12">
+        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pl-sm-11 pl-md-0 pr-sm-9 pr-md-12">
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
@@ -96,7 +106,9 @@
             </template>
           </quotes>
         </v-col>
-        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pr-sm-12 mt-16 mt-sm-0">
+        <v-col
+          class="col-10 offset-1 col-sm-6 offset-sm-0 pl-sm-11 pl-md-0 pr-sm-9 pr-md-12 mt-16 mt-sm-0"
+        >
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
