@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="inner-cursor" v-if="cursorMoved"></div>
-    <div class="outer-cursor" v-if="cursorMoved"></div>
+    <div class="outer-cursor" v-if="cursorMoved" :style="[isChrome ? {transition: 'all 0.1s'} : null]"></div>
     <transition name="fade">
       <main-loading v-if="!loaded"></main-loading>
     </transition>
@@ -31,6 +31,7 @@ export default {
       showHeader: true,
       click: false,
       cursorMoved: false,
+      isChrome: false,
     };
   },
   methods: {
@@ -113,6 +114,7 @@ export default {
     },
   },
   mounted() {
+    window.chrome ? (this.isChrome = true) : (this.isChrome = false);
     this.animateLoading();
     this.showOrHideFeatures();
     //First cursor call to hide it until it has been moved by the user
@@ -152,7 +154,6 @@ export default {
   height: 35px;
   width: 35px;
   border: 1px solid $light-violet;
-  transition: 0.1s;
 }
 </style>
 
