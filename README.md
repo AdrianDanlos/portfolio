@@ -6,6 +6,7 @@
 <p>
   <span>Built with :heart: in 2020 using</span>
   <img src="https://img.shields.io/badge/-VueJS-41B883">
+  <img src="https://img.shields.io/badge/-Vuetify-9cf">
   <img src="https://img.shields.io/badge/-JavaScript-EFD81F">
   <img src="https://img.shields.io/badge/-SASS-FF69B4">
 </p>
