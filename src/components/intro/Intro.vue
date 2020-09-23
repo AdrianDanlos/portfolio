@@ -11,7 +11,7 @@
               <glitch></glitch>
             </div>
             <p
-              class="intro-long-text mt-0 mt-lg-4"
+              class="intro-long-text mt-0 mt-lg-4 text-justify"
             >As an enthusiast for progress my goal is to create innovative websites and applications that could make a positive impact in society and solve real world problems.</p>
             <p class="call-to-action d-flex justify-center d-sm-block">
               <a
