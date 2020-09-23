@@ -1,4 +1,4 @@
-# :sparkles: Portfolio 
+# Portfolio :sparkles:
 <p>
   Built in 2020 with
   <img src="https://img.shields.io/badge/-VueJS-41B883">
