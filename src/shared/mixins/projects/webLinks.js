@@ -9,11 +9,11 @@ export default {
                 host: 'http://repositori.uji.es/',
             },
             linksProject3: {
-                host: 'https://apex-opgg.herokuapp.com/',
+                host: 'https://apex-legends-tracker-7662d.web.app/',
                 github: 'https://github.com/AdrianDanlos/ApexLegends.OPGG'
             },
             linksProject4: {
-                host: 'http://onthethunder.herokuapp.com/',
+                host: 'http://cloudroad.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/CloudRoad'
             },
             linksProject5: {
