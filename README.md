@@ -3,9 +3,10 @@
   Built in 2020 with
   <img src="https://img.shields.io/badge/-VueJS-41B883">
   <img src="https://img.shields.io/badge/-SASS-FF69B4">
-  :arrow_right:
-  <a href="https://adriandanlos.es/">Visit portfolio site</a>
 </p>
+
+:arrow_right:
+  <a href="https://adriandanlos.es/">Visit portfolio site</a>
 
 <img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/github.png" alt="landing" />
 
