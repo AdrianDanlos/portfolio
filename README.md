@@ -1,24 +1,3 @@
-# portfolioa
+# Portfolio
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/github.png" alt="logo" width="200"            height="110"/>
