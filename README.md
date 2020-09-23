@@ -1,24 +1,21 @@
-# portfolioa
+# Portfolio :sparkles:
+<p>Hey! Im <b>Adrian Danlos</b>, a Frontend Developer ready for challenges. Come say hi! :arrow_right:
+  <a href="https://adriandanlos.es/">Visit portfolio site</a>
+</p>
 
-## Project setup
-```
-npm install
-```
+<p>
+  <span>Built with :heart: in 2020 using</span>
+  <img src="https://img.shields.io/badge/-VueJS-41B883">
+  <img src="https://img.shields.io/badge/-Vuetify-9cf">
+  <img src="https://img.shields.io/badge/-JavaScript-EFD81F">
+  <img src="https://img.shields.io/badge/-SASS-FF69B4">
+</p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+<img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/github.png" alt="landing" />
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### :fallen_leaf: Color Palette
+<img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/palette.png" alt="palette" width="400"/>
