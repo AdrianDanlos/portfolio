@@ -38,6 +38,7 @@
       <aside
         class="d-none d-md-flex align-center flex-column"
         :style="[showAside ? {opacity: 1} : {opacity: 0}]"
+        @click="redirect(5)"
       >
         <p @mouseover="cursorHover" @mouseleave="cursorLeave">{{email}}</p>
         <div class="vertical-divider"></div>
