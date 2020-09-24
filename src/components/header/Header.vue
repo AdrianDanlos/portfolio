@@ -3,7 +3,7 @@
     <header
       class="d-flex align-center justify-space-between mb-4 ma-sm-9 px-6 px-sm-0 py-4 py-sm-0"
       id="navbar"
-      :class="{headerBg: !drawer}"
+      :class="{ headerBg: !drawer }"
     >
       <div
         class="d-flex align-center"
@@ -15,11 +15,21 @@
         <!-- <header-brand :class="menuColor"></header-brand> -->
       </div>
       <nav @mouseover="cursorHover" @mouseleave="cursorLeave">
-        <div class="d-flex align-center open" v-if="!drawer" @click.stop="drawer = !drawer" >
-          <span class="d-none d-sm-block mr-2 font-weight-bold dark-text">MENU</span>
+        <div
+          class="d-flex align-center open"
+          v-if="!drawer"
+          @click.stop="drawer = !drawer"
+        >
+          <span class="d-none d-sm-block mr-2 font-weight-bold dark-text"
+            >MENU</span
+          >
           <v-icon large>mdi-menu</v-icon>
         </div>
-        <div class="d-flex align-center close" v-if="drawer" @click.stop="drawer = !drawer">
+        <div
+          class="d-flex align-center close"
+          v-if="drawer"
+          @click.stop="drawer = !drawer"
+        >
           <span class="d-none d-sm-block d- mr-2 font-weight-bold">CLOSE</span>
           <v-icon large>mdi-close</v-icon>
         </div>
@@ -32,18 +42,27 @@
       temporary
       width="100vw"
       class="drawer"
-      :style="{ backgroundImage: 'url(' + '/images/drawer/' + drawerBg + '.jpg' + ')' }"
+      :style="{
+        backgroundImage: 'url(' + '/images/drawer/' + drawerBg + '.jpg' + ')',
+      }"
     >
       <v-sheet height="100%" class="flex-column menu">
         <a
           v-for="n in 6"
           :key="n"
           href="#"
-          @mouseover="drawerBg = menuOptions[n - 1].toLowerCase(); cursorHover()"
-          @mouseleave="drawerBg = 'none'; cursorLeave()"
+          @mouseover="
+            drawerBg = menuOptions[n - 1].toLowerCase();
+            cursorHover();
+          "
+          @mouseleave="
+            drawerBg = 'none';
+            cursorLeave();
+          "
           @click="n !== 6 ? redirect(n) : openResume()"
           @click.stop="drawer = !drawer"
-        >{{menuOptions[n - 1]}}</a>
+          >{{ menuOptions[n - 1] }}</a
+        >
         <footer-vue color="gray-blue-text"></footer-vue>
       </v-sheet>
     </v-navigation-drawer>
@@ -97,10 +116,15 @@ export default {
       }
     },
     openResume() {
-      window.open(
-        "https://drive.google.com/file/d/1kyuOcjPTBD9pDbegQEvu7yvTCcH6p2wE/view?usp=sharing",
-        "_blank"
-      );
+      // window.open(
+      //   "https://drive.google.com/file/d/1kyuOcjPTBD9pDbegQEvu7yvTCcH6p2wE/view?usp=sharing",
+      //   "_blank"
+      // );
+
+      let link = document.createElement("a");
+      link.href = 'Adrian.pdf';
+      link.download = "Adrian_Danlos.pdf";
+      link.dispatchEvent(new MouseEvent("click"));
     },
   },
   mounted() {
