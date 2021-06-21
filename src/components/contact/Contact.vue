@@ -21,7 +21,7 @@
                     class="email"
                     label="Your Email"
                     v-model="recruiterEmail"
-                    @keyup.enter="triggerNext"
+                    @keydown.enter.prevent="triggerNext"
                     required
                     :rules="emailRules"
                     @mouseover="cursorHover"
@@ -167,6 +167,7 @@ export default {
       else return false;
     },
     triggerNext() {
+      console.log(this.$refs.nextBtn.$el)
       this.$refs.nextBtn.$el.click();
     },
     validate() {
