@@ -1,14 +1,17 @@
 <template>
   <v-sheet>
-    <v-container class="content-wrapper flex-column my-sm-16" id="experience-container">
+    <v-container
+      class="content-wrapper flex-column my-sm-16"
+      id="experience-container"
+    >
       <v-row>
         <v-col class="col-12">
           <section-title class="mb-sm-16">
             <span>
               <span class="z-index-priority">My</span>&nbsp;
               <underline class="main-title">
-                <span>work</span>
-              </underline>&nbsp;
+                <span>work</span> </underline
+              >&nbsp;
               <span class="z-index-priority">experience</span>
             </span>
           </section-title>
@@ -23,22 +26,22 @@
                   <div
                     id="job-border-in"
                     class="w100 absolute"
-                    :class="{top: selectorIsTop, bottom: !selectorIsTop}"
+                    :class="tabSelected"
                   ></div>
                 </div>
                 <div @mouseover="cursorHover" @mouseleave="cursorLeave">
+                  <p @click="currentJob = 1" class="jobs-item">2019 - 2020</p>
+                  <p @click="currentJob = 2" class="jobs-item">2020 - 2021</p>
                   <p
-                    @click="borderTransition('top'), currentJob = 0, selectorIsTop = true"
+                    @click="goAnimation(), (currentJob = null)"
                     class="jobs-item"
-                  >2019 - 2020</p>
-                  <p
-                    @click="goAnimation(), borderTransition('bottom'), currentJob = 1, selectorIsTop = false"
-                    class="jobs-item"
-                  >Present</p>
+                  >
+                    Present
+                  </p>
                 </div>
               </div>
             </v-col>
-            <v-col v-if="currentJob === 0" class="col-12 col-sm-10">
+            <v-col v-if="currentJob === 1" class="col-12 col-sm-10">
               <h4 class="mb-2">
                 FullStack Developer
                 <a
@@ -50,20 +53,58 @@
                   <span class="company">@IbaiScanbit</span>
                 </a>
               </h4>
-              <h5 class="mb-5">1 year, 2019 - 2020</h5>
+              <h5 class="mb-5">1 year, June 2019 - June 2020</h5>
               <ul>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Developed multiple Web Apps for scholarly and published digital content using Dspace open source package.
+                  <v-icon>mdi-chevron-right</v-icon>Developed multiple Web Apps
+                  for scholarly and published digital content using Dspace open
+                  source package.
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Contributed to over 10 Web Apps that serve as digital repositories for public institutions and big companies.
+                  <v-icon>mdi-chevron-right</v-icon>Contributed to over 10 Web
+                  Apps that serve as digital repositories for public
+                  institutions and big companies.
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Test and implementation of performant and responsive code to ensure cross-browser compatibility and responsiveness in all devices.
+                  <v-icon>mdi-chevron-right</v-icon>Test and implementation of
+                  performant and responsive code to ensure cross-browser
+                  compatibility and responsiveness in all devices.
                 </li>
               </ul>
             </v-col>
-            <v-col v-if="currentJob === 1" class="col-12 col-sm-10 px-0 px-sm-3">
+            <v-col v-if="currentJob === 2" class="col-12 col-sm-10">
+              <h4 class="mb-2">
+                Frontend Developer
+                <a
+                  href="https://www.linkedin.com/company/benocs"
+                  target="_blank"
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
+                  <span class="company">@Benocs - Deutsche Telekom</span>
+                </a>
+              </h4>
+              <h5 class="mb-5">November 2020 - Present</h5>
+              <p class="job-description">Founded in 2013, Benocs introduced the industry’s first ever ISP/CDN cooperative solution to provide ISPs and CDNs with next-generation network telemetry and analytics.</p>
+              <ul>
+                <li>
+                  <v-icon>mdi-chevron-right</v-icon>Developed multiple Web Apps
+                  for scholarly and published digital content using Dspace open
+                  source package.
+                </li>
+                <li>
+                  <v-icon>mdi-chevron-right</v-icon>Contributed to over 10 Web
+                  Apps that serve as digital repositories for public
+                  institutions and big companies.
+                </li>
+                <li>
+                  <v-icon>mdi-chevron-right</v-icon>Test and implementation of
+                  performant and responsive code to ensure cross-browser
+                  compatibility and responsiveness in all devices.
+                </li>
+              </ul>
+            </v-col>
+            <v-col v-if="!currentJob" class="col-12 col-sm-10 px-0 px-sm-3">
               <h4 class="mb-2 ml-3 ml-sm-0">
                 Frontend Developer
                 <span class="light-violet-text">@YourCompany</span>
@@ -76,7 +117,8 @@
                   @mouseover="cursorHover"
                   @mouseleave="cursorLeave"
                   @click="redirect(5)"
-                >Contact me</span>
+                  >Contact me</span
+                >
               </h1>
             </v-col>
           </v-row>
@@ -87,42 +129,74 @@
       </v-row>
       <!-- Recomendation quotes -->
       <v-row class="mt-16 recomendations">
-        <v-col class="col-10 offset-1 col-sm-6 offset-sm-0 pl-sm-11 pl-md-0 pr-sm-9 pr-md-12">
+        <v-col
+          class="
+            col-10
+            offset-1
+            col-sm-6
+            offset-sm-0
+            pl-sm-11 pl-md-0
+            pr-sm-9 pr-md-12
+          "
+        >
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
-                <strong>...Implemented and developed on his own for the clients...</strong>
-                <span
-                  class="text"
-                >We must indicate that his integration in the work team has been totally satisfactory, as well as his attitude and participation in the projects, being active and cooperative.</span>
+                <strong
+                  >...Implemented and developed on his own for the
+                  clients...</strong
+                >
+                <span class="text"
+                  >We must indicate that his integration in the work team has
+                  been totally satisfactory, as well as his attitude and
+                  participation in the projects, being active and
+                  cooperative.</span
+                >
               </p>
             </template>
             <template v-slot:author>
               <div class="author flex-column flex-sm-row">
                 <div class="dash d-none d-sm-block"></div>
                 <span class="name">Izaskun Ucar,&nbsp;</span>
-                <span class="light-violet-text">Project Manager @IbaiScanbit</span>
+                <span class="light-violet-text"
+                  >Project Manager @IbaiScanbit</span
+                >
               </div>
             </template>
           </quotes>
         </v-col>
         <v-col
-          class="col-10 offset-1 col-sm-6 offset-sm-0 pl-sm-11 pl-md-0 pr-sm-9 pr-md-12 mt-16 mt-sm-0"
+          class="
+            col-10
+            offset-1
+            col-sm-6
+            offset-sm-0
+            pl-sm-11 pl-md-0
+            pr-sm-9 pr-md-12
+            mt-16 mt-sm-0
+          "
         >
           <quotes>
             <template v-slot:text>
               <p class="ma-0 text-container">
-                <strong>His participation in the different projects developed has been remarkable...</strong>
-                <span
-                  class="text"
-                >...contributing to their high level. Not only has he contributed academically but he has also been able to lead the work team.</span>
+                <strong
+                  >His participation in the different projects developed has
+                  been remarkable...</strong
+                >
+                <span class="text"
+                  >...contributing to their high level. Not only has he
+                  contributed academically but he has also been able to lead the
+                  work team.</span
+                >
               </p>
             </template>
             <template v-slot:author>
               <div class="author flex-column flex-sm-row">
                 <div class="dash d-none d-sm-block"></div>
                 <span class="name">Nieves Ruiz Nogueras,&nbsp;</span>
-                <span class="light-violet-text">Computer Science Professor</span>
+                <span class="light-violet-text"
+                  >Computer Science Professor</span
+                >
               </div>
             </template>
           </quotes>
@@ -132,8 +206,8 @@
         <v-col class="col-12 pl-5">
           <section-title>
             <underline>
-              <span>Clients</span>
-            </underline>&nbsp; I worked for @IbaiScanbit
+              <span>Clients</span> </underline
+            >&nbsp; I worked for @IbaiScanbit
           </section-title>
         </v-col>
       </v-row>
@@ -145,9 +219,11 @@
         >
           <img
             class="w100"
-            :src="'/images/clients/' + (clients[n-1])"
+            :src="'/images/clients/' + clients[n - 1]"
             alt="clients"
-            :style="[n === clients.length ? {width: '40%'} : {width: '65%'}]"
+            :style="[
+              n === clients.length ? { width: '40%' } : { width: '65%' },
+            ]"
           />
         </v-col>
       </v-row>
@@ -165,13 +241,12 @@ export default {
   components: { Quotes },
   data() {
     return {
-      currentJob: 0,
-      selectorIsTop: true,
+      currentJob: 2,
     };
   },
   methods: {
     goAnimation() {
-      if (this.currentJob === 0) {
+      if (this.currentJob) {
         setTimeout(() => {
           var ml4 = {};
           ml4.opacityIn = [0, 1];
@@ -230,13 +305,12 @@ export default {
         }, 10);
       }
     },
-    borderTransition(direction) {
-      switch (direction) {
-        case "top":
-          break;
-        case "bottom":
-          break;
-      }
+  },
+  computed: {
+    // a computed getter
+    tabSelected: function () {
+      // `this` points to the vm instance
+      return this.currentJob ? "tab" + this.currentJob : "tab3";
     },
   },
 };
@@ -250,11 +324,14 @@ export default {
     }
   }
 }
-.top {
+.tab1 {
   top: 0;
 }
-.bottom {
-  top: 50%;
+.tab2 {
+  top: 33%;
+}
+.tab3 {
+  top: 66.6%;
 }
 h4,
 h5,
@@ -266,7 +343,7 @@ h5,
   background: $gray-300;
   position: relative;
   #job-border-in {
-    height: 50%;
+    height: 33%;
     transition: all 0.3s;
     background-color: $light-violet;
   }
@@ -282,6 +359,9 @@ h4 {
 }
 .company {
   color: $light-violet;
+}
+.job-description{
+  color: $gray-400;
 }
 ul {
   padding: 0;
