@@ -15,8 +15,8 @@
             :src="'/images/projects' + (getColorMode[n-1])"
             alt="image"
           />
-          <div v-if="currentProject == 1">
-            <video-project-1></video-project-1>
+          <div v-if="currentProject == 2">
+            <video-project-2></video-project-2>
           </div>
           <router-link :to="{ name: 'FullProject', params: { id: getPrevOrNextId('next') }}">
             <next-project></next-project>
@@ -158,7 +158,7 @@ import technologiesUsed from "./../shared/mixins/projects/technologiesUsed";
 import projectNames from "./../shared/mixins/projects/projectNames";
 import webLinks from "./../shared/mixins/projects/webLinks";
 import imageURLs from "./../shared/mixins/projects/imageURLs";
-import VideoProject1 from "./../components/full_projects/video_components/VideoProject1";
+import VideoProject2 from "./../components/full_projects/video_components/VideoProject2";
 import VideoProject5 from "./../components/full_projects/video_components/VideoProject5";
 import Devices3D from "./../components/full_projects/Devices3D";
 import NextProject from "./../components/full_projects/NextProject";
@@ -166,7 +166,7 @@ import NextProject from "./../components/full_projects/NextProject";
 export default {
   mixins: [technologiesUsed, projectNames, webLinks, imageURLs],
   components: {
-    VideoProject1,
+    VideoProject2,
     VideoProject5,
     Devices3D,
     NextProject,

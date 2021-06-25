@@ -1,38 +1,46 @@
 <template>
   <v-sheet>
-    <v-container class="content-wrapper flex-column mt-sm-15" id="featured-projects-container">
+    <v-container
+      class="content-wrapper flex-column mt-sm-15"
+      id="featured-projects-container"
+    >
       <v-row class="pb-sm-4">
         <v-col class="pb-0 pb-sm-3">
-          <section-title class="mb-0 mb-sm-8 text-center text-sm-left px-1 px-sm-0">
+          <section-title
+            class="mb-0 mb-sm-8 text-center text-sm-left px-1 px-sm-0"
+          >
             <span>
               <span class="z-index-priority">Some</span>&nbsp;
-              <underline>
-                <span>projects</span>
-              </underline>&nbsp;
+              <underline> <span>projects</span> </underline>&nbsp;
               <span class="z-index-priority">I have built</span>
             </span>
           </section-title>
         </v-col>
       </v-row>
+
       <!-- PROJECT 1 -->
       <v-row class="mb-5 mb-sm-15">
         <v-col>
           <featured-project :projectNumber="1">
             <template v-slot:side-title>
-              <div class="shadow" :style="{ background: 'rgb(22, 82, 46)' }"></div>
+              <div class="shadow" :style="{ background: '#454976' }"></div>
               <div class="side-title-container">
-                <span>V</span>
-                <span>U</span>
-                <span class="mb-4">E</span>
-                <span>W</span>
-                <span>O</span>
-                <span>R</span>
+                <span>A</span>
+                <span>N</span>
+                <span>A</span>
                 <span>L</span>
-                <span>D</span>
+                <span>Y</span>
+                <span>T</span>
+                <span>I</span>
+                <span>C</span>
+                <span>S</span>
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/vueworld/landing.jpg"></v-img>
+              <v-img
+                height="100%"
+                src="/images/projects/benocs/benocs_main.png"
+              ></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[0] }}</span>
@@ -42,19 +50,22 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== techsProject1.length}"
+                :class="{
+                  'mr-4': n !== techsProject1.length,
+                }"
                 v-for="n in techsProject1.length"
                 :key="n"
-              >{{techsProject1[n-1]}}</span>
+                >{{ techsProject1[n - 1] }}</span
+              >
             </template>
             <template v-slot:web-links>
-              <a target="_blank" :href="linksProject1.github">
-                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
-                  <v-icon>mdi-github</v-icon>
-                </v-btn>
-              </a>
               <a target="_blank" :href="linksProject1.host">
-                <v-btn class="mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
+                <v-btn
+                  class="ml-n2 mr-4"
+                  icon
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -67,19 +78,26 @@
         <v-col>
           <featured-project reverse :projectNumber="2">
             <template v-slot:side-title>
-              <div class="shadow" :style="{ background: '#454976' }"></div>
+              <div
+                class="shadow"
+                :style="{ background: 'rgb(22, 82, 46)' }"
+              ></div>
               <div class="side-title-container">
+                <span>V</span>
                 <span>U</span>
-                <span>J</span>
-                <span class="mb-4">I</span>
-                <span>R</span>
-                <span>E</span>
-                <span>P</span>
+                <span class="mb-4">E</span>
+                <span>W</span>
                 <span>O</span>
+                <span>R</span>
+                <span>L</span>
+                <span>D</span>
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/uji/3.png"></v-img>
+              <v-img
+                height="100%"
+                src="/images/projects/vueworld/landing.jpg"
+              ></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[1] }}</span>
@@ -89,12 +107,23 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'google-maps': n === techsProject2[0], 'ml-4': n !== 1 }"
+                :class="{ 'ml-4': n !== techsProject2.length }"
                 v-for="n in techsProject2.length"
                 :key="n"
-              >{{techsProject2[n-1]}}</span>
+                >{{ techsProject2[n - 1] }}</span
+              >
             </template>
             <template v-slot:web-links>
+              <a target="_blank" :href="linksProject2.github">
+                <v-btn
+                  class="mr-4 mr-sm-0 ml-n2 ml-sm-4"
+                  icon
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
+              </a>
               <a target="_blank" :href="linksProject2.host">
                 <v-btn
                   class="mr-4 mr-sm-0 ml-sm-4"
@@ -140,19 +169,30 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== techsProject3.length}"
+                :class="{ 'mr-4': n !== techsProject3.length }"
                 v-for="n in techsProject3.length"
                 :key="n"
-              >{{techsProject3[n-1]}}</span>
+                >{{ techsProject3[n - 1] }}</span
+              >
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject3.github">
-                <v-btn class="ml-n2 mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
+                <v-btn
+                  class="ml-n2 mr-4"
+                  icon
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </a>
               <a target="_blank" :href="linksProject3.host">
-                <v-btn class="mr-4" icon @mouseover="cursorHover" @mouseleave="cursorLeave">
+                <v-btn
+                  class="mr-4"
+                  icon
+                  @mouseover="cursorHover"
+                  @mouseleave="cursorLeave"
+                >
                   <v-icon>mdi-web</v-icon>
                 </v-btn>
               </a>
@@ -179,7 +219,10 @@
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/cloudroad/dark/mapa.png"></v-img>
+              <v-img
+                height="100%"
+                src="/images/projects/cloudroad/dark/mapa.png"
+              ></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[1] }}</span>
@@ -189,10 +232,14 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'google-maps': n === techsProject4[0], 'ml-4': n !== 1 }"
+                :class="{
+                  'min-width': n === techsProject4[0],
+                  'ml-4': n !== 1,
+                }"
                 v-for="n in techsProject4.length"
                 :key="n"
-              >{{techsProject4[n-1]}}</span>
+                >{{ techsProject4[n - 1] }}</span
+              >
             </template>
             <template v-slot:web-links>
               <a target="_blank" :href="linksProject4.github">
@@ -235,7 +282,10 @@
               </div>
             </template>
             <slot>
-              <v-img height="100%" src="/images/projects/manhattan/landing.jpg"></v-img>
+              <v-img
+                height="100%"
+                src="/images/projects/manhattan/landing.jpg"
+              ></v-img>
             </slot>
             <template v-slot:project-title>
               <span>{{ projectNames[4] }}</span>
@@ -245,10 +295,11 @@
             </template>
             <template v-slot:languages-used>
               <span
-                :class="{'mr-4': n !== techsProject5.length}"
+                :class="{ 'mr-4': n !== techsProject5.length }"
                 v-for="n in techsProject5.length"
                 :key="n"
-              >{{techsProject5[n-1]}}</span>
+                >{{ techsProject5[n - 1] }}</span
+              >
             </template>
           </featured-project>
         </v-col>
@@ -343,7 +394,7 @@ export default {
   h4 {
     font-size: 30px;
   }
-  .google-maps {
+  .min-width {
     width: min-content;
   }
 }

@@ -2,11 +2,11 @@ export default {
     data() {
         return {
             linksProject1: {
-                host: 'http://vueworld.herokuapp.com/',
-                github: 'https://github.com/AdrianDanlos/VueWorld'
+                host: 'https://www.linkedin.com/company/benocs/',
             },
             linksProject2: {
-                host: 'http://repositori.uji.es/',
+                host: 'http://vueworld.herokuapp.com/',
+                github: 'https://github.com/AdrianDanlos/VueWorld'
             },
             linksProject3: {
                 host: 'https://apex-legends-tracker-7662d.web.app/',
@@ -18,6 +18,9 @@ export default {
             },
             linksProject5: {
                 
+            },
+            linksProject6: {
+                host: 'http://repositori.uji.es/',
             },
         }
     }

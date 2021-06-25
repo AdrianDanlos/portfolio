@@ -9,8 +9,7 @@
           <section-title class="mb-sm-16">
             <span>
               <span class="z-index-priority">My</span>&nbsp;
-              <underline class="main-title">
-                <span>work</span> </underline
+              <underline class="main-title"> <span>work</span> </underline
               >&nbsp;
               <span class="z-index-priority">experience</span>
             </span>
@@ -85,22 +84,24 @@
                 </a>
               </h4>
               <h5 class="mb-5">November 2020 - Present</h5>
-              <p class="job-description">Founded in 2013, Benocs introduced the industry’s first ever ISP/CDN cooperative solution to provide ISPs and CDNs with next-generation network telemetry and analytics.</p>
               <ul>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Developed multiple Web Apps
-                  for scholarly and published digital content using Dspace open
-                  source package.
+                  <v-icon>mdi-chevron-right</v-icon>Architected and implemented
+                  the frontend of the the first ever ISP/CDN cooperative
+                  application to provide ISPs and CDNs with next-generation
+                  network telemetry and analytics.
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Contributed to over 10 Web
-                  Apps that serve as digital repositories for public
-                  institutions and big companies.
+                  <v-icon>mdi-chevron-right</v-icon>Performing on a variety
+                  of different languages, platforms and frameworks such as
+                  React, MobX, TypeScript, Django, Cypress, Sass, Docker, Internal and
+                  3rd party APIs...
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Test and implementation of
-                  performant and responsive code to ensure cross-browser
-                  compatibility and responsiveness in all devices.
+                  <v-icon>mdi-chevron-right</v-icon>Working under a startup mindset, utilizing modern technologies and methodologies (scrum) to ensure efficiency and high quality code. 
+                </li>
+                <li>
+                  <v-icon>mdi-chevron-right</v-icon>Currently developing our software for some the most well known ISP/Internet brands worldwide.
                 </li>
               </ul>
             </v-col>
@@ -205,9 +206,8 @@
       <v-row class="mt-16 mb-10">
         <v-col class="col-12 pl-5">
           <section-title>
-            <underline>
-              <span>Clients</span> </underline
-            >&nbsp; I worked for @IbaiScanbit
+            <underline> <span>Clients</span> </underline>&nbsp; I worked for
+            @IbaiScanbit
           </section-title>
         </v-col>
       </v-row>
@@ -359,9 +359,6 @@ h4 {
 }
 .company {
   color: $light-violet;
-}
-.job-description{
-  color: $gray-400;
 }
 ul {
   padding: 0;
