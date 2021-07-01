@@ -21,5 +21,9 @@
 <img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/palette.png" alt="palette" width="400"/>
 
 
-### :computer: Run project
-npm run serve
+
+
+### :computer: Run and deploy project
+- npm run serve
+- npm run build
+- firebase deploy
