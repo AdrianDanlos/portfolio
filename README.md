@@ -19,3 +19,7 @@
 
 ### :fallen_leaf: Color Palette
 <img src="https://raw.githubusercontent.com/AdrianDanlos/Portfolio/master/public/images/palette.png" alt="palette" width="400"/>
+
+
+### :computer: Run project
+npm run serve
