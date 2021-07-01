@@ -9,7 +9,7 @@
           <section-title class="mb-sm-16">
             <span>
               <span class="z-index-priority">My</span>&nbsp;
-              <underline class="main-title"> <span>work</span> </underline
+              <underline class="main-title-work"> <span>work</span> </underline
               >&nbsp;
               <span class="z-index-priority">experience</span>
             </span>
@@ -86,22 +86,26 @@
               <h5 class="mb-5">November 2020 - Present</h5>
               <ul>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Architected and implemented
-                  the frontend of the the first ever ISP/CDN cooperative
-                  application to provide ISPs and CDNs with next-generation
-                  network telemetry and analytics.
+                  <v-icon>mdi-chevron-right</v-icon>Architecting and
+                  implementing the frontend of the the first ever ISP/CDN
+                  cooperative application to provide ISPs and CDNs with
+                  next-generation network telemetry and analytics.
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Performing on a variety
-                  of different languages, platforms and frameworks such as
-                  React, MobX, TypeScript, Django, Cypress, Sass, Docker, Internal and
+                  <v-icon>mdi-chevron-right</v-icon>Performing on a variety of
+                  different languages, platforms and frameworks such as React,
+                  MobX, TypeScript, Django, Cypress, Sass, Docker, Internal and
                   3rd party APIs...
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Working under a startup mindset, utilizing modern technologies and methodologies (scrum) to ensure efficiency and high quality code. 
+                  <v-icon>mdi-chevron-right</v-icon>Working under a startup
+                  mindset, utilizing modern technologies and methodologies
+                  (scrum) to ensure efficiency and high quality code.
                 </li>
                 <li>
-                  <v-icon>mdi-chevron-right</v-icon>Currently developing our software for some the most well known ISP/Internet brands worldwide.
+                  <v-icon>mdi-chevron-right</v-icon>Currently developing our
+                  software for some the most well known ISP/Internet brands
+                  worldwide.
                 </li>
               </ul>
             </v-col>
@@ -203,11 +207,12 @@
           </quotes>
         </v-col>
       </v-row>
-      <v-row class="mt-16 mb-10">
+      <v-row class="clients-title mb-16">
         <v-col class="col-12 pl-5">
           <section-title>
-            <underline> <span>Clients</span> </underline>&nbsp; I worked for
-            @IbaiScanbit
+            <underline class="main-title-clients">
+              <span>Clients</span> </underline
+            >&nbsp; <span class="z-index-priority">I worked for</span>
           </section-title>
         </v-col>
       </v-row>
@@ -316,11 +321,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-::v-deep .main-title.underline-container {
+::v-deep .main-title-work.underline-container {
   .text {
     &::after {
       content: "work";
       left: -73px;
+    }
+  }
+}
+::v-deep .main-title-clients.underline-container {
+  .text {
+    &::after {
+      content: "clients";
+      left: -28px;
     }
   }
 }
@@ -389,6 +402,9 @@ ul {
     width: fit-content;
     font-family: Montserrat;
   }
+}
+.clients-title {
+  margin-top: 150px;
 }
 .recomendations {
   strong {

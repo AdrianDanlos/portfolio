@@ -25,10 +25,8 @@
                   Despite being specialized on Frontend technologies I have a broad experience building performant
                   <span
                     class="special-text"
-                  >end-to-end applications</span>. In 2019 I joined the engineering team at IbaiScanbit where I had the opportunity to work on a
-                  <span
-                    class="special-text"
-                  >wide variety of projects</span>.
+                  >end-to-end applications</span>. In 2020 I joined the talented and experienced engineering team at Benocs where I was given the opportunity to work on a
+                  high performance analytics application for internet networks.
                 </p>
                 <p>I feel at home in young, fresh, and fast-paced organizations.</p>
               </div>
@@ -111,7 +109,7 @@ export default {
   data() {
     return {
       loaded: false,
-      technologies: ["VueJS", "JavaScript", "Laravel", "PHP", "HTML5", "SASS"],
+      technologies: ["React", "VueJS", "JavaScript", "HTML5", "SASS", "Laravel"],
       currentTech: 0,
       sections: ["CORE SKILLS", "TEAMWORK", "PROBLEM SOLVING"],
       currentSection: "CORE SKILLS",

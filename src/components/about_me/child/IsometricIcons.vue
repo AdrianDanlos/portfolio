@@ -10,10 +10,14 @@
         </li>
       </v-col>
       <v-col sm12 md6 class="d-flex pl-0 second-row">
-        <li @mouseover="$emit('displayTechnology', n + 3)" v-for="n in 3" :key="n">
+        <li
+          @mouseover="$emit('displayTechnology', n + 3)"
+          v-for="n in 3"
+          :key="n"
+        >
           <span v-for="n in 4" :key="n"></span>
           <span>
-            <v-icon>{{ technologiesIcons[(n + 3) - 1] }}</v-icon>
+            <v-icon>{{ technologiesIcons[n + 3 - 1] }}</v-icon>
           </span>
         </li>
       </v-col>
@@ -26,15 +30,15 @@ export default {
   data() {
     return {
       technologiesIcons: [
+        "mdi-react",
         "mdi-vuejs",
         "mdi-language-javascript",
-        "mdi-laravel",
-        "mdi-language-php",
         "mdi-language-html5",
-        "mdi-sass"
-      ]
+        "mdi-sass",
+        "mdi-laravel",
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -120,17 +124,26 @@ export default {
       }
     }
   }
-  li:nth-child(2) {
-    &:hover {
-      i {
-        color: $gray-500;
-      }
-    }
-  }
   .first-row {
     li:nth-child(1) {
       span {
         z-index: 6;
+      }
+      &:hover {
+        &::before {
+          background: $react-bBorder-color;
+        }
+        &::after {
+          background: $react-lBorder-color;
+        }
+        span {
+          background: $react-color;
+        }
+      }
+    }
+    li:nth-child(2) {
+      span {
+        z-index: 5;
       }
       &:hover {
         &::before {
@@ -144,9 +157,9 @@ export default {
         }
       }
     }
-    li:nth-child(2) {
+    li:nth-child(3) {
       span {
-        z-index: 5;
+        z-index: 4;
       }
       &:hover {
         &::before {
@@ -159,20 +172,9 @@ export default {
           background: $js-color;
         }
       }
-    }
-    li:nth-child(3) {
-      span {
-        z-index: 4;
-      }
       &:hover {
-        &::before {
-          background: $laravel-bBorder-color;
-        }
-        &::after {
-          background: $laravel-lBorder-color;
-        }
-        span {
-          background: $laravel-color;
+        i {
+          color: $gray-500;
         }
       }
     }
@@ -181,22 +183,6 @@ export default {
     li:nth-child(1) {
       span {
         z-index: 3;
-      }
-      &:hover {
-        &::before {
-          background: $php-bBorder-color;
-        }
-        &::after {
-          background: $php-lBorder-color;
-        }
-        span {
-          background: $php-color;
-        }
-      }
-    }
-    li:nth-child(2) {
-      span {
-        z-index: 2;
       }
       &:hover {
         &::before {
@@ -210,9 +196,9 @@ export default {
         }
       }
     }
-    li:nth-child(3) {
+    li:nth-child(2) {
       span {
-        z-index: 1;
+        z-index: 2;
       }
       &:hover {
         &::before {
@@ -223,6 +209,22 @@ export default {
         }
         span {
           background: $sass-color;
+        }
+      }
+    }
+    li:nth-child(3) {
+      span {
+        z-index: 1;
+      }
+      &:hover {
+        &::before {
+          background: $laravel-bBorder-color;
+        }
+        &::after {
+          background: $laravel-lBorder-color;
+        }
+        span {
+          background: $laravel-color;
         }
       }
     }

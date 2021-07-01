@@ -37,12 +37,12 @@ $tile-lBorder-color: setBorderColors($tile-color, left);
 $tile-bBorder-color: setBorderColors($tile-color, bottom);
 
 /*Tile technologies*/
+$react-color:#61DBFB;
 $vue-color: #40b883;
 $js-color:#ffca1d;
-$laravel-color:#e65b49;
-$php-color:#4D588E;
 $html-color:#f88838;
 $sass-color:#c66395;
+$laravel-color:#e65b49;
 
 /*Tile borders*/
 $vue-lBorder-color: setBorderColors($vue-color, left);
@@ -51,8 +51,8 @@ $js-lBorder-color: setBorderColors($js-color, left);
 $js-bBorder-color: setBorderColors($js-color, bottom);
 $laravel-lBorder-color: setBorderColors($laravel-color, left);
 $laravel-bBorder-color: setBorderColors($laravel-color, bottom);
-$php-lBorder-color: setBorderColors($php-color, left);
-$php-bBorder-color: setBorderColors($php-color, bottom);
+$react-lBorder-color: setBorderColors($react-color, left);
+$react-bBorder-color: setBorderColors($react-color, bottom);
 $html-lBorder-color: setBorderColors($html-color, left);
 $html-bBorder-color: setBorderColors($html-color, bottom);
 $sass-lBorder-color: setBorderColors($sass-color, left);
