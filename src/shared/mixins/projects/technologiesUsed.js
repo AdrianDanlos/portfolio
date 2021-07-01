@@ -6,7 +6,7 @@ export default {
             techsProject3: ['JS', 'jQuery', 'Apex API', 'Firebase'],
             techsProject4: ['GoogleMaps Api', 'ChartJS', 'SASS', 'Laravel'],
             techsProject5: ['UX/UI', 'Design', 'Animations'],
-            techsProject6: ['Java', 'JSP', 'JS', 'Hibernate'],
+            // techsProject6: ['Java', 'JSP', 'JS', 'Hibernate'],
         }
     }
 };

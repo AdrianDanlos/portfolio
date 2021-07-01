@@ -2,10 +2,10 @@ export default {
     data() {
         return {
             linksProject1: {
-                host: 'https://www.linkedin.com/company/benocs/',
+                host: 'https://www.benocs.com/analytics/',
+                linkedin: 'https://www.linkedin.com/company/benocs/',
             },
             linksProject2: {
-                host: 'http://vueworld.herokuapp.com/',
                 github: 'https://github.com/AdrianDanlos/VueWorld'
             },
             linksProject3: {
@@ -19,9 +19,9 @@ export default {
             linksProject5: {
                 
             },
-            linksProject6: {
-                host: 'http://repositori.uji.es/',
-            },
+            // linksProject6: {
+            //     host: 'http://repositori.uji.es/',
+            // },
         }
     }
 };

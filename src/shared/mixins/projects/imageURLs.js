@@ -2,10 +2,10 @@ export default {
     data() {
         return {
             imgsProject1: {
-                light: ['/vueworld/landing-border.jpg', '/vueworld/bookables.png', '/vueworld/bookable.png', '/vueworld/reviews.png', '/vueworld/basket.png', '/vueworld/success.png', '/vueworld/sendreview.png']
+                light: ['/benocs/benocs_main.png', '/benocs/timeseries.png', '/benocs/dimensions.png', '/benocs/links1.png', '/benocs/links2.png', '/benocs/lookingglass.jpg'],
             },
-            imgsProject2: {
-                light: ['/uji/1.png', '/uji/2.png', '/uji/3.png', '/uji/4.png', '/uji/5.png', '/uji/6.png', '/uji/7.png', '/uji/8.png', '/uji/9.png', '/uji/10.png', ],
+            imgsProject2: {                
+                light: ['/vueworld/landing-border.jpg', '/vueworld/bookables.png', '/vueworld/bookable.png', '/vueworld/reviews.png', '/vueworld/basket.png', '/vueworld/success.png', '/vueworld/sendreview.png']
             },
             imgsProject3: {
                 light: ['/apex/apex.jpg', '/apex/github1.png', '/apex/github2.png', '/apex/github3.png'],
@@ -17,6 +17,9 @@ export default {
             imgsProject5: {
                 light: ['/manhattan/contact.png', '/manhattan/world.png', '/manhattan/footer.png'],
             },
+            // imgsProject6: {
+            //     light: ['/uji/1.png', '/uji/2.png', '/uji/3.png', '/uji/4.png', '/uji/5.png', '/uji/6.png', '/uji/7.png', '/uji/8.png', '/uji/9.png', '/uji/10.png', ],
+            // },
         }
     }
 };

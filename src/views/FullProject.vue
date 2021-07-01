@@ -4,7 +4,7 @@
       <v-row class="ma-0">
         <!-- GALLERY -->
         <v-col class="order-1 order-lg-0 col-12 col-lg-8 pa-0 py-lg-0">
-          <devices-3-d v-if="currentProject == 1" class="d-none d-lg-block"></devices-3-d>
+          <devices-3-d v-if="currentProject == 2" class="d-none d-lg-block"></devices-3-d>
           <div v-if="currentProject == 5">
             <video-project-5></video-project-5>
           </div>
@@ -111,6 +111,15 @@
                             @mouseover="cursorHover"
                             @mouseleave="cursorLeave"
                           >mdi-github</v-icon>
+                        </v-btn>
+                      </a>
+                      <a v-if="('linkedin' in webLinks)" target="_blank" :href="webLinks.linkedin">
+                        <v-btn class="mr-4" icon>
+                          <v-icon
+                            class="light-purple-text"
+                            @mouseover="cursorHover"
+                            @mouseleave="cursorLeave"
+                          >mdi-linkedin</v-icon>
                         </v-btn>
                       </a>
                     </div>
