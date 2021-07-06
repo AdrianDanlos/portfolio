@@ -52,7 +52,7 @@
                   <span class="company">@IbaiScanbit</span>
                 </a>
               </h4>
-              <h5 class="mb-5">1 year, June 2019 - June 2020</h5>
+              <h5 class="mb-5">1 year, June 2019 - June 2020<span class="dot-divider">•</span>Vitoria, Spain</h5>
               <ul>
                 <li>
                   <v-icon>mdi-chevron-right</v-icon>Developed multiple Web Apps
@@ -83,7 +83,7 @@
                   <span class="company">@Benocs - Deutsche Telekom</span>
                 </a>
               </h4>
-              <h5 class="mb-5">November 2020 - Present</h5>
+              <h5 class="mb-5">November 2020 - Present<span class="dot-divider">•</span>Berlin, Germany</h5>
               <ul>
                 <li>
                   <v-icon>mdi-chevron-right</v-icon>Architecting and
@@ -387,6 +387,9 @@ ul {
       color: $light-violet !important;
     }
   }
+}
+.dot-divider{
+  margin: 0 10px;
 }
 .ml4 {
   position: relative;
